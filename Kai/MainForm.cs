@@ -95,5 +95,14 @@ namespace Kai
             }
             registrationForm.ShowDialog();
         }
+
+        private void iconLocations_Click(object sender, EventArgs e)
+        {
+            if (locationForm == null) 
+            {
+                locationForm = new Locations(DM, this);
+            }
+            locationForm.ShowDialog();  
+        }
     }
 }

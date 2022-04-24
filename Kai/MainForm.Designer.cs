@@ -132,6 +132,7 @@
             this.iconLocations.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconLocations.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconLocations.UseVisualStyleBackColor = true;
+            this.iconLocations.Click += new System.EventHandler(this.iconLocations_Click);
             // 
             // IconWhanau
             // 

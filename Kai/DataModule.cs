@@ -61,6 +61,11 @@ namespace Kai
             daEventRegister.Update(dtEventRegister);
         }
 
+        public void UpdateLocation() 
+        {
+            daLocation.Update(dtLocation);
+       }
+
         private void DataModule_Load(object sender, EventArgs e)
         {
 
