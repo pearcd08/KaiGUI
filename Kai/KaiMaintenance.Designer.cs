@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KaiMaintenance));
             this.listBoxKai = new System.Windows.Forms.ListBox();
+            this.kAIBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsKaioordinate = new Kai.dsKaioordinate();
             this.txtKaiID = new System.Windows.Forms.TextBox();
             this.txtEvent = new System.Windows.Forms.TextBox();
             this.txtKaiName = new System.Windows.Forms.TextBox();
@@ -53,7 +55,7 @@
             this.cbxPreparation = new System.Windows.Forms.CheckBox();
             this.numServingQuantity = new System.Windows.Forms.NumericUpDown();
             this.numPreparationTime = new System.Windows.Forms.NumericUpDown();
-            this.pnlAdd = new System.Windows.Forms.Panel();
+            this.txtEventID = new System.Windows.Forms.Panel();
             this.lblMinutes = new System.Windows.Forms.Label();
             this.btnSave = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,25 +66,34 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.dsKaioordinate = new Kai.dsKaioordinate();
-            this.kAIBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.kAIBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsKaioordinate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numServingQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPreparationTime)).BeginInit();
-            this.pnlAdd.SuspendLayout();
+            this.txtEventID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsKaioordinate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kAIBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxKai
             // 
-            this.listBoxKai.DataSource = this.kAIBindingSource;
             this.listBoxKai.FormattingEnabled = true;
             this.listBoxKai.Location = new System.Drawing.Point(25, 50);
             this.listBoxKai.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxKai.Name = "listBoxKai";
             this.listBoxKai.Size = new System.Drawing.Size(291, 277);
             this.listBoxKai.TabIndex = 0;
+            this.listBoxKai.SelectedIndexChanged += new System.EventHandler(this.listBoxKai_SelectedIndexChanged);
+            // 
+            // kAIBindingSource
+            // 
+            this.kAIBindingSource.DataMember = "KAI";
+            this.kAIBindingSource.DataSource = this.dsKaioordinate;
+            // 
+            // dsKaioordinate
+            // 
+            this.dsKaioordinate.DataSetName = "dsKaioordinate";
+            this.dsKaioordinate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtKaiID
             // 
@@ -354,26 +365,26 @@
             this.numPreparationTime.Size = new System.Drawing.Size(100, 29);
             this.numPreparationTime.TabIndex = 25;
             // 
-            // pnlAdd
+            // txtEventID
             // 
-            this.pnlAdd.Controls.Add(this.lblMinutes);
-            this.pnlAdd.Controls.Add(this.btnSave);
-            this.pnlAdd.Controls.Add(this.label6);
-            this.pnlAdd.Controls.Add(this.btnCancel);
-            this.pnlAdd.Controls.Add(this.txtKaiNameAdd);
-            this.pnlAdd.Controls.Add(this.label5);
-            this.pnlAdd.Controls.Add(this.label4);
-            this.pnlAdd.Controls.Add(this.label2);
-            this.pnlAdd.Controls.Add(this.label1);
-            this.pnlAdd.Controls.Add(this.numPreparationTime);
-            this.pnlAdd.Controls.Add(this.numServingQuantity);
-            this.pnlAdd.Controls.Add(this.cbxPreparation);
-            this.pnlAdd.Controls.Add(this.cboEvent);
-            this.pnlAdd.Location = new System.Drawing.Point(886, 66);
-            this.pnlAdd.Name = "pnlAdd";
-            this.pnlAdd.Size = new System.Drawing.Size(507, 354);
-            this.pnlAdd.TabIndex = 27;
-            this.pnlAdd.Visible = false;
+            this.txtEventID.Controls.Add(this.lblMinutes);
+            this.txtEventID.Controls.Add(this.btnSave);
+            this.txtEventID.Controls.Add(this.label6);
+            this.txtEventID.Controls.Add(this.btnCancel);
+            this.txtEventID.Controls.Add(this.txtKaiNameAdd);
+            this.txtEventID.Controls.Add(this.label5);
+            this.txtEventID.Controls.Add(this.label4);
+            this.txtEventID.Controls.Add(this.label2);
+            this.txtEventID.Controls.Add(this.label1);
+            this.txtEventID.Controls.Add(this.numPreparationTime);
+            this.txtEventID.Controls.Add(this.numServingQuantity);
+            this.txtEventID.Controls.Add(this.cbxPreparation);
+            this.txtEventID.Controls.Add(this.cboEvent);
+            this.txtEventID.Location = new System.Drawing.Point(886, 66);
+            this.txtEventID.Name = "txtEventID";
+            this.txtEventID.Size = new System.Drawing.Size(507, 354);
+            this.txtEventID.TabIndex = 27;
+            this.txtEventID.Visible = false;
             // 
             // lblMinutes
             // 
@@ -499,23 +510,24 @@
             this.picLogo.TabIndex = 28;
             this.picLogo.TabStop = false;
             // 
-            // dsKaioordinate
+            // textBox1
             // 
-            this.dsKaioordinate.DataSetName = "dsKaioordinate";
-            this.dsKaioordinate.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // kAIBindingSource
-            // 
-            this.kAIBindingSource.DataMember = "KAI";
-            this.kAIBindingSource.DataSource = this.dsKaioordinate;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(342, 80);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(100, 29);
+            this.textBox1.TabIndex = 29;
             // 
             // KaiMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(1383, 558);
-            this.Controls.Add(this.pnlAdd);
+            this.ClientSize = new System.Drawing.Size(1293, 561);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEventID);
             this.Controls.Add(this.txtPreperation);
             this.Controls.Add(this.txtServingQuantity);
             this.Controls.Add(this.txtPreperationTime);
@@ -542,13 +554,13 @@
             this.Text = " Kaioordinate - Community Event Management Software                             ";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Load += new System.EventHandler(this.KaiMaintenance_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.kAIBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsKaioordinate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numServingQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPreparationTime)).EndInit();
-            this.pnlAdd.ResumeLayout(false);
-            this.pnlAdd.PerformLayout();
+            this.txtEventID.ResumeLayout(false);
+            this.txtEventID.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsKaioordinate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kAIBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -579,7 +591,7 @@
         private System.Windows.Forms.CheckBox cbxPreparation;
         private System.Windows.Forms.NumericUpDown numServingQuantity;
         private System.Windows.Forms.NumericUpDown numPreparationTime;
-        private System.Windows.Forms.Panel pnlAdd;
+        private System.Windows.Forms.Panel txtEventID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtKaiNameAdd;
         private System.Windows.Forms.Label label5;
@@ -592,5 +604,6 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.BindingSource kAIBindingSource;
         private dsKaioordinate dsKaioordinate;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -75,5 +75,25 @@ namespace Kai
             reportForm.ShowDialog();
 
         }
+
+        private void IconWhanau_Click(object sender, EventArgs e)
+        {
+            if (whanauForm == null)
+            {
+                whanauForm = new Whanau(DM, this);
+
+            }
+            whanauForm.ShowDialog();
+
+        }
+
+        private void iconRegistration_Click(object sender, EventArgs e)
+        {
+            if (registrationForm == null) 
+            {
+                registrationForm = new Registration(DM, this);
+            }
+            registrationForm.ShowDialog();
+        }
     }
 }

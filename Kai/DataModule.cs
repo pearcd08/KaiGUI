@@ -51,9 +51,19 @@ namespace Kai
             daKai.Update(dtKai);    
         }
 
+        public void UpdateWhanau() 
+        {
+            daWhanau.Update(dtWhanau);
+        }
+
+        public void UpdateEventRegister() 
+        {
+            daEventRegister.Update(dtEventRegister);
+        }
+
         private void DataModule_Load(object sender, EventArgs e)
         {
 
-        }
+        } 
     }
 }

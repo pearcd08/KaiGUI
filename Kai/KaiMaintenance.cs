@@ -14,9 +14,10 @@ namespace Kai
     public partial class KaiMaintenance : Form
     {
         private DataModule DM;
-        private MainMenu frmMenu;
-        private CurrencyManager currencyManager;
-        
+        private MainMenu frmMenu;       
+        private CurrencyManager cmKai;
+       
+
 
 
         public KaiMaintenance(DataModule dm, MainMenu mnu)
@@ -28,13 +29,11 @@ namespace Kai
         }
 
         public void BindControls()
-        {
-            
-            
+        {           
             
             //bindings for original panel
             txtKaiID.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.KaiID");
-            txtEvent.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.EventID");    
+            txtEventID.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.EventID"); 
             txtKaiName.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.KaiName");            
             txtPreperation.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.PreparationRequired");
             txtPreperationTime.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.PreparationMinutes");
@@ -50,8 +49,7 @@ namespace Kai
             listBoxKai.DisplayMember = "Kai.KaiName";
             listBoxKai.ValueMember = "Kai.KaiID";
 
-            currencyManager = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "Kai"];
-
+            cmKai = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "Kai"];
 
 
         }
@@ -65,7 +63,7 @@ namespace Kai
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataRow deleteKaiRow = DM.dtKai.Rows[currencyManager.Position];
+            DataRow deleteKaiRow = DM.dtKai.Rows[cmKai.Position];
             DataRow[] eventKaiRow = DM.dtEventRegister.Select("EventID = " + txtEvent.Text);
             if (eventKaiRow.Length != 0) 
             {
@@ -88,8 +86,8 @@ namespace Kai
         private void iconAdd_Click(object sender, EventArgs e)
         {
             //make panel visible
-            pnlAdd.Location = new Point(384, 37);
-            pnlAdd.Visible = true;            
+            txtEventID.Location = new Point(384, 37);
+            txtEventID.Visible = true;            
             //load data into combobox
             LoadEvents();
             //make fields invisible
@@ -124,8 +122,8 @@ namespace Kai
             //get the name
             txtKaiNameAdd.Text = txtKaiName.Text;
             //make panel visible
-            pnlAdd.Location = new Point(384, 37);
-            pnlAdd.Visible = true;
+            txtEventID.Location = new Point(384, 37);
+            txtEventID.Visible = true;
             //make fields invisible
             listBoxKai.Visible = false;
             lblKaiID.Visible = false;
@@ -148,17 +146,17 @@ namespace Kai
 
         private void iconUp_Click(object sender, EventArgs e)
         {
-            if (currencyManager.Position > 0) 
+            if (cmKai.Position > 0) 
             {
-                --currencyManager.Position; 
+                --cmKai.Position; 
             }
         }
 
         private void iconDown_Click(object sender, EventArgs e)
         {
-            if (currencyManager.Position < currencyManager.Count - 1)
+            if (cmKai.Position < cmKai.Count - 1)
             {
-                ++currencyManager.Position;
+                ++cmKai.Position;
             }
 
         }
@@ -168,7 +166,7 @@ namespace Kai
 
             
             //make panel invisible
-            pnlAdd.Visible = false;
+            txtEventID.Visible = false;
             //make fields visible
             listBoxKai.Visible = true;
             listBoxKai.Enabled = true;
@@ -223,6 +221,25 @@ namespace Kai
             Close();
         }
 
+        private void listBoxKai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (txtEventID.Text != "") 
+            {
+                int eventValue = Convert.ToInt32(txtEventID.Text);
+                int eventIndex = DM.eventView.Find(eventValue);
 
+                if (eventIndex != -1)
+                {
+                    DataRow drEvent = DM.dtEvent.Rows[eventIndex];
+                    txtEvent.Text = drEvent.ToString();
+                }
+
+            }
+            
+            
+            
+            
+
+        }
     }
 }

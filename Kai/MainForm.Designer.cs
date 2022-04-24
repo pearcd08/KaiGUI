@@ -114,6 +114,7 @@
             this.iconRegistration.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconRegistration.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconRegistration.UseVisualStyleBackColor = true;
+            this.iconRegistration.Click += new System.EventHandler(this.iconRegistration_Click);
             // 
             // iconLocations
             // 
@@ -148,6 +149,7 @@
             this.IconWhanau.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.IconWhanau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.IconWhanau.UseVisualStyleBackColor = true;
+            this.IconWhanau.Click += new System.EventHandler(this.IconWhanau_Click);
             // 
             // iconEvents
             // 
