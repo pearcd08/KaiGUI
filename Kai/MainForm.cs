@@ -14,7 +14,7 @@ namespace Kai
     {
         private DataModule DM;
         private KaiMaintenance kaiForm;
-        private Events eventsForm;
+        private EventMaintenance eventsForm;
         private Whanau whanauForm;
         private Locations locationForm;
         private Registration registrationForm;  
@@ -36,14 +36,7 @@ namespace Kai
 
         }
 
-        private void iconEvents_Click(object sender, EventArgs e)
-        {
-            if (eventsForm == null) 
-            {
-                Events eForm = new Events();  
-
-            }
-        }
+ 
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
@@ -103,6 +96,17 @@ namespace Kai
                 locationForm = new Locations(DM, this);
             }
             locationForm.ShowDialog();  
+        }
+
+        private void iconEvents_Click(object sender, EventArgs e)
+        {
+            if (eventsForm == null) 
+            {
+                eventsForm = new EventMaintenance(DM, this);
+            }
+            eventsForm.ShowDialog();
+
+
         }
     }
 }

@@ -26,6 +26,8 @@ namespace Kai
             cmLocation = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "Location"];
             BindControls();
             
+
+
         }
 
         private void BindControls() 
@@ -36,7 +38,11 @@ namespace Kai
             //load data into textboxes             
             txtLocationID.DataBindings.Add("Text", DM.dsKaioordinate, "Location.LocationID");
             txtLocationName.DataBindings.Add("Text", DM.dsKaioordinate, "Location.LocationName");
-            txtLocationAddress.DataBindings.Add("Text", DM.dsKaioordinate, "Location.Address");
+            txtMessyText.DataBindings.Add("Text", DM.dsKaioordinate, "Location.Address");
+
+            
+
+            
         }
 
        
@@ -114,7 +120,7 @@ namespace Kai
             HideButtons();
             //put text from original text boxes to the update panel textboxes
             txtUpdateLocationName.Text = txtLocationName.Text;
-            txtUpdateLocationAddress.Text = txtLocationAddress.Text;    
+            txtUpdateLocationAddress.Text = txtMessyText.Text;    
 
         }
 
@@ -232,11 +238,45 @@ namespace Kai
             
         }
 
+        private void SplitAddress() 
+        {
+            
+
+        }
+
 
 
         private void Locations_Load(object sender, EventArgs e)
         {
+           
             
+        }
+
+        private void listBoxLocations_ValueMemberChanged(object sender, EventArgs e)
+        {
+            
+
+
+        }
+
+        private void listBoxLocations_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxLocations.SelectedIndex != -1) 
+            {
+                txtLocationAddress.Text = "";
+                string originalAddress = txtMessyText.Text;
+                string[] splitAddress = originalAddress.Split(',');
+                for (int i = 0; i < splitAddress.Length; i++) 
+                {
+                    txtLocationAddress.Text += splitAddress[i].Trim() + Environment.NewLine;
+                }
+                
+             
+
+            }
+           
+
+
         }
     }
 }

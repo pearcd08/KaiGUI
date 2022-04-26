@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
             this.btnGenerateReport = new FontAwesome.Sharp.IconButton();
             this.btnReturn = new FontAwesome.Sharp.IconButton();
-            this.ppGenerateReport = new System.Windows.Forms.PrintPreviewDialog();
-            this.printEventReport = new System.Drawing.Printing.PrintDocument();
+            this.printEvents = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.SuspendLayout();
             // 
             // btnGenerateReport
@@ -44,7 +44,7 @@
             this.btnGenerateReport.IconColor = System.Drawing.Color.Black;
             this.btnGenerateReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerateReport.IconSize = 80;
-            this.btnGenerateReport.Location = new System.Drawing.Point(159, 167);
+            this.btnGenerateReport.Location = new System.Drawing.Point(219, 109);
             this.btnGenerateReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerateReport.Name = "btnGenerateReport";
             this.btnGenerateReport.Size = new System.Drawing.Size(112, 122);
@@ -62,7 +62,7 @@
             this.btnReturn.IconColor = System.Drawing.Color.Black;
             this.btnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReturn.IconSize = 60;
-            this.btnReturn.Location = new System.Drawing.Point(317, 167);
+            this.btnReturn.Location = new System.Drawing.Point(335, 109);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(112, 122);
@@ -70,32 +70,32 @@
             this.btnReturn.Text = "RETURN";
             this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.iconReturn_Click_1);
             // 
-            // ppGenerateReport
+            // printEvents
             // 
-            this.ppGenerateReport.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.ppGenerateReport.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.ppGenerateReport.ClientSize = new System.Drawing.Size(400, 300);
-            this.ppGenerateReport.Enabled = true;
-            this.ppGenerateReport.Icon = ((System.Drawing.Icon)(resources.GetObject("ppGenerateReport.Icon")));
-            this.ppGenerateReport.Name = "ppGenerateReport";
-            this.ppGenerateReport.Visible = false;
-            this.ppGenerateReport.Load += new System.EventHandler(this.printPreviewDialog1_Load);
+            this.printEvents.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printEvents_PrintPage);
             // 
-            // printEventReport
+            // printPreviewDialog
             // 
-            this.printEventReport.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printEventReport_PrintPage);
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Document = this.printEvents;
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
+            this.printPreviewDialog.Load += new System.EventHandler(this.printPreviewDialog_Load);
             // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(588, 456);
+            this.ClientSize = new System.Drawing.Size(667, 355);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnGenerateReport);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Report";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.Report_Load);
@@ -106,7 +106,7 @@
         #endregion
         private FontAwesome.Sharp.IconButton btnGenerateReport;
         private FontAwesome.Sharp.IconButton btnReturn;
-        private System.Windows.Forms.PrintPreviewDialog ppGenerateReport;
-        private System.Drawing.Printing.PrintDocument printEventReport;
+        private System.Drawing.Printing.PrintDocument printEvents;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
     }
 }

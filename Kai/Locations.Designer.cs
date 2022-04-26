@@ -58,6 +58,7 @@
             this.txtUpdateLocationAddress = new System.Windows.Forms.TextBox();
             this.txtUpdateLocationName = new System.Windows.Forms.TextBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.txtMessyText = new System.Windows.Forms.TextBox();
             this.panelDelete.SuspendLayout();
             this.panelAdd.SuspendLayout();
             this.panelUpdate.SuspendLayout();
@@ -174,8 +175,9 @@
             this.listBoxLocations.Location = new System.Drawing.Point(30, 51);
             this.listBoxLocations.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxLocations.Name = "listBoxLocations";
-            this.listBoxLocations.Size = new System.Drawing.Size(291, 268);
+            this.listBoxLocations.Size = new System.Drawing.Size(291, 244);
             this.listBoxLocations.TabIndex = 19;
+            this.listBoxLocations.SelectedIndexChanged += new System.EventHandler(this.listBoxLocations_SelectedIndexChanged);
             // 
             // lblLocationAddress
             // 
@@ -444,12 +446,23 @@
             this.picLogo.TabIndex = 35;
             this.picLogo.TabStop = false;
             // 
+            // txtMessyText
+            // 
+            this.txtMessyText.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessyText.Location = new System.Drawing.Point(30, 344);
+            this.txtMessyText.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMessyText.Name = "txtMessyText";
+            this.txtMessyText.ReadOnly = true;
+            this.txtMessyText.Size = new System.Drawing.Size(300, 29);
+            this.txtMessyText.TabIndex = 32;
+            // 
             // Locations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.txtMessyText);
             this.Controls.Add(this.panelUpdate);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.panelDelete);
@@ -476,6 +489,7 @@
             this.panelUpdate.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -510,5 +524,6 @@
         private FontAwesome.Sharp.IconButton btnUpdateSave;
         private FontAwesome.Sharp.IconButton btnUpdateCancel;
         private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.TextBox txtMessyText;
     }
 }

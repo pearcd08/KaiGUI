@@ -66,7 +66,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEventID2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.kAIBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsKaioordinate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numServingQuantity)).BeginInit();
@@ -510,15 +510,15 @@
             this.picLogo.TabIndex = 28;
             this.picLogo.TabStop = false;
             // 
-            // textBox1
+            // txtEventID2
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(342, 80);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 29);
-            this.textBox1.TabIndex = 29;
+            this.txtEventID2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEventID2.Location = new System.Drawing.Point(342, 80);
+            this.txtEventID2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEventID2.Name = "txtEventID2";
+            this.txtEventID2.ReadOnly = true;
+            this.txtEventID2.Size = new System.Drawing.Size(100, 29);
+            this.txtEventID2.TabIndex = 29;
             // 
             // KaiMaintenance
             // 
@@ -526,7 +526,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(1293, 561);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEventID2);
             this.Controls.Add(this.txtEventID);
             this.Controls.Add(this.txtPreperation);
             this.Controls.Add(this.txtServingQuantity);
@@ -604,6 +604,6 @@
         private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.BindingSource kAIBindingSource;
         private dsKaioordinate dsKaioordinate;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEventID2;
     }
 }

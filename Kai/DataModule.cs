@@ -42,6 +42,17 @@ namespace Kai
             dtWhanau = dsKaioordinate.Tables["Whanau"];
             dtEventRegister = dsKaioordinate.Tables["EventRegister"];
 
+            kaiView = new DataView(dtKai);
+            kaiView.Sort = "KaiID";
+            eventView = new DataView(dtEvent);
+            eventView.Sort = "EventID";
+            locationView = new DataView(dtLocation);    
+            locationView.Sort = "LocationID";
+            whanauView = new DataView(dtWhanau);
+            whanauView.Sort = "WhanauID";
+            eventRegisterView = new DataView(dtEventRegister);
+            eventRegisterView.Sort = "RegistrationID";
+
             dsKaioordinate.EnforceConstraints = true;
 
         }
@@ -65,6 +76,11 @@ namespace Kai
         {
             daLocation.Update(dtLocation);
        }
+
+        public void UpdateEvent() 
+        {
+            daEvent.Update(dtEvent);
+        }
 
         private void DataModule_Load(object sender, EventArgs e)
         {

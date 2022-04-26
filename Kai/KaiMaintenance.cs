@@ -16,7 +16,8 @@ namespace Kai
         private DataModule DM;
         private MainMenu frmMenu;       
         private CurrencyManager cmKai;
-       
+        private CurrencyManager cmEvent;
+
 
 
 
@@ -33,7 +34,7 @@ namespace Kai
             
             //bindings for original panel
             txtKaiID.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.KaiID");
-            txtEventID.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.EventID"); 
+            txtEventID2.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.EventID"); 
             txtKaiName.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.KaiName");            
             txtPreperation.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.PreparationRequired");
             txtPreperationTime.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.PreparationMinutes");
@@ -50,11 +51,10 @@ namespace Kai
             listBoxKai.ValueMember = "Kai.KaiID";
 
             cmKai = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "Kai"];
-
-
+            
         }
 
-      
+
 
         private void KaiMaintenance_Load(object sender, EventArgs e)
         {
@@ -64,7 +64,7 @@ namespace Kai
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DataRow deleteKaiRow = DM.dtKai.Rows[cmKai.Position];
-            DataRow[] eventKaiRow = DM.dtEventRegister.Select("EventID = " + txtEvent.Text);
+            DataRow[] eventKaiRow = DM.dtEventRegister.Select("EventID = " + deleteKaiRow["EventID"]);
             if (eventKaiRow.Length != 0) 
             {
                 MessageBox.Show("You may only delete kai that have no event relation", "Error");
@@ -222,24 +222,19 @@ namespace Kai
         }
 
         private void listBoxKai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (txtEventID.Text != "") 
+        {           
+            cmEvent = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "Event"];
+
+            if (cmKai != null) 
             {
-                int eventValue = Convert.ToInt32(txtEventID.Text);
-                int eventIndex = DM.eventView.Find(eventValue);
+                DataRow drKai = DM.dtKai.Rows[cmKai.Position];
+                int aEventID = Convert.ToInt32(drKai["EventID"].ToString());
+                cmEvent.Position = DM.eventView.Find(aEventID);
+                DataRow drEvent = DM.dtEvent.Rows[cmEvent.Position];
+                txtEvent.Text = drEvent["EventName"].ToString();
 
-                if (eventIndex != -1)
-                {
-                    DataRow drEvent = DM.dtEvent.Rows[eventIndex];
-                    txtEvent.Text = drEvent.ToString();
-                }
-
-            }
-            
-            
-            
-            
-
+            }    
+              
         }
     }
 }

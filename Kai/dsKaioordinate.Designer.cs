@@ -34,6 +34,10 @@ namespace Kai {
         
         private WHANAUDataTable tableWHANAU;
         
+        private global::System.Data.DataRelation relationEVENT_EVENTREGISTER;
+        
+        private global::System.Data.DataRelation relationWHANAU_EVENTREGISTER;
+        
         private global::System.Data.DataRelation relationEVENT_KAI;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
@@ -292,6 +296,8 @@ namespace Kai {
                     this.tableWHANAU.InitVars();
                 }
             }
+            this.relationEVENT_EVENTREGISTER = this.Relations["EVENT_EVENTREGISTER"];
+            this.relationWHANAU_EVENTREGISTER = this.Relations["WHANAU_EVENTREGISTER"];
             this.relationEVENT_KAI = this.Relations["EVENT_KAI"];
         }
         
@@ -314,6 +320,20 @@ namespace Kai {
             this.tableWHANAU = new WHANAUDataTable();
             base.Tables.Add(this.tableWHANAU);
             global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_EVENT_EVENTREGISTER", new global::System.Data.DataColumn[] {
+                        this.tableEVENT.EventIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEVENTREGISTER.EventIDColumn});
+            this.tableEVENTREGISTER.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_WHANAU_EVENTREGISTER", new global::System.Data.DataColumn[] {
+                        this.tableWHANAU.WhanauIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEVENTREGISTER.WhanauIDColumn});
+            this.tableEVENTREGISTER.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.None;
             fkc = new global::System.Data.ForeignKeyConstraint("EVENT_KAI", new global::System.Data.DataColumn[] {
                         this.tableEVENT.EventIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableKAI.EventIDColumn});
@@ -321,6 +341,14 @@ namespace Kai {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.None;
+            this.relationEVENT_EVENTREGISTER = new global::System.Data.DataRelation("EVENT_EVENTREGISTER", new global::System.Data.DataColumn[] {
+                        this.tableEVENT.EventIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEVENTREGISTER.EventIDColumn}, false);
+            this.Relations.Add(this.relationEVENT_EVENTREGISTER);
+            this.relationWHANAU_EVENTREGISTER = new global::System.Data.DataRelation("WHANAU_EVENTREGISTER", new global::System.Data.DataColumn[] {
+                        this.tableWHANAU.WhanauIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableEVENTREGISTER.WhanauIDColumn}, false);
+            this.Relations.Add(this.relationWHANAU_EVENTREGISTER);
             this.relationEVENT_KAI = new global::System.Data.DataRelation("EVENT_KAI", new global::System.Data.DataColumn[] {
                         this.tableEVENT.EventIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableKAI.EventIDColumn}, false);
@@ -846,13 +874,19 @@ namespace Kai {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public EVENTREGISTERRow AddEVENTREGISTERRow(int WhanauID, int EventID, bool KaiPreparation) {
+            public EVENTREGISTERRow AddEVENTREGISTERRow(WHANAURow parentWHANAURowByWHANAU_EVENTREGISTER, EVENTRow parentEVENTRowByEVENT_EVENTREGISTER, bool KaiPreparation) {
                 EVENTREGISTERRow rowEVENTREGISTERRow = ((EVENTREGISTERRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        WhanauID,
-                        EventID,
+                        null,
+                        null,
                         KaiPreparation};
+                if ((parentWHANAURowByWHANAU_EVENTREGISTER != null)) {
+                    columnValuesArray[1] = parentWHANAURowByWHANAU_EVENTREGISTER[0];
+                }
+                if ((parentEVENTRowByEVENT_EVENTREGISTER != null)) {
+                    columnValuesArray[2] = parentEVENTRowByEVENT_EVENTREGISTER[0];
+                }
                 rowEVENTREGISTERRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowEVENTREGISTERRow);
                 return rowEVENTREGISTERRow;
@@ -2105,6 +2139,17 @@ namespace Kai {
                     return ((KAIRow[])(base.GetChildRows(this.Table.ChildRelations["EVENT_KAI"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EVENTREGISTERRow[] GetEVENTREGISTERRows() {
+                if ((this.Table.ChildRelations["EVENT_EVENTREGISTER"] == null)) {
+                    return new EVENTREGISTERRow[0];
+                }
+                else {
+                    return ((EVENTREGISTERRow[])(base.GetChildRows(this.Table.ChildRelations["EVENT_EVENTREGISTER"])));
+                }
+            }
         }
         
         /// <summary>
@@ -2177,6 +2222,28 @@ namespace Kai {
                 }
                 set {
                     this[this.tableEVENTREGISTER.KaiPreparationColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EVENTRow EVENTRow {
+                get {
+                    return ((EVENTRow)(this.GetParentRow(this.Table.ParentRelations["EVENT_EVENTREGISTER"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["EVENT_EVENTREGISTER"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public WHANAURow WHANAURow {
+                get {
+                    return ((WHANAURow)(this.GetParentRow(this.Table.ParentRelations["WHANAU_EVENTREGISTER"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["WHANAU_EVENTREGISTER"]);
                 }
             }
             
@@ -2639,6 +2706,17 @@ namespace Kai {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetAddressNull() {
                 this[this.tableWHANAU.AddressColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public EVENTREGISTERRow[] GetEVENTREGISTERRows() {
+                if ((this.Table.ChildRelations["WHANAU_EVENTREGISTER"] == null)) {
+                    return new EVENTREGISTERRow[0];
+                }
+                else {
+                    return ((EVENTREGISTERRow[])(base.GetChildRows(this.Table.ChildRelations["WHANAU_EVENTREGISTER"])));
+                }
             }
         }
         

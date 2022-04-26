@@ -64,11 +64,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsKaioordinate.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Events.cs">
+    <Compile Include="EventMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Events.Designer.cs">
-      <DependentUpon>Events.cs</DependentUpon>
+    <Compile Include="EventMaintenance.Designer.cs">
+      <DependentUpon>EventMaintenance.cs</DependentUpon>
     </Compile>
     <Compile Include="KaiMaintenance.cs">
       <SubType>Form</SubType>
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="DataModule.resx">
       <DependentUpon>DataModule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Events.resx">
-      <DependentUpon>Events.cs</DependentUpon>
+    <EmbeddedResource Include="EventMaintenance.resx">
+      <DependentUpon>EventMaintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KaiMaintenance.resx">
       <DependentUpon>KaiMaintenance.cs</DependentUpon>

@@ -44,6 +44,7 @@ namespace Kai
             txtPhone.DataBindings.Add("Text", DM.dsKaioordinate, "Whanau.Phone");
             txtAddress.DataBindings.Add("Text", DM.dsKaioordinate, "Whanau.Address");
 
+           
 
         }
         private void Whanau_Load(object sender, EventArgs e)
@@ -203,5 +204,11 @@ namespace Kai
         {
             Close();
         }
+
+    
+
+   
     }
+
 }
+
