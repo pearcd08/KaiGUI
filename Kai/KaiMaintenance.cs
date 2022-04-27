@@ -78,6 +78,12 @@ namespace Kai
                     txtAddKaiName.Focus();
                     MessageBox.Show("Please enter a Kai Name", "Error");
                 }
+
+                if ((numAddServingQuantity.Text == "0"))
+                {
+                    MessageBox.Show("Quantity cannot be zero", "Error");
+                    numAddServingQuantity.Focus();
+                }
                 else
                 {
                     DataRow newKaiRow = DM.dtKai.NewRow();
@@ -141,9 +147,15 @@ namespace Kai
             {
                 if ((txtUpdateKaiName.Text == ""))
                 {
-                    txtUpdateKaiName.Focus();
                     MessageBox.Show("Please enter an Kai Name", "Error");
+                    txtUpdateKaiName.Focus();
                 }
+                if ((numUpdateServingQuantity.Text == "0"))
+                {
+                    MessageBox.Show("Quantity cannot be zero", "Error");
+                    numUpdateServingQuantity.Focus();
+                }
+
                 else
                 {
                     DataRow updateKaiRow = DM.dtKai.Rows[cmKai.Position];
@@ -185,11 +197,11 @@ namespace Kai
         //TASK C 
         //DELETE AN EXISTING KAI RECORD
         private void btnDelete_Click(object sender, EventArgs e)
-        {     
+        {
 
             try
             {
-                DataRow deleteKaiRow = DM.dtKai.Rows[cmKai.Position];                
+                DataRow deleteKaiRow = DM.dtKai.Rows[cmKai.Position];
                 int aEventID = Convert.ToInt32(deleteKaiRow["EventID"].ToString());
                 DataRow[] eventRegisterRow = DM.dtEventRegister.Select("EventID = " + aEventID);
 
@@ -218,7 +230,7 @@ namespace Kai
             }
         }
 
-        
+
 
         // FUNCTIONS
 
