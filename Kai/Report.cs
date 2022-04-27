@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kai
@@ -18,8 +13,8 @@ namespace Kai
         private CurrencyManager cmLocation;
         private CurrencyManager cmEventRegister;
         private CurrencyManager cmWhanau;
-       
- 
+
+
 
 
         public Report(DataModule dm, MainMenu mnu)
@@ -46,27 +41,27 @@ namespace Kai
 
         }
 
-     
+
 
 
         private void iconPrint_Click(object sender, EventArgs e)
         {
-            
-           
-           
+
+
+
             printPreviewDialog.ShowDialog();
         }
 
-      
+
         private void printEvents_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             //font styles
             Graphics g = e.Graphics;
             int linesSoFar = 0;
-            Font textFont = new Font("Arial", 12, FontStyle.Regular);       
+            Font textFont = new Font("Arial", 12, FontStyle.Regular);
             Font boldFont = new Font("Arial", 12, FontStyle.Bold);
             int textHeight = textFont.Height + 2;
-                        
+
             //currency manager binding context
             cmEvent = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENT"];
             cmEventRegister = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENTREGISTER"];
@@ -83,10 +78,10 @@ namespace Kai
             int phoneMargin = 375;
             int helperMargin = 500;
             int topMarginDetails = topMargin + 70;
-            int rightMargin = e.MarginBounds.Right;   
-            
-            
-            
+            int rightMargin = e.MarginBounds.Right;
+
+
+
             foreach (DataRow drEvent in DM.dtEvent.Rows)
             {
                 int aEventID = Convert.ToInt32(drEvent["EventID"].ToString());
@@ -97,8 +92,8 @@ namespace Kai
                 {
                     //heading
                     //event id
-                    g.DrawString("Event ID: "+ drEvent["EventID"], boldFont, brush, leftMargin + headingLeftMargin,
-                                  topMargin + (linesSoFar * textHeight));        
+                    g.DrawString("Event ID: " + drEvent["EventID"], boldFont, brush, leftMargin + headingLeftMargin,
+                                  topMargin + (linesSoFar * textHeight));
                     linesSoFar++;
                     linesSoFar++;
                     //event name
@@ -131,7 +126,7 @@ namespace Kai
                     g.DrawString(drLocation["Address"].ToString(), textFont, brush, leftMargin + midMargin,
                                  topMargin + (linesSoFar * textHeight));
                     linesSoFar++;
-                    linesSoFar++; 
+                    linesSoFar++;
                     //Antendees
                     g.DrawString("Attendees: ", boldFont, brush, leftMargin + headingLeftMargin,
                                  topMargin + (linesSoFar * textHeight));
@@ -150,7 +145,7 @@ namespace Kai
                     linesSoFar++;
 
                     //get the whanau associated with each event
-                    DataRow[] drRegistrations = drEvent.GetChildRows(DM.dtEvent.ChildRelations["EVENT_EVENTREGISTER"]);                   
+                    DataRow[] drRegistrations = drEvent.GetChildRows(DM.dtEvent.ChildRelations["EVENT_EVENTREGISTER"]);
                     if (drRegistrations.Length > 0)
                     {
                         //loop through the whanau attending the event                       
@@ -163,30 +158,36 @@ namespace Kai
                             DataRow drWhanau = DM.dtWhanau.Rows[cmWhanau.Position];
 
                             g.DrawString(drWhanau["FirstName"].ToString(), textFont, brush, (leftMargin + headingLeftMargin), (topMargin + (linesSoFar * textHeight)));
-                            g.DrawString(drWhanau["LastName"].ToString(),  textFont, brush, (leftMargin + midMargin), (topMargin + (linesSoFar * textHeight)));
+                            g.DrawString(drWhanau["LastName"].ToString(), textFont, brush, (leftMargin + midMargin), (topMargin + (linesSoFar * textHeight)));
                             g.DrawString(drWhanau["Phone"].ToString(), textFont, brush, (leftMargin + phoneMargin), (topMargin + (linesSoFar * textHeight)));
                             g.DrawString(drEventRegister["KaiPreparation"].ToString(), textFont, brush, (leftMargin + helperMargin), (topMargin + (linesSoFar * textHeight)));
-                           linesSoFar++;
-                            
+                            linesSoFar++;
+
+
+
 
 
                         }
-                        
+
+                        linesSoFar++;
+
+
+
                     }
-                    
+
 
 
                 }
-               
+
             }
-           
+
 
         }
-          private void printPreviewDialog_Load(object sender, EventArgs e)
+        private void printPreviewDialog_Load(object sender, EventArgs e)
         {
-           
+
         }
 
     }
-    }
+}
 

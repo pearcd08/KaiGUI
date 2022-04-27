@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kai
@@ -36,7 +31,7 @@ namespace Kai
             txtEventID.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventID");
             txtEventName.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventName");
             dateUpdateEventDate.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventDate");
-         
+
 
         }
 
@@ -63,7 +58,7 @@ namespace Kai
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            txtUpdateEventName.Text = txtEventName.Text;    
+            txtUpdateEventName.Text = txtEventName.Text;
             //disable orignal panel and listbox
             panelDelete.Visible = false;
             listBoxEvents.Visible = false;
@@ -73,9 +68,9 @@ namespace Kai
             //hidebuttons
             HideButtons();
             //put text from original text boxes to the update panel textboxes
-            
 
-           
+
+
 
         }
 
@@ -144,7 +139,7 @@ namespace Kai
             cboAddLocation.DataSource = DM.dsKaioordinate;
             cboAddLocation.DisplayMember = "Location.LocationName";
             cboAddLocation.ValueMember = "Location.LocationID";
-               
+
             cboUpdateLocation.DataSource = DM.dsKaioordinate;
             cboUpdateLocation.DisplayMember = "Location.LocationName";
             cboUpdateLocation.ValueMember = "Location.LocationID";
@@ -195,14 +190,14 @@ namespace Kai
         private void btnUpdateSave_Click(object sender, EventArgs e)
         {
             try
-            {       
+            {
 
                 if ((txtUpdateEventName.Text == ""))
                 {
                     txtUpdateEventName.Focus();
                     MessageBox.Show("Please enter an Event Name", "Error");
                 }
-                else 
+                else
                 {
                     DataRow updateEventRow = DM.dtEvent.Rows[cmEvent.Position];
                     updateEventRow["EventName"] = txtUpdateEventName.Text;
@@ -211,21 +206,21 @@ namespace Kai
 
                     if (MessageBox.Show("Event updated successfully", "Success",
                                MessageBoxButtons.OKCancel) == DialogResult.OK)
-                    {                        
-                        panelUpdate.Visible = false;                        
+                    {
+                        panelUpdate.Visible = false;
                         listBoxEvents.Visible = true;
-                        panelDelete.Visible = true;                       
+                        panelDelete.Visible = true;
                         ShowButtons();
                     }
 
                 }
             }
 
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error");   
+                MessageBox.Show(ex.Message, "Error");
             }
-          
+
 
         }
 
@@ -236,20 +231,20 @@ namespace Kai
             try
             {
                 if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
-                                    MessageBoxButtons.OKCancel) == DialogResult.OK) 
+                                    MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     deleteEventRow.Delete();
                     DM.UpdateEvent();
                     MessageBox.Show("Event deleted successfully", "Success"); ;
-                }                  
+                }
 
             }
-            catch (Exception ex) 
-            {                   
-                MessageBox.Show("You may only delete an event that has no kai", "Error");    
-            }           
+            catch (Exception ex)
+            {
+                MessageBox.Show("You may only delete an event that has no kai", "Error");
+            }
 
-            
+
 
 
         }

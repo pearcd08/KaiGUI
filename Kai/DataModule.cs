@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kai
@@ -23,17 +17,17 @@ namespace Kai
         public DataView locationView;
         public DataView whanauView;
         public DataView eventRegisterView;
-        
+
 
         public DataModule()
         {
             InitializeComponent();
             dsKaioordinate.EnforceConstraints = false;
-            
+
             daKai.Fill(dsKaioordinate);
             daEvent.Fill(dsKaioordinate);
             daLocation.Fill(dsKaioordinate);
-            daWhanau.Fill(dsKaioordinate);  
+            daWhanau.Fill(dsKaioordinate);
             daEventRegister.Fill(dsKaioordinate);
 
             dtKai = dsKaioordinate.Tables["Kai"];
@@ -46,7 +40,7 @@ namespace Kai
             kaiView.Sort = "KaiID";
             eventView = new DataView(dtEvent);
             eventView.Sort = "EventID";
-            locationView = new DataView(dtLocation);    
+            locationView = new DataView(dtLocation);
             locationView.Sort = "LocationID";
             whanauView = new DataView(dtWhanau);
             whanauView.Sort = "WhanauID";
@@ -57,27 +51,27 @@ namespace Kai
 
         }
 
-        public void UpdateKai() 
+        public void UpdateKai()
         {
-            daKai.Update(dtKai);    
+            daKai.Update(dtKai);
         }
 
-        public void UpdateWhanau() 
+        public void UpdateWhanau()
         {
             daWhanau.Update(dtWhanau);
         }
 
-        public void UpdateEventRegister() 
+        public void UpdateEventRegister()
         {
             daEventRegister.Update(dtEventRegister);
         }
 
-        public void UpdateLocation() 
+        public void UpdateLocation()
         {
             daLocation.Update(dtLocation);
-       }
+        }
 
-        public void UpdateEvent() 
+        public void UpdateEvent()
         {
             daEvent.Update(dtEvent);
         }
@@ -85,6 +79,6 @@ namespace Kai
         private void DataModule_Load(object sender, EventArgs e)
         {
 
-        } 
+        }
     }
 }

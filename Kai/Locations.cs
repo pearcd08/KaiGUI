@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kai
@@ -19,18 +14,18 @@ namespace Kai
 
         public Locations(DataModule dm, MainMenu mnu)
         {
-           
+
             InitializeComponent();
             DM = dm;
             frmMenu = mnu;
             cmLocation = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "Location"];
             BindControls();
-            
+
 
 
         }
 
-        private void BindControls() 
+        private void BindControls()
         {   //load data into listbox
             listBoxLocations.DataSource = DM.dsKaioordinate;
             listBoxLocations.DisplayMember = "Location.LocationName";
@@ -40,12 +35,12 @@ namespace Kai
             txtLocationName.DataBindings.Add("Text", DM.dsKaioordinate, "Location.LocationName");
             txtMessyText.DataBindings.Add("Text", DM.dsKaioordinate, "Location.Address");
 
-            
 
-            
+
+
         }
 
-       
+
         //add location record
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -57,7 +52,7 @@ namespace Kai
             panelAdd.Visible = true;
             //disable buttons
             HideButtons();
-            
+
         }
 
         private void btnAddCancel_Click(object sender, EventArgs e)
@@ -68,7 +63,7 @@ namespace Kai
             listBoxLocations.Visible = true;
             panelDelete.Visible = true;
             //enable buttons
-            ShowButtons(); 
+            ShowButtons();
 
         }
 
@@ -84,7 +79,7 @@ namespace Kai
             {
                 newLocationRow["LocationName"] = txtAddLocationName.Text;
                 newLocationRow["Address"] = txtAddLocationAddress.Text;
-                
+
                 DM.dtLocation.Rows.Add(newLocationRow);
                 DM.UpdateLocation();
 
@@ -109,7 +104,7 @@ namespace Kai
         }
         //update location record
         private void btnUpdate_Click(object sender, EventArgs e)
-        {   
+        {
             //disable orignal panel and listbox
             panelDelete.Visible = false;
             listBoxLocations.Visible = false;
@@ -120,7 +115,7 @@ namespace Kai
             HideButtons();
             //put text from original text boxes to the update panel textboxes
             txtUpdateLocationName.Text = txtLocationName.Text;
-            txtUpdateLocationAddress.Text = txtMessyText.Text;    
+            txtUpdateLocationAddress.Text = txtMessyText.Text;
 
         }
 
@@ -145,12 +140,12 @@ namespace Kai
             {
                 MessageBox.Show("Please enter all fields", "Error");
             }
-            else 
+            else
             {
                 updateLocationRow["LocationName"] = txtUpdateLocationName.Text;
                 updateLocationRow["Address"] = txtUpdateLocationAddress.Text;
                 if (MessageBox.Show("Location updated successfully", "Success",
-                                  MessageBoxButtons.OKCancel) == DialogResult.OK) 
+                                  MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     //disable update panel
                     panelUpdate.Visible = false;
@@ -161,8 +156,8 @@ namespace Kai
                     ShowButtons();
 
                 }
-                   
-                
+
+
             }
 
         }
@@ -179,17 +174,17 @@ namespace Kai
             {
                 MessageBox.Show("You may only delete locations that have no events", "Error");
             }
-            else 
+            else
             {
                 if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
-                                    MessageBoxButtons.OKCancel) == DialogResult.OK) 
+                                    MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     deleteLocationRow.Delete();
                     DM.UpdateLocation();
-                   
+
                 }
-                   
-            } 
+
+            }
 
         }
 
@@ -217,7 +212,7 @@ namespace Kai
             Close();
         }
 
-        private void HideButtons() 
+        private void HideButtons()
         {
             btnUp.Visible = false;
             btnDown.Visible = false; ;
@@ -235,12 +230,12 @@ namespace Kai
             btnUpdate.Enabled = true;
             btnDelete.Enabled = true;
             btnReturn.Enabled = true;
-            
+
         }
 
-        private void SplitAddress() 
+        private void SplitAddress()
         {
-            
+
 
         }
 
@@ -248,33 +243,33 @@ namespace Kai
 
         private void Locations_Load(object sender, EventArgs e)
         {
-           
-            
+
+
         }
 
         private void listBoxLocations_ValueMemberChanged(object sender, EventArgs e)
         {
-            
+
 
 
         }
 
         private void listBoxLocations_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxLocations.SelectedIndex != -1) 
+            if (listBoxLocations.SelectedIndex != -1)
             {
                 txtLocationAddress.Text = "";
                 string originalAddress = txtMessyText.Text;
                 string[] splitAddress = originalAddress.Split(',');
-                for (int i = 0; i < splitAddress.Length; i++) 
+                for (int i = 0; i < splitAddress.Length; i++)
                 {
                     txtLocationAddress.Text += splitAddress[i].Trim() + Environment.NewLine;
                 }
-                
-             
+
+
 
             }
-           
+
 
 
         }

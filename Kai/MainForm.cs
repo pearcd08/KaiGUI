@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kai
@@ -17,7 +11,7 @@ namespace Kai
         private EventMaintenance eventsForm;
         private Whanau whanauForm;
         private Locations locationForm;
-        private Registration registrationForm;  
+        private Registration registrationForm;
         private Report reportForm;
 
         public MainMenu()
@@ -27,16 +21,16 @@ namespace Kai
 
         private void iconKai_Click(object sender, EventArgs e)
         {
-            if (kaiForm == null) 
+            if (kaiForm == null)
             {
                 kaiForm = new KaiMaintenance(DM, this);
-                
+
             }
             kaiForm.ShowDialog();
 
         }
 
- 
+
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
@@ -82,7 +76,7 @@ namespace Kai
 
         private void iconRegistration_Click(object sender, EventArgs e)
         {
-            if (registrationForm == null) 
+            if (registrationForm == null)
             {
                 registrationForm = new Registration(DM, this);
             }
@@ -91,16 +85,16 @@ namespace Kai
 
         private void iconLocations_Click(object sender, EventArgs e)
         {
-            if (locationForm == null) 
+            if (locationForm == null)
             {
                 locationForm = new Locations(DM, this);
             }
-            locationForm.ShowDialog();  
+            locationForm.ShowDialog();
         }
 
         private void iconEvents_Click(object sender, EventArgs e)
         {
-            if (eventsForm == null) 
+            if (eventsForm == null)
             {
                 eventsForm = new EventMaintenance(DM, this);
             }

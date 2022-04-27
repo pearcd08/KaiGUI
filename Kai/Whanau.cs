@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Kai
@@ -18,7 +13,7 @@ namespace Kai
 
         public Whanau(DataModule dm, MainMenu mnu)
         {
-            InitializeComponent();           
+            InitializeComponent();
             DM = dm;
             frmMenu = mnu;
             BindControls();
@@ -26,16 +21,16 @@ namespace Kai
 
         }
 
-        public void BindControls() 
+        public void BindControls()
         {
             cmWhanau = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "Whanau"];
 
 
             listBoxWhanau.DataSource = DM.dsKaioordinate;
-            listBoxWhanau.DisplayMember = "Whanau.FirstName";  
+            listBoxWhanau.DisplayMember = "Whanau.FirstName";
             listBoxWhanau.ValueMember = "Whanau.WhanauID";
 
-       
+
 
             txtWhanauID.DataBindings.Add("Text", DM.dsKaioordinate, "Whanau.WhanauID");
             txtFirstName.DataBindings.Add("Text", DM.dsKaioordinate, "Whanau.FirstName");
@@ -44,7 +39,7 @@ namespace Kai
             txtPhone.DataBindings.Add("Text", DM.dsKaioordinate, "Whanau.Phone");
             txtAddress.DataBindings.Add("Text", DM.dsKaioordinate, "Whanau.Address");
 
-           
+
 
         }
         private void Whanau_Load(object sender, EventArgs e)
@@ -52,7 +47,7 @@ namespace Kai
 
         }
 
-        private void disableFields() 
+        private void disableFields()
         {
             listBoxWhanau.Visible = false;
             txtWhanauID.Enabled = false;
@@ -91,19 +86,19 @@ namespace Kai
             disableFields();
 
             panelAdd.Visible = true;
-            panelAdd.Location = new Point(442, 50);           
-          
+            panelAdd.Location = new Point(442, 50);
+
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             disableFields();
 
-            panelUpdate.Visible = true; 
+            panelUpdate.Visible = true;
             panelUpdate.Location = new Point(442, 50);
-           
+
             txtUpdateFirstName.Text = txtFirstName.Text.ToString();
             txtUpdateLastName.Text = txtLastName.Text.ToString();
-            txtUpdateEmail.Text = txtEmail.Text.ToString(); 
+            txtUpdateEmail.Text = txtEmail.Text.ToString();
             txtUpdatePhone.Text = txtPhone.Text.ToString();
             txtUpdateAddress.Text = txtAddress.Text.ToString();
 
@@ -112,12 +107,12 @@ namespace Kai
         private void txtAddPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
-          
+
         }
 
         private void btnAddCancel_Click(object sender, EventArgs e)
         {
-            panelAdd.Visible = false;   
+            panelAdd.Visible = false;
             enableFields();
 
         }
@@ -137,19 +132,19 @@ namespace Kai
             {
                 MessageBox.Show("You must enter a value for each of the Whanau text fields", "Error");
             }
-            else 
+            else
             {
                 newWhanauRow["FirstName"] = txtAddFirstName.Text;
                 newWhanauRow["LastName"] = txtAddLastName.Text;
                 newWhanauRow["Email"] = txtAddEmail.Text;
                 newWhanauRow["Phone"] = txtAddPhone.Text;
                 newWhanauRow["Address"] = txtAddAddress.Text;
-                
+
                 DM.dtWhanau.Rows.Add(newWhanauRow);
                 DM.UpdateWhanau();
 
                 MessageBox.Show("Whanau added successfully", "Success");
-            } 
+            }
 
         }
 
@@ -185,14 +180,14 @@ namespace Kai
             {
                 MessageBox.Show("You may only delete kai that have no event relation", "Error");
             }
-            else 
+            else
             {
                 if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
                                     MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     deleteWhanauRow.Delete();
                     DM.UpdateWhanau();
-                   MessageBox.Show("Whanau Record Deleted Successfully?", "Success");
+                    MessageBox.Show("Whanau Record Deleted Successfully?", "Success");
 
                 }
 
@@ -205,9 +200,9 @@ namespace Kai
             Close();
         }
 
-    
 
-   
+
+
     }
 
 }
