@@ -56,8 +56,10 @@ namespace Kai
                 //IF THE ID EXISTS IN THE EVENT REGISTER TABLE THEN ADD THE CURRENT EVENT ID INTO THE DATATABLE
                 if (eventRegisterRow.Length > 0)
                 {
+                    //CREATE A NEW ROW FOR THE TABLE
                     DataRow dr = filteredTable.NewRow();
                     dr[0] = aEventID;
+                    //ADD THE NEW ROW TO THE BOTTOM OF THE TABLE
                     filteredTable.Rows.Add(dr);
                     //INCREASE THE TABLE COUNT
                     tableCount++;
