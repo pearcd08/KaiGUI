@@ -13,13 +13,11 @@ namespace Kai
         private CurrencyManager cmLocation;
         private CurrencyManager cmEventRegister;
         private CurrencyManager cmWhanau;
-        private DataRow[] eventsToPrint;
-        
-        int amountOfReportsToPrint, pagesAmountExpected;
+        private DataRow[] filteredEvent;
+        int pagesToPrint, pagesExpected;
 
         public Report(DataModule dm, MainMenu mnu)
         {
-
             InitializeComponent();
             DM = dm;
             frmMenu = mnu;
@@ -27,13 +25,9 @@ namespace Kai
             cmEventRegister = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "EVENTREGISTER"];
             cmLocation = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "LOCATION"];
             cmWhanau = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "WHANAU"];
-
         }
 
-        private void Report_Load(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void iconReturn_Click(object sender, EventArgs e)
         {
@@ -45,30 +39,37 @@ namespace Kai
 
         }
 
-
-
-
         private void iconPrint_Click(object sender, EventArgs e)
         {
-            amountOfReportsToPrint = 0;
+            DataTable filteredTable = new DataTable();
+            DataColumn newColumn = new DataColumn("EventID", typeof(Int32));
+            filteredTable.Columns.Add(newColumn);
+
+            int tableCount = 0;
+            pagesToPrint = 0;
 
             foreach (DataRow drEvent in DM.dtEvent.Rows)
-            {               
+            {   //GET THE EVENT ID FROM EACH ROW AND CONVERT TO INT                            
                 int aEventID = Convert.ToInt32(drEvent["EventID"].ToString());
-                cmEventRegister.Position = DM.eventRegisterView.Find(aEventID);
+                //SELECT ALL ROWS THAT HAVE THAT ID IN THE EVENTREGISTER TABLE
                 DataRow[] eventRegisterRow = DM.dtEventRegister.Select("EventID = " + aEventID);
-
+                //IF THE ID EXISTS IN THE EVENT REGISTER TABLE THEN ADD THE CURRENT EVENT ID INTO THE DATATABLE
                 if (eventRegisterRow.Length > 0)
-                {                    
-                   eventsToPrint = DM.dtEvent.Select("EventID = " + aEventID);
-                   
-                    //DM.dsKaioordinate.Tables["Event"].Select("EventID = " + aEventID, "EVENTID", DataViewRowState.CurrentRows);
+                {
+                    DataRow dr = filteredTable.NewRow();
+                    dr[0] = aEventID;
+                    filteredTable.Rows.Add(dr);
+                    //INCREASE THE TABLE COUNT
+                    tableCount++;
+
                 }
+
             }
-
-            pagesAmountExpected = eventsToPrint.Length;
+            //ADD ALL THE RESULTS OF THE DATATABLE TO A NEW DATAROW
+            filteredEvent = filteredTable.Select();
+            //SET THE PAGES EXPECTED INT TO THE AMOUNT OF ROWS IN THE FILTERED TABLE
+            pagesExpected = tableCount;
             printPreviewDialog.ShowDialog();
-
 
         }
 
@@ -83,7 +84,7 @@ namespace Kai
             int textHeight = textFont.Height + 2;
 
             //currency manager binding context
-            
+
 
             Brush brush = new SolidBrush(Color.Black);
 
@@ -96,7 +97,15 @@ namespace Kai
             int helperMargin = 500;
             int topMarginDetails = topMargin + 70;
             int rightMargin = e.MarginBounds.Right;
-            DataRow drEvent = eventsToPrint[amountOfReportsToPrint];
+
+            //CONVERT THE DATAROW CREATED ABOVE INTO A NEW DATAROW 
+            //FIND INDEX OF ROW TO PRINT BY HOW MANY PAGES HAVE BEEN PRINTED
+            DataRow fEvent = filteredEvent[pagesToPrint];
+
+            //TAKE THE EVENTID FROM THE NEW DATAROW AND USE IT TO NAVIGATE THE EVENT CURRENCY MANAGER
+            int aEventID = Convert.ToInt32(fEvent["EventID"].ToString());
+            cmEvent.Position = DM.eventView.Find(aEventID);
+            DataRow drEvent = DM.dtEvent.Rows[cmEvent.Position];
 
 
             //heading
@@ -176,10 +185,14 @@ namespace Kai
 
 
             }
-            amountOfReportsToPrint++;
-            if (!(amountOfReportsToPrint == pagesAmountExpected))
+            pagesToPrint++;
+            if (pagesToPrint != pagesExpected)
             {
                 e.HasMorePages = true;
+            }
+            else if (pagesToPrint == pagesExpected)
+            {
+                e.HasMorePages = false;
             }
 
         }
@@ -189,6 +202,10 @@ namespace Kai
 
 
         private void printPreviewDialog_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void Report_Load(object sender, EventArgs e)
         {
 
         }
