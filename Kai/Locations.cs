@@ -36,8 +36,6 @@ namespace Kai
             txtMessyText.DataBindings.Add("Text", DM.dsKaioordinate, "Location.Address");
 
 
-
-
         }
 
 

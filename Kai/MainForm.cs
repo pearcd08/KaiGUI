@@ -26,6 +26,7 @@ namespace Kai
                 kaiForm = new KaiMaintenance(DM, this);
 
             }
+            kaiForm.Size = new Size(900, 600);
             kaiForm.ShowDialog();
 
         }

@@ -30,8 +30,7 @@ namespace Kai
             //load data into textboxes             
             txtEventID.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventID");
             txtEventName.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventName");
-            dateUpdateEventDate.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventDate");
-
+            txtEventDate.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventDate");                                 
 
         }
 
@@ -43,115 +42,24 @@ namespace Kai
 
         }
 
+        //TASK A
+        //ADD A NEW EVENT RECORD
+        //1. CLICK THE ADD BUTTON
         private void btnAdd_Click(object sender, EventArgs e)
-        {
-            // disable orignal panel and listbox
-            panelDelete.Visible = false;
-            listBoxEvents.Visible = false;
+        {           
             //enable add panel and change location
             panelAdd.Location = new Point(390, 50);
-            panelAdd.Visible = true;
-            //disable buttons
+            panelAdd.Visible = true;            
             HideButtons();
 
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            txtUpdateEventName.Text = txtEventName.Text;
-            //disable orignal panel and listbox
-            panelDelete.Visible = false;
-            listBoxEvents.Visible = false;
-            //enable update panel and change location
-            panelUpdate.Location = new Point(390, 50);
-            panelUpdate.Visible = true;
-            //hidebuttons
-            HideButtons();
-            //put text from original text boxes to the update panel textboxes
-
-
-
-
-        }
-
-        private void HideButtons()
-        {
-            btnUp.Visible = false;
-            btnDown.Visible = false; ;
-            btnAdd.Enabled = false;
-            btnUpdate.Enabled = false;
-            btnDelete.Enabled = false;
-            btnReturn.Enabled = false;
-        }
-
-        private void ShowButtons()
-        {
-            btnUp.Visible = true;
-            btnDown.Visible = true;
-            btnAdd.Enabled = true;
-            btnUpdate.Enabled = true;
-            btnDelete.Enabled = true;
-            btnReturn.Enabled = true;
-
-        }
-
-        private void btnAddCancel_Click(object sender, EventArgs e)
-        {
-            //disable add panel
-            panelAdd.Visible = false;
-            //enable original panel and listbox
-            listBoxEvents.Visible = true;
-            panelDelete.Visible = true;
-            //enable buttons
-            ShowButtons();
-
-        }
-
-        private void btnUpdateCanel_Click(object sender, EventArgs e)
-        {
-            //disable update panel
-            panelUpdate.Visible = false;
-            //enable original panel and listbox
-            listBoxEvents.Visible = true;
-            panelDelete.Visible = true;
-            //enable button
-            ShowButtons();
-        }
-
-        private void listBoxEvents_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmLocation = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "Location"];
-
-            if (cmEvent != null)
-            {
-                DataRow drEvent = DM.dtEvent.Rows[cmEvent.Position];
-                int aLocationID = Convert.ToInt32(drEvent["LocationID"].ToString());
-                cmLocation.Position = DM.locationView.Find(aLocationID);
-                DataRow drLocation = DM.dtLocation.Rows[cmLocation.Position];
-                txtLocation.Text = drLocation["LocationName"].ToString();
-                txtEventDate.Text = dateUpdateEventDate.Text;
-
-            }
-        }
-
-        private void LoadLocations()
-        {
-            cboAddLocation.DataSource = DM.dsKaioordinate;
-            cboAddLocation.DisplayMember = "Location.LocationName";
-            cboAddLocation.ValueMember = "Location.LocationID";
-
-            cboUpdateLocation.DataSource = DM.dsKaioordinate;
-            cboUpdateLocation.DisplayMember = "Location.LocationName";
-            cboUpdateLocation.ValueMember = "Location.LocationID";
-
-        }
-
+        //2. SAVE THE NEW EVENT RECORD
         private void btnAddSave_Click(object sender, EventArgs e)
         {
             try
             {
-
-                if ((txtAddEventName.Text == ""))
+                if (txtAddEventName.Text == "")
                 {
                     txtAddEventName.Focus();
                     MessageBox.Show("Please enter an Event Name", "Error");
@@ -183,15 +91,40 @@ namespace Kai
                 MessageBox.Show(ex.Message, "Error");
             }
 
+        }
 
+        //3. CANCEL THE ADD EVENT
+        private void btnAddCancel_Click(object sender, EventArgs e)
+        {
+            //disable add panel
+            panelAdd.Visible = false;          
+            //enable buttons
+            ShowButtons();
 
         }
 
+        //TASK B UPDATE AN EXISTING EVENT RECORD
+        //1. CLICK THE UPDATE BUTTON
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+                      
+            //enable update panel and change location
+            panelUpdate.Location = new Point(390, 50);
+            panelUpdate.Visible = true;
+            //hidebuttons
+            HideButtons();
+            //put text from original text boxes to the update panel textboxes
+            txtUpdateEventName.Text = txtEventName.Text;
+            
+
+        }
+
+        //2. SAVE THE UPDATED RECORD
         private void btnUpdateSave_Click(object sender, EventArgs e)
         {
             try
             {
-
                 if ((txtUpdateEventName.Text == ""))
                 {
                     txtUpdateEventName.Focus();
@@ -203,6 +136,8 @@ namespace Kai
                     updateEventRow["EventName"] = txtUpdateEventName.Text;
                     updateEventRow["LocationID"] = cboUpdateLocation.SelectedValue;
                     updateEventRow["EventDate"] = dateUpdateEventDate.Text;
+                    cmEvent.EndCurrentEdit();
+                    DM.UpdateEvent();
 
                     if (MessageBox.Show("Event updated successfully", "Success",
                                MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -221,9 +156,20 @@ namespace Kai
                 MessageBox.Show(ex.Message, "Error");
             }
 
-
         }
 
+        //3. CANCEL THE UPDATE OPERATION
+        private void btnUpdateCanel_Click(object sender, EventArgs e)
+        {
+            //disable update panel
+            panelUpdate.Visible = false;          
+            //enable button
+            ShowButtons();
+        }
+
+
+        //TASK C
+        //DELETE AN EXISTING RECORD
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DataRow deleteEventRow = DM.dtEvent.Rows[cmEvent.Position];
@@ -243,11 +189,74 @@ namespace Kai
             {
                 MessageBox.Show("You may only delete an event that has no kai", "Error");
             }
+        }
 
+        //OTHER FUNCTIONS
 
+        private void HideButtons()
+        {
+            panelDelete.Visible = false;
+            listBoxEvents.Visible = false;
+            btnUp.Visible = false;
+            btnDown.Visible = false; ;
+            btnAdd.Enabled = false;
+            btnUpdate.Enabled = false;
+            btnDelete.Enabled = false;
+            btnReturn.Enabled = false;
+        }
 
+        private void ShowButtons()
+        {
+            panelDelete.Visible = true;
+            listBoxEvents.Visible = true;
+            btnUp.Visible = true;
+            btnDown.Visible = true;
+            btnAdd.Enabled = true;
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+            btnReturn.Enabled = true;
 
         }
+         
+ 
+
+        private void listBoxEvents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmLocation = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "Location"];
+
+            if (cmEvent != null)
+            {   //GET THE LOCATION NAME USING THE LOCATION ID 
+                DataRow drEvent = DM.dtEvent.Rows[cmEvent.Position];
+                int aLocationID = Convert.ToInt32(drEvent["LocationID"].ToString());
+                cmLocation.Position = DM.locationView.Find(aLocationID);
+                DataRow drLocation = DM.dtLocation.Rows[cmLocation.Position];                
+                txtLocation.Text = drLocation["LocationName"].ToString();
+
+                //REMOVE TIME FROM THE DATE DATA BY SPLITTING THE STRING AT THE SPACE
+                string newDate = txtEventDate.Text.Split(' ')[0];
+                txtEventDate.Text = newDate;
+                dateUpdateEventDate.Text = newDate;
+
+
+            }
+        }
+
+        private void LoadLocations()
+        {
+            cboAddLocation.DataSource = DM.dsKaioordinate;
+            cboAddLocation.DisplayMember = "Location.LocationName";
+            cboAddLocation.ValueMember = "Location.LocationID";
+
+            cboUpdateLocation.DataSource = DM.dsKaioordinate;
+            cboUpdateLocation.DisplayMember = "Location.LocationName";
+            cboUpdateLocation.ValueMember = "Location.LocationID";
+
+        }
+
+    
+           
+
+       
 
         private void btnReturn_Click(object sender, EventArgs e)
         {

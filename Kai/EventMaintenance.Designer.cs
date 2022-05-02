@@ -36,7 +36,13 @@
             this.lblEventNameAdd = new System.Windows.Forms.Label();
             this.txtAddEventName = new System.Windows.Forms.TextBox();
             this.panelAdd = new System.Windows.Forms.Panel();
+            this.lblEventDateAdd = new System.Windows.Forms.Label();
+            this.dateAddEventDate = new System.Windows.Forms.DateTimePicker();
+            this.cboAddLocation = new System.Windows.Forms.ComboBox();
             this.panelDelete = new System.Windows.Forms.Panel();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.txtEventDate = new System.Windows.Forms.TextBox();
+            this.txtLocation = new System.Windows.Forms.TextBox();
             this.lblLocation = new System.Windows.Forms.Label();
             this.lblEventName = new System.Windows.Forms.Label();
             this.lblEventID = new System.Windows.Forms.Label();
@@ -50,12 +56,6 @@
             this.btnUp = new FontAwesome.Sharp.IconButton();
             this.listBoxEvents = new System.Windows.Forms.ListBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
-            this.txtLocation = new System.Windows.Forms.TextBox();
-            this.txtEventDate = new System.Windows.Forms.TextBox();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.cboAddLocation = new System.Windows.Forms.ComboBox();
-            this.dateAddEventDate = new System.Windows.Forms.DateTimePicker();
-            this.lblEventDateAdd = new System.Windows.Forms.Label();
             this.panelUpdate = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dateUpdateEventDate = new System.Windows.Forms.DateTimePicker();
@@ -159,6 +159,38 @@
             this.panelAdd.Size = new System.Drawing.Size(458, 305);
             this.panelAdd.TabIndex = 45;
             // 
+            // lblEventDateAdd
+            // 
+            this.lblEventDateAdd.AutoSize = true;
+            this.lblEventDateAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEventDateAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblEventDateAdd.Location = new System.Drawing.Point(43, 106);
+            this.lblEventDateAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEventDateAdd.Name = "lblEventDateAdd";
+            this.lblEventDateAdd.Size = new System.Drawing.Size(101, 24);
+            this.lblEventDateAdd.TabIndex = 36;
+            this.lblEventDateAdd.Text = "Event Date";
+            // 
+            // dateAddEventDate
+            // 
+            this.dateAddEventDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.dateAddEventDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.dateAddEventDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateAddEventDate.Location = new System.Drawing.Point(149, 104);
+            this.dateAddEventDate.Name = "dateAddEventDate";
+            this.dateAddEventDate.Size = new System.Drawing.Size(148, 29);
+            this.dateAddEventDate.TabIndex = 35;
+            // 
+            // cboAddLocation
+            // 
+            this.cboAddLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboAddLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.cboAddLocation.FormattingEnabled = true;
+            this.cboAddLocation.Location = new System.Drawing.Point(149, 55);
+            this.cboAddLocation.Name = "cboAddLocation";
+            this.cboAddLocation.Size = new System.Drawing.Size(299, 32);
+            this.cboAddLocation.TabIndex = 34;
+            // 
             // panelDelete
             // 
             this.panelDelete.Controls.Add(this.lblDate);
@@ -173,6 +205,39 @@
             this.panelDelete.Name = "panelDelete";
             this.panelDelete.Size = new System.Drawing.Size(450, 292);
             this.panelDelete.TabIndex = 44;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblDate.Location = new System.Drawing.Point(44, 160);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(101, 24);
+            this.lblDate.TabIndex = 34;
+            this.lblDate.Text = "Event Date";
+            // 
+            // txtEventDate
+            // 
+            this.txtEventDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEventDate.Location = new System.Drawing.Point(149, 157);
+            this.txtEventDate.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEventDate.MaxLength = 10;
+            this.txtEventDate.Name = "txtEventDate";
+            this.txtEventDate.ReadOnly = true;
+            this.txtEventDate.Size = new System.Drawing.Size(204, 29);
+            this.txtEventDate.TabIndex = 33;
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.Location = new System.Drawing.Point(149, 106);
+            this.txtLocation.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.ReadOnly = true;
+            this.txtLocation.Size = new System.Drawing.Size(300, 29);
+            this.txtLocation.TabIndex = 32;
             // 
             // lblLocation
             // 
@@ -355,71 +420,6 @@
             this.picLogo.TabIndex = 47;
             this.picLogo.TabStop = false;
             // 
-            // txtLocation
-            // 
-            this.txtLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.Location = new System.Drawing.Point(149, 106);
-            this.txtLocation.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.ReadOnly = true;
-            this.txtLocation.Size = new System.Drawing.Size(300, 29);
-            this.txtLocation.TabIndex = 32;
-            // 
-            // txtEventDate
-            // 
-            this.txtEventDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEventDate.Location = new System.Drawing.Point(149, 157);
-            this.txtEventDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEventDate.MaxLength = 10;
-            this.txtEventDate.Name = "txtEventDate";
-            this.txtEventDate.ReadOnly = true;
-            this.txtEventDate.Size = new System.Drawing.Size(100, 29);
-            this.txtEventDate.TabIndex = 33;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDate.Location = new System.Drawing.Point(44, 160);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(101, 24);
-            this.lblDate.TabIndex = 34;
-            this.lblDate.Text = "Event Date";
-            // 
-            // cboAddLocation
-            // 
-            this.cboAddLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboAddLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.cboAddLocation.FormattingEnabled = true;
-            this.cboAddLocation.Location = new System.Drawing.Point(149, 55);
-            this.cboAddLocation.Name = "cboAddLocation";
-            this.cboAddLocation.Size = new System.Drawing.Size(299, 32);
-            this.cboAddLocation.TabIndex = 34;
-            // 
-            // dateAddEventDate
-            // 
-            this.dateAddEventDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.dateAddEventDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.dateAddEventDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateAddEventDate.Location = new System.Drawing.Point(149, 104);
-            this.dateAddEventDate.Name = "dateAddEventDate";
-            this.dateAddEventDate.Size = new System.Drawing.Size(148, 29);
-            this.dateAddEventDate.TabIndex = 35;
-            // 
-            // lblEventDateAdd
-            // 
-            this.lblEventDateAdd.AutoSize = true;
-            this.lblEventDateAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEventDateAdd.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblEventDateAdd.Location = new System.Drawing.Point(43, 106);
-            this.lblEventDateAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEventDateAdd.Name = "lblEventDateAdd";
-            this.lblEventDateAdd.Size = new System.Drawing.Size(101, 24);
-            this.lblEventDateAdd.TabIndex = 36;
-            this.lblEventDateAdd.Text = "Event Date";
-            // 
             // panelUpdate
             // 
             this.panelUpdate.Controls.Add(this.label1);
@@ -567,7 +567,7 @@
             this.Controls.Add(this.listBoxEvents);
             this.Controls.Add(this.picLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "EventMaintenance";
             this.Text = "EventMaintenance";

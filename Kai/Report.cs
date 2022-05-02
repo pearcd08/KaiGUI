@@ -27,7 +27,7 @@ namespace Kai
             cmWhanau = (CurrencyManager)this.BindingContext[DM.dsKaioordinate, "WHANAU"];
         }
 
-     
+
 
         private void iconReturn_Click(object sender, EventArgs e)
         {

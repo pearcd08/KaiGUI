@@ -25,6 +25,7 @@ namespace Kai
         //loads event name based on cm position on form load
         private void KaiMaintenance_Load(object sender, EventArgs e)
         {
+            
             LoadEventName();
         }
 
@@ -40,11 +41,7 @@ namespace Kai
             txtPreperation.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.PreparationRequired");
             txtPreperationTime.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.PreparationMinutes");
             txtServingQuantity.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.ServeQuantity");
-            //bindings for update panel
-            txtUpdateKaiName.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.KaiName");
-            cboxUpdatePreparation.DataBindings.Add("Checked", DM.dsKaioordinate, "Kai.PreparationRequired");
-            numUpdatePreparationTime.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.PreparationMinutes");
-            numUpdateServingQuantity.DataBindings.Add("Text", DM.dsKaioordinate, "Kai.ServeQuantity");
+                   
 
 
         }
@@ -57,41 +54,58 @@ namespace Kai
             //make panel visible
             panelAdd.Location = new Point(384, 37);
             panelAdd.Visible = true;
-            //load data into combobox
-            LoadEvents();
-            //make fields invisible
-            panelDelete.Visible = false;
-            listBoxKai.Visible = false;
             //disable buttons
             HideButtons();
-
+            //load data into combobox
+            LoadEvents();
+            //make fields blank
+            cboAddEvent.SelectedIndex = 0;
+            txtAddKaiName.Text = "";            
+            cboxAddPreparation.Checked = false;
+            numAddPreparationTime.Value = 0;
+            numAddServingQuantity.Value = 0;          
 
         }
 
-        //2. Click the save button 
+        //2. IF CHECKBOX NOT CHECKED THEN DISABLE THE NUMBER BOX AND SET VALUE TO 0
+        private void cboxAddPreparation_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (cboxAddPreparation.Checked)
+            {
+                numAddPreparationTime.Enabled = true;
+            }
+            else
+            {
+                numAddPreparationTime.Enabled = false;
+                numAddPreparationTime.Value = 0;
+            }
+        }
+
+        //3. Click the save button 
         private void btnAddSave_Click(object sender, EventArgs e)
         {
             try
             {
-                if ((txtAddKaiName.Text == ""))
+                if (txtAddKaiName.Text == "")
                 {
                     txtAddKaiName.Focus();
                     MessageBox.Show("Please enter a Kai Name", "Error");
                 }
 
-                if ((numAddServingQuantity.Text == "0"))
+                if (numAddServingQuantity.Value == 0)
                 {
                     MessageBox.Show("Quantity cannot be zero", "Error");
                     numAddServingQuantity.Focus();
                 }
-                else
+                else if (txtAddKaiName.Text != "" || numAddServingQuantity.Value != 0)
                 {
                     DataRow newKaiRow = DM.dtKai.NewRow();
                     newKaiRow["EventID"] = cboAddEvent.SelectedValue;
                     newKaiRow["KaiName"] = txtAddKaiName.Text;
                     newKaiRow["PreparationRequired"] = cboxAddPreparation.Checked;
-                    newKaiRow["PreparationMinutes"] = numUpdatePreparationTime.Text;
-                    newKaiRow["ServeQuantity"] = numUpdateServingQuantity.Text;
+                    newKaiRow["PreparationMinutes"] = numAddPreparationTime.Value;
+                    newKaiRow["ServeQuantity"] = numAddServingQuantity.Value;
 
                     DM.dtKai.Rows.Add(newKaiRow);
                     DM.UpdateKai();
@@ -114,11 +128,11 @@ namespace Kai
             }
 
         }
-        //3. cancel the add operation
+        
+        //4. cancel the add operation
         private void btnAddCancel_Click(object sender, EventArgs e)
         {
-            panelAdd.Visible = false;
-            panelDelete.Visible = true;
+            panelAdd.Visible = false;         
             listBoxKai.Visible = true;
             ShowButtons();
 
@@ -132,31 +146,67 @@ namespace Kai
             //make panel visible
             panelUpdate.Location = new Point(384, 37);
             panelUpdate.Visible = true;
-            LoadEvents();
-            panelDelete.Visible = false;
-            listBoxKai.Visible = false;
+            LoadEvents();                  
             HideButtons();
-            //txtUpdateKaiName.Text = txtKaiName.Text;            
+            
+            //sets the values from the original text 
+
+            txtUpdateKaiName.Text = txtKaiName.Text;
+
+            if (txtPreperation.Text == "True")
+            {
+                cboxUpdatePreparation.Checked = true;
+
+            }
+            else 
+            {
+                cboxUpdatePreparation.Checked = false;
+                numUpdatePreparationTime.Enabled = false;
+                numUpdatePreparationTime.Value = 0;
+            }
+           
+
+            numUpdatePreparationTime.Value = Convert.ToInt32(txtPreperationTime.Text); 
+            numUpdateServingQuantity.Value = Convert.ToInt32(txtServingQuantity.Text); 
+           
+          
 
         }
+        //2. IF CHECKBOX NOT CHECKED THEN DISABLE THE NUMBER BOX AND SET VALUE TO 0
+
+        private void cboxUpdatePreparation_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (cboxUpdatePreparation.Checked)
+            {
+                numUpdatePreparationTime.Enabled = true;
+            }
+            else
+            {
+                numUpdatePreparationTime.Enabled = false;
+                numUpdatePreparationTime.Value = 0;
+            }
+
+        }
+        
+
 
         //2. save the updated record
         private void btnUpdateSave_Click(object sender, EventArgs e)
         {
             try
             {
-                if ((txtUpdateKaiName.Text == ""))
+                if (txtUpdateKaiName.Text == "")
                 {
                     MessageBox.Show("Please enter an Kai Name", "Error");
                     txtUpdateKaiName.Focus();
                 }
-                if ((numUpdateServingQuantity.Text == "0"))
+                if (numUpdateServingQuantity.Text == "0")
                 {
                     MessageBox.Show("Quantity cannot be zero", "Error");
                     numUpdateServingQuantity.Focus();
                 }
 
-                else
+                else if ((txtUpdateKaiName.Text != "") && (numUpdateServingQuantity.Text != "0"))   
                 {
                     DataRow updateKaiRow = DM.dtKai.Rows[cmKai.Position];
                     updateKaiRow["EventID"] = cboUpdateEvent.SelectedValue;
@@ -164,6 +214,9 @@ namespace Kai
                     updateKaiRow["PreparationRequired"] = cboxUpdatePreparation.Checked;
                     updateKaiRow["PreparationMinutes"] = numUpdatePreparationTime.Text;
                     updateKaiRow["ServeQuantity"] = numUpdateServingQuantity.Text;
+                    cmKai.EndCurrentEdit();
+                    DM.UpdateKai();
+                  
 
 
                     if (MessageBox.Show("Kai updated successfully", "Success",
@@ -202,6 +255,8 @@ namespace Kai
             try
             {
                 DataRow deleteKaiRow = DM.dtKai.Rows[cmKai.Position];
+
+
                 int aEventID = Convert.ToInt32(deleteKaiRow["EventID"].ToString());
                 DataRow[] eventRegisterRow = DM.dtEventRegister.Select("EventID = " + aEventID);
 
@@ -214,8 +269,9 @@ namespace Kai
                     if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
                                         MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
+                       
                         deleteKaiRow.Delete();
-                        DM.UpdateKai();
+                        DM.DeleteKai();
                         MessageBox.Show("Kai Deleted Successfully", "Success");
 
                     }
@@ -234,22 +290,7 @@ namespace Kai
 
         // FUNCTIONS
 
-        private void iconUp_Click(object sender, EventArgs e)
-        {
-            if (cmKai.Position > 0)
-            {
-                --cmKai.Position;
-            }
-        }
-
-        private void iconDown_Click(object sender, EventArgs e)
-        {
-            if (cmKai.Position < cmKai.Count - 1)
-            {
-                ++cmKai.Position;
-            }
-
-        }
+   
 
 
 
@@ -298,6 +339,8 @@ namespace Kai
 
         private void HideButtons()
         {
+            panelDelete.Visible = false;
+            listBoxKai.Visible = false;
             btnUp.Visible = false;
             btnDown.Visible = false;
             btnAdd.Enabled = false;
@@ -309,6 +352,8 @@ namespace Kai
 
         private void ShowButtons()
         {
+            panelDelete.Visible = true;
+            listBoxKai.Visible = true;
             btnUp.Visible = true;
             btnDown.Visible = true;
             btnAdd.Enabled = true;
@@ -318,7 +363,21 @@ namespace Kai
 
         }
 
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            if (cmKai.Position > 0)
+            {
+                --cmKai.Position;
+            }
+        }
 
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            if (cmKai.Position < cmKai.Count - 1)
+            {
+                ++cmKai.Position;
+            }
+        }
     }
 
 }

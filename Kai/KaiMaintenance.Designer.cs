@@ -67,6 +67,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelDelete = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.panelAdd = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAddSave = new FontAwesome.Sharp.IconButton();
@@ -77,11 +78,10 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.numAddPrepTime = new System.Windows.Forms.NumericUpDown();
+            this.numAddPreparationTime = new System.Windows.Forms.NumericUpDown();
             this.numAddServingQuantity = new System.Windows.Forms.NumericUpDown();
             this.cboxAddPreparation = new System.Windows.Forms.CheckBox();
             this.cboAddEvent = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.kAIBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsKaioordinate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpdateServingQuantity)).BeginInit();
@@ -90,7 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelDelete.SuspendLayout();
             this.panelAdd.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numAddPrepTime)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAddPreparationTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAddServingQuantity)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,7 +233,7 @@
             this.btnUp.Text = "UP";
             this.btnUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUp.UseVisualStyleBackColor = true;
-            this.btnUp.Click += new System.EventHandler(this.iconUp_Click);
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnDown
             // 
@@ -250,7 +250,7 @@
             this.btnDown.Text = "DOWN";
             this.btnDown.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += new System.EventHandler(this.iconDown_Click);
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnAdd
             // 
@@ -369,6 +369,7 @@
             this.cboxUpdatePreparation.Size = new System.Drawing.Size(15, 14);
             this.cboxUpdatePreparation.TabIndex = 23;
             this.cboxUpdatePreparation.UseVisualStyleBackColor = true;
+            this.cboxUpdatePreparation.CheckedChanged += new System.EventHandler(this.cboxUpdatePreparation_CheckedChanged_1);
             // 
             // numUpdateServingQuantity
             // 
@@ -551,6 +552,18 @@
             this.panelDelete.Size = new System.Drawing.Size(494, 314);
             this.panelDelete.TabIndex = 29;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.Control;
+            this.label13.Location = new System.Drawing.Point(287, 210);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 24);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "minutes";
+            // 
             // panelAdd
             // 
             this.panelAdd.Controls.Add(this.label7);
@@ -562,7 +575,7 @@
             this.panelAdd.Controls.Add(this.label10);
             this.panelAdd.Controls.Add(this.label11);
             this.panelAdd.Controls.Add(this.label12);
-            this.panelAdd.Controls.Add(this.numAddPrepTime);
+            this.panelAdd.Controls.Add(this.numAddPreparationTime);
             this.panelAdd.Controls.Add(this.numAddServingQuantity);
             this.panelAdd.Controls.Add(this.cboxAddPreparation);
             this.panelAdd.Controls.Add(this.cboAddEvent);
@@ -685,13 +698,13 @@
             this.label12.TabIndex = 12;
             this.label12.Text = "Preperation Time";
             // 
-            // numAddPrepTime
+            // numAddPreparationTime
             // 
-            this.numAddPrepTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numAddPrepTime.Location = new System.Drawing.Point(165, 167);
-            this.numAddPrepTime.Name = "numAddPrepTime";
-            this.numAddPrepTime.Size = new System.Drawing.Size(100, 29);
-            this.numAddPrepTime.TabIndex = 25;
+            this.numAddPreparationTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numAddPreparationTime.Location = new System.Drawing.Point(165, 167);
+            this.numAddPreparationTime.Name = "numAddPreparationTime";
+            this.numAddPreparationTime.Size = new System.Drawing.Size(100, 29);
+            this.numAddPreparationTime.TabIndex = 25;
             // 
             // numAddServingQuantity
             // 
@@ -710,6 +723,7 @@
             this.cboxAddPreparation.Size = new System.Drawing.Size(15, 14);
             this.cboxAddPreparation.TabIndex = 23;
             this.cboxAddPreparation.UseVisualStyleBackColor = true;
+            this.cboxAddPreparation.CheckedChanged += new System.EventHandler(this.cboxAddPreparation_CheckedChanged);
             // 
             // cboAddEvent
             // 
@@ -721,24 +735,12 @@
             this.cboAddEvent.Size = new System.Drawing.Size(300, 32);
             this.cboAddEvent.TabIndex = 22;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(287, 210);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 24);
-            this.label13.TabIndex = 31;
-            this.label13.Text = "minutes";
-            // 
             // KaiMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(1799, 561);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.panelDelete);
             this.Controls.Add(this.panelUpdate);
@@ -769,7 +771,7 @@
             this.panelDelete.PerformLayout();
             this.panelAdd.ResumeLayout(false);
             this.panelAdd.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numAddPrepTime)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numAddPreparationTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numAddServingQuantity)).EndInit();
             this.ResumeLayout(false);
 
@@ -824,7 +826,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown numAddPrepTime;
+        private System.Windows.Forms.NumericUpDown numAddPreparationTime;
         private System.Windows.Forms.NumericUpDown numAddServingQuantity;
         private System.Windows.Forms.CheckBox cboxAddPreparation;
         private System.Windows.Forms.ComboBox cboAddEvent;

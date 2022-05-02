@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
             this.dgvEvents = new System.Windows.Forms.DataGridView();
             this.dgvWhanau = new System.Windows.Forms.DataGridView();
             this.dgvRegister = new System.Windows.Forms.DataGridView();
@@ -40,6 +41,9 @@
             this.eVENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.wHANAUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eVENTREGISTERBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblWhanau = new System.Windows.Forms.Label();
+            this.lblEvents = new System.Windows.Forms.Label();
+            this.lblRegistrations = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWhanau)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegister)).BeginInit();
@@ -54,12 +58,12 @@
             this.dgvEvents.AllowUserToAddRows = false;
             this.dgvEvents.AllowUserToDeleteRows = false;
             this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEvents.Location = new System.Drawing.Point(25, 25);
+            this.dgvEvents.Location = new System.Drawing.Point(30, 51);
             this.dgvEvents.Name = "dgvEvents";
             this.dgvEvents.ReadOnly = true;
             this.dgvEvents.RowHeadersVisible = false;
             this.dgvEvents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEvents.Size = new System.Drawing.Size(400, 218);
+            this.dgvEvents.Size = new System.Drawing.Size(400, 200);
             this.dgvEvents.TabIndex = 0;
             // 
             // dgvWhanau
@@ -67,12 +71,12 @@
             this.dgvWhanau.AllowUserToAddRows = false;
             this.dgvWhanau.AllowUserToDeleteRows = false;
             this.dgvWhanau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWhanau.Location = new System.Drawing.Point(450, 25);
+            this.dgvWhanau.Location = new System.Drawing.Point(455, 51);
             this.dgvWhanau.Name = "dgvWhanau";
             this.dgvWhanau.ReadOnly = true;
             this.dgvWhanau.RowHeadersVisible = false;
             this.dgvWhanau.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvWhanau.Size = new System.Drawing.Size(400, 218);
+            this.dgvWhanau.Size = new System.Drawing.Size(400, 200);
             this.dgvWhanau.TabIndex = 1;
             // 
             // dgvRegister
@@ -80,25 +84,25 @@
             this.dgvRegister.AllowUserToAddRows = false;
             this.dgvRegister.AllowUserToDeleteRows = false;
             this.dgvRegister.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegister.Location = new System.Drawing.Point(25, 290);
+            this.dgvRegister.Location = new System.Drawing.Point(30, 310);
             this.dgvRegister.Name = "dgvRegister";
             this.dgvRegister.ReadOnly = true;
             this.dgvRegister.RowHeadersVisible = false;
             this.dgvRegister.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRegister.Size = new System.Drawing.Size(400, 219);
+            this.dgvRegister.Size = new System.Drawing.Size(400, 200);
             this.dgvRegister.TabIndex = 2;
             // 
             // btnReturn
             // 
-            this.btnReturn.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btnReturn.IconColor = System.Drawing.Color.Black;
             this.btnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReturn.IconSize = 60;
-            this.btnReturn.Location = new System.Drawing.Point(750, 409);
+            this.btnReturn.Location = new System.Drawing.Point(765, 419);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(100, 100);
+            this.btnReturn.Size = new System.Drawing.Size(90, 90);
             this.btnReturn.TabIndex = 26;
             this.btnReturn.Text = "RETURN";
             this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -107,15 +111,15 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnDelete.IconColor = System.Drawing.Color.Black;
             this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelete.IconSize = 60;
-            this.btnDelete.Location = new System.Drawing.Point(534, 409);
+            this.btnDelete.Location = new System.Drawing.Point(549, 419);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 100);
+            this.btnDelete.Size = new System.Drawing.Size(90, 90);
             this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -124,15 +128,15 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAdd.IconColor = System.Drawing.Color.Black;
             this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdd.IconSize = 60;
-            this.btnAdd.Location = new System.Drawing.Point(430, 409);
+            this.btnAdd.Location = new System.Drawing.Point(455, 419);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 100);
+            this.btnAdd.Size = new System.Drawing.Size(90, 90);
             this.btnAdd.TabIndex = 27;
             this.btnAdd.Text = "ADD";
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -144,7 +148,7 @@
             this.cboxKai.AutoSize = true;
             this.cboxKai.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxKai.ForeColor = System.Drawing.SystemColors.Control;
-            this.cboxKai.Location = new System.Drawing.Point(450, 290);
+            this.cboxKai.Location = new System.Drawing.Point(455, 310);
             this.cboxKai.Name = "cboxKai";
             this.cboxKai.Size = new System.Drawing.Size(245, 28);
             this.cboxKai.TabIndex = 29;
@@ -171,12 +175,48 @@
             this.eVENTREGISTERBindingSource.DataMember = "EVENTREGISTER";
             this.eVENTREGISTERBindingSource.DataSource = this.dsKaioordinate;
             // 
+            // lblWhanau
+            // 
+            this.lblWhanau.AutoSize = true;
+            this.lblWhanau.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.lblWhanau.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblWhanau.Location = new System.Drawing.Point(451, 24);
+            this.lblWhanau.Name = "lblWhanau";
+            this.lblWhanau.Size = new System.Drawing.Size(81, 24);
+            this.lblWhanau.TabIndex = 31;
+            this.lblWhanau.Text = "Whanau";
+            // 
+            // lblEvents
+            // 
+            this.lblEvents.AutoSize = true;
+            this.lblEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.lblEvents.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblEvents.Location = new System.Drawing.Point(26, 24);
+            this.lblEvents.Name = "lblEvents";
+            this.lblEvents.Size = new System.Drawing.Size(67, 24);
+            this.lblEvents.TabIndex = 30;
+            this.lblEvents.Text = "Events";
+            // 
+            // lblRegistrations
+            // 
+            this.lblRegistrations.AutoSize = true;
+            this.lblRegistrations.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.lblRegistrations.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblRegistrations.Location = new System.Drawing.Point(26, 283);
+            this.lblRegistrations.Name = "lblRegistrations";
+            this.lblRegistrations.Size = new System.Drawing.Size(117, 24);
+            this.lblRegistrations.TabIndex = 32;
+            this.lblRegistrations.Text = "Registrations";
+            // 
             // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.lblRegistrations);
+            this.Controls.Add(this.lblWhanau);
+            this.Controls.Add(this.lblEvents);
             this.Controls.Add(this.cboxKai);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
@@ -184,9 +224,12 @@
             this.Controls.Add(this.dgvRegister);
             this.Controls.Add(this.dgvWhanau);
             this.Controls.Add(this.dgvEvents);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Registration";
-            this.Text = "Registration";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registration Maintenance";
             this.Load += new System.EventHandler(this.Registration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEvents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWhanau)).EndInit();
@@ -213,5 +256,8 @@
         private dsKaioordinate dsKaioordinate;
         private System.Windows.Forms.BindingSource wHANAUBindingSource;
         private System.Windows.Forms.BindingSource eVENTREGISTERBindingSource;
+        private System.Windows.Forms.Label lblWhanau;
+        private System.Windows.Forms.Label lblEvents;
+        private System.Windows.Forms.Label lblRegistrations;
     }
 }
