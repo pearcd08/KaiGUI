@@ -55,53 +55,44 @@ namespace Kai
 
         public void UpdateKai()
         {
+                    
             daKai.Update(dtKai);
+            
 
         }
 
-
-        public void DeleteKai()
-        {
-            daKai.Update(dtKai);
-            dtKai.AcceptChanges();
-            daKai.Fill(dtKai);
-        }
         public void UpdateWhanau()
         {
-            daWhanau.Update(dtWhanau);     
-
-
-        }
-
-        public void DeleteWhanau()
-        {
             daWhanau.Update(dtWhanau);
-
-
+            
+           
         }
-
-
 
         public void UpdateEventRegister()
         {
+                      
             daEventRegister.Update(dtEventRegister);
+            
+
         }
 
         public void UpdateLocation()
         {
+           
+            
             daLocation.Update(dtLocation);
+            
+
         }
 
-        public void DeleteLocation() 
-        {
-            daLocation.Update(dtLocation);
-            dtKai.AcceptChanges();
-            daKai.Fill(dtLocation);
-        }
+      
 
         public void UpdateEvent()
         {
+            
+        
             daEvent.Update(dtEvent);
+           
         }
 
         private void DataModule_Load(object sender, EventArgs e)

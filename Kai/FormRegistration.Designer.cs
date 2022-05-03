@@ -1,6 +1,6 @@
 ﻿namespace Kai
 {
-    partial class Registration
+    partial class FormRegistration
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistration));
             this.dgvEvents = new System.Windows.Forms.DataGridView();
             this.dgvWhanau = new System.Windows.Forms.DataGridView();
             this.dgvRegister = new System.Windows.Forms.DataGridView();

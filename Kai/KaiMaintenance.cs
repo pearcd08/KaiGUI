@@ -66,6 +66,7 @@ namespace Kai
             cboAddEvent.SelectedIndex = 0;
             txtAddKaiName.Text = "";
             cboxAddPreparation.Checked = false;
+            numAddPreparationTime.Enabled = false;
             numAddPreparationTime.Value = 0;
             numAddServingQuantity.Value = 0;
 
@@ -266,8 +267,6 @@ namespace Kai
             try
             {
                 DataRow deleteKaiRow = DM.dtKai.Rows[cmKai.Position];
-
-
                 int aEventID = Convert.ToInt32(deleteKaiRow["EventID"].ToString());
                 DataRow[] eventRegisterRow = DM.dtEventRegister.Select("EventID = " + aEventID);
 
@@ -282,7 +281,7 @@ namespace Kai
                     {
 
                         deleteKaiRow.Delete();
-                        DM.DeleteKai();
+                        DM.UpdateKai();
                         MessageBox.Show("Kai Deleted Successfully", "Success");
 
                     }

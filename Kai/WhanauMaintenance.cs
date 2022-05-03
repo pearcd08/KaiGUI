@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Kai
 {
-    public partial class Whanau : Form
+    public partial class WhanauMaintenance : Form
     {
         private DataModule DM;
         private MainMenu frmMenu;
@@ -14,7 +14,7 @@ namespace Kai
 
 
 
-        public Whanau(DataModule dm, MainMenu mnu)
+        public WhanauMaintenance(DataModule dm, MainMenu mnu)
         {
             InitializeComponent();
             DM = dm;

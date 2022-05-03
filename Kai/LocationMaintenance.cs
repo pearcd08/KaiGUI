@@ -5,14 +5,14 @@ using System.Windows.Forms;
 
 namespace Kai
 {
-    public partial class Locations : Form
+    public partial class LocationMaintenance : Form
     {
 
         private DataModule DM;
         private MainMenu frmMenu;
         private CurrencyManager cmLocation;
 
-        public Locations(DataModule dm, MainMenu mnu)
+        public LocationMaintenance(DataModule dm, MainMenu mnu)
         {
             InitializeComponent();
             DM = dm;
@@ -56,62 +56,78 @@ namespace Kai
         ///</Summary> 
         private void btnAddSave_Click(object sender, EventArgs e)
         {
-            if (txtAddLocationName.Text == "")
+            try
             {
-                MessageBox.Show("Please enter a location name", "Error");
-                txtAddLocationName.Focus();
-            }
-            else
-            {
-                DataRow newLocationRow = DM.dtLocation.NewRow();
-                if ((txtAddAddress1.Text == "") && (txtAddAddress2.Text != "") && (txtAddAddress3.Text != "") && (txtAddAddress4.Text != "") && (txtAddAddress5.Text != ""))
+                if (txtAddLocationName.Text.Trim() == "")
                 {
-                    newLocationRow["LocationName"] = txtAddLocationName.Text;
-                    newLocationRow["Address"] = txtAddAddress2.Text.Trim() + ", " + txtAddAddress3.Text.Trim() + ", " + txtAddAddress4.Text.Trim() + " " + txtAddAddress5.Text.Trim();
-
-                    DM.dtLocation.Rows.Add(newLocationRow);
-                    DM.UpdateLocation();
-                    if (MessageBox.Show("“Location added successfully”", "Success",
-                                       MessageBoxButtons.OK) == DialogResult.OK) 
-                    {
-                        panelAdd.Visible = false;
-                        ShowButtons();
-                    }
-
-                }
-                if ((txtUpdateAddress1.Text != "") && (txtAddAddress2.Text == "") && (txtAddAddress3.Text != "") && (txtAddAddress4.Text != "") && (txtAddAddress5.Text != ""))
-                {
-                    newLocationRow["LocationName"] = txtAddLocationName.Text;
-                    newLocationRow["Address"] = txtAddAddress1.Text.Trim() + ", " + txtAddAddress3.Text.Trim() + ", " + txtAddAddress4.Text.Trim() + ", " + txtAddAddress5.Text.Trim();
-                    DM.dtLocation.Rows.Add(newLocationRow);
-                    DM.UpdateLocation();
-                    if (MessageBox.Show("“Location added successfully”", "Success",
-                                     MessageBoxButtons.OK) == DialogResult.OK)
-                    {
-                        panelAdd.Visible = false;
-                        ShowButtons();
-                    }
-                }
-                if ((txtUpdateAddress1.Text != "") && (txtAddAddress2.Text != "") && (txtAddAddress3.Text != "") && (txtAddAddress4.Text != "") && (txtAddAddress5.Text != "")) 
-                {
-                    newLocationRow["LocationName"] = txtAddLocationName.Text;
-                    newLocationRow["Address"] = txtAddAddress1.Text.Trim() + ", " + txtAddAddress2.Text.Trim() + ", " + txtAddAddress3.Text.Trim() + ", " +
-                                                txtAddAddress4.Text.Trim() + ", " +  txtAddAddress5.Text.Trim();
-                    DM.dtLocation.Rows.Add(newLocationRow);
-                    DM.UpdateLocation();
-                    if (MessageBox.Show("“Location added successfully”", "Success",
-                                     MessageBoxButtons.OK) == DialogResult.OK)
-                    {
-                        panelAdd.Visible = false;
-                        ShowButtons();
-                    }
+                    MessageBox.Show("Please enter a location name", "Error");
+                    txtAddLocationName.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("Suburb, City and atleast One street address line are required", "Error");
-                }              
+                    DataRow newLocationRow = DM.dtLocation.NewRow();
+                    if ((txtAddAddress1.Text.Trim() == "") && (txtAddAddress2.Text.Trim() != "") && (txtAddAddress3.Text.Trim() != "") &&
+                        (txtAddAddress4.Text.Trim() != "") && (txtAddAddress5.Text.Trim() != ""))
+                    {
+                        newLocationRow["LocationName"] = txtAddLocationName.Text;
+                        newLocationRow["Address"] = txtAddAddress2.Text.Trim() + ", " + txtAddAddress3.Text.Trim() + ", " + txtAddAddress4.Text.Trim() + " " + txtAddAddress5.Text.Trim();
+
+                        DM.dtLocation.Rows.Add(newLocationRow);
+                        DM.UpdateLocation();
+                        if (MessageBox.Show("“Location added successfully”", "Success",
+                                           MessageBoxButtons.OK) == DialogResult.OK)
+                        {
+                            panelAdd.Visible = false;
+                            ShowButtons();
+                        }
+
+                    }
+                    if ((txtAddAddress1.Text.Trim() != "") && (txtAddAddress2.Text.Trim() == "") && (txtAddAddress3.Text.Trim() != "") &&
+                        (txtAddAddress4.Text.Trim() != "") && (txtAddAddress5.Text.Trim() != ""))
+                    {
+                        newLocationRow["LocationName"] = txtAddLocationName.Text;
+                        newLocationRow["Address"] = txtAddAddress1.Text.Trim() + ", " + txtAddAddress3.Text.Trim() + ", " + txtAddAddress4.Text.Trim() + ", " + txtAddAddress5.Text.Trim();
+                        DM.dtLocation.Rows.Add(newLocationRow);
+                        DM.UpdateLocation();
+                        if (MessageBox.Show("“Location added successfully”", "Success",
+                                         MessageBoxButtons.OK) == DialogResult.OK)
+                        {
+                            panelAdd.Visible = false;
+                            ShowButtons();
+                        }
+                    }
+                    if ((txtAddAddress1.Text.Trim() != "") && (txtAddAddress2.Text.Trim() != "") && (txtAddAddress3.Text.Trim() != "") &&
+                        (txtAddAddress4.Text.Trim() != "") && (txtAddAddress5.Text.Trim() != ""))
+                    {
+                        newLocationRow["LocationName"] = txtAddLocationName.Text;
+                        newLocationRow["Address"] = txtAddAddress1.Text.Trim() + ", " + txtAddAddress2.Text.Trim() + ", " + txtAddAddress3.Text.Trim() + ", " +
+                                                    txtAddAddress4.Text.Trim() + ", " + txtAddAddress5.Text.Trim();
+                        DM.dtLocation.Rows.Add(newLocationRow);
+                        DM.UpdateLocation();
+                        if (MessageBox.Show("“Location added successfully”", "Success",
+                                         MessageBoxButtons.OK) == DialogResult.OK)
+                        {
+                            panelAdd.Visible = false;
+                            ShowButtons();
+                        }
+                    }
+                    if((txtAddAddress1.Text.Trim() == "") && (txtAddAddress2.Text.Trim() == ""))
+                    {
+                        MessageBox.Show("Atleast one Street Address line is required", "Error");
+                    }
+                    if ((txtAddAddress3.Text.Trim() == "") || (txtAddAddress4.Text.Trim() == "") || (txtAddAddress5.Text.Trim() == ""))
+                    {
+                        MessageBox.Show("Suburb, City and Postcode is required", "Error");
+                    }
+
+                }
 
             }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+           
 
         }
 
@@ -185,23 +201,24 @@ namespace Kai
         {
             try
             {
-                if (txtUpdateLocationName.Text == "")
+                if (txtUpdateLocationName.Text.Trim() == "")
                 {
                     MessageBox.Show("Please enter a location name", "Error");
                     txtUpdateLocationName.Focus();
 
                 }
-                else 
+                else
                 {
                     DataRow updateLocationRow = DM.dtLocation.Rows[cmLocation.Position];
-                    if ((txtUpdateAddress1.Text == "") && (txtUpdateAddress2.Text != "") && (txtUpdateAddress3.Text != "") && (txtUpdateAddress4.Text != "") && (txtUpdateAddress5.Text != ""))
+                    if ((txtUpdateAddress1.Text.Trim() == "") && (txtUpdateAddress2.Text.Trim() != "") && (txtUpdateAddress3.Text.Trim() != "") && 
+                        (txtUpdateAddress4.Text.Trim() != "") && (txtUpdateAddress5.Text.Trim() != ""))
                     {
                         updateLocationRow["LocationName"] = txtUpdateLocationName.Text.Trim();
                         updateLocationRow["Address"] = txtUpdateAddress2.Text.Trim() + ", " + txtUpdateAddress3.Text.Trim() + ", " +
                                                        txtUpdateAddress4.Text.Trim() + " " + txtUpdateAddress5.Text.Trim();
                         cmLocation.EndCurrentEdit();
                         DM.UpdateLocation();
-                        
+
                         if (MessageBox.Show("“Location updated successfully”", "Success",
                                      MessageBoxButtons.OK) == DialogResult.OK)
                         {
@@ -210,14 +227,15 @@ namespace Kai
                         }
 
                     }
-                    if ((txtUpdateAddress1.Text != "") && (txtUpdateAddress2.Text == "") && (txtUpdateAddress3.Text != "") && (txtUpdateAddress4.Text != "") && (txtUpdateAddress5.Text != "")) 
+                    if ((txtUpdateAddress1.Text.Trim() != "") && (txtUpdateAddress2.Text.Trim() == "") && (txtUpdateAddress3.Text.Trim() != "") &&
+                        (txtUpdateAddress4.Text.Trim() != "") && (txtUpdateAddress5.Text.Trim() != ""))
                     {
                         updateLocationRow["LocationName"] = txtUpdateLocationName.Text.Trim();
                         updateLocationRow["Address"] = txtUpdateAddress1.Text.Trim() + ", " + txtUpdateAddress3.Text.Trim() + ", " +
                                                        txtUpdateAddress4.Text.Trim() + " " + txtUpdateAddress5.Text.Trim();
                         cmLocation.EndCurrentEdit();
                         DM.UpdateLocation();
-                        
+
                         if (MessageBox.Show("“Location updated successfully”", "Success",
                                    MessageBoxButtons.OK) == DialogResult.OK)
                         {
@@ -225,7 +243,8 @@ namespace Kai
                             ShowButtons();
                         }
                     }
-                    if ((txtUpdateAddress1.Text != "") && (txtUpdateAddress2.Text != "") && (txtUpdateAddress3.Text != "") && (txtUpdateAddress4.Text != "") && (txtUpdateAddress5.Text != ""))
+                    if ((txtUpdateAddress1.Text.Trim() != "") && (txtUpdateAddress2.Text.Trim() != "") && (txtUpdateAddress3.Text.Trim() != "") &&
+                        (txtUpdateAddress4.Text.Trim() != "") && (txtUpdateAddress5.Text.Trim() != ""))
                     {
                         updateLocationRow["LocationName"] = txtUpdateLocationName.Text.Trim();
                         updateLocationRow["Address"] = txtUpdateAddress1.Text.Trim() + ", " + txtUpdateAddress2.Text.Trim() + ", " + txtUpdateAddress3.Text.Trim() + ", " +
@@ -241,13 +260,18 @@ namespace Kai
                         }
                     }
 
-                    else
+                    if ((txtUpdateAddress1.Text.Trim() == "") && (txtUpdateAddress2.Text.Trim() == ""))
                     {
-                        MessageBox.Show("Suburb, City and atleast One street address line are required", "Error");
+                        MessageBox.Show("Atleast one Street Address line is required", "Error");
                     }
 
-                }            
-                
+                    if ((txtUpdateAddress3.Text.Trim() == "") || (txtUpdateAddress4.Text.Trim() == "") || (txtUpdateAddress5.Text.Trim() == ""))
+                    {
+                        MessageBox.Show("Suburb, City and Postcode is required", "Error");
+                    }
+
+                }
+
 
             }
             catch (Exception ex)
@@ -279,7 +303,7 @@ namespace Kai
                 DataRow deleteLocationRow = DM.dtLocation.Rows[cmLocation.Position];
                 DataRow[] locationEventRow = DM.dtEvent.Select("LocationID = " + txtLocationID.Text);
 
-                if (locationEventRow.Length != 0)
+                if (locationEventRow.Length > 0)
                 {
                     MessageBox.Show("You may only delete locations that have no events", "Error");
                 }
@@ -289,7 +313,8 @@ namespace Kai
                                         MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         deleteLocationRow.Delete();
-                        DM.DeleteLocation();
+                        DM.UpdateLocation();
+                        MessageBox.Show("Location successfully deleted", "Success");
 
                     }
                 }
@@ -299,7 +324,7 @@ namespace Kai
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
-            }                       
+            }
 
         }
 
@@ -368,5 +393,27 @@ namespace Kai
 
         }
 
+        private void Locations_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /// <summary> method: txtAddAddress5_KeyPress()
+        /// Only allows numbers and backspace in the add postcode text box     
+        /// </summary> 
+        private void txtAddAddress5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
+
+              
+    /// <summary> method: txtUpdateAddress5_KeyPress()
+    /// Only allows numbers and backspace in the update postcode text box     
+    /// </summary> 
+    private void txtUpdateAddress5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
+        }
     }
 }

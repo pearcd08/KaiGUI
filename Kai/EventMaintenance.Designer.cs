@@ -288,7 +288,7 @@
             // txtEventID
             // 
             this.txtEventID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEventID.Location = new System.Drawing.Point(149, 2);
+            this.txtEventID.Location = new System.Drawing.Point(149, 4);
             this.txtEventID.Margin = new System.Windows.Forms.Padding(2);
             this.txtEventID.Name = "txtEventID";
             this.txtEventID.ReadOnly = true;
@@ -297,104 +297,110 @@
             // 
             // btnReturn
             // 
+            this.btnReturn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnReturn.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btnReturn.IconColor = System.Drawing.Color.Black;
             this.btnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReturn.IconSize = 60;
-            this.btnReturn.Location = new System.Drawing.Point(750, 412);
+            this.btnReturn.Location = new System.Drawing.Point(739, 420);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(100, 100);
             this.btnReturn.TabIndex = 42;
             this.btnReturn.Text = "RETURN";
             this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnDelete.IconColor = System.Drawing.Color.Black;
             this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDelete.IconSize = 60;
-            this.btnDelete.Location = new System.Drawing.Point(608, 412);
+            this.btnDelete.Location = new System.Drawing.Point(608, 420);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 100);
             this.btnDelete.TabIndex = 41;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnUpdate.IconColor = System.Drawing.Color.Black;
             this.btnUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUpdate.IconSize = 60;
-            this.btnUpdate.Location = new System.Drawing.Point(504, 412);
+            this.btnUpdate.Location = new System.Drawing.Point(504, 420);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 100);
             this.btnUpdate.TabIndex = 40;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAdd.IconColor = System.Drawing.Color.Black;
             this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAdd.IconSize = 60;
-            this.btnAdd.Location = new System.Drawing.Point(400, 412);
+            this.btnAdd.Location = new System.Drawing.Point(400, 420);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 100);
             this.btnAdd.TabIndex = 39;
             this.btnAdd.Text = "ADD";
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnDown
             // 
+            this.btnDown.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDown.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDown.IconChar = FontAwesome.Sharp.IconChar.CaretSquareDown;
             this.btnDown.IconColor = System.Drawing.Color.Black;
             this.btnDown.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDown.IconSize = 60;
-            this.btnDown.Location = new System.Drawing.Point(241, 412);
+            this.btnDown.Location = new System.Drawing.Point(250, 420);
             this.btnDown.Margin = new System.Windows.Forms.Padding(2);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(100, 100);
             this.btnDown.TabIndex = 38;
             this.btnDown.Text = "DOWN";
             this.btnDown.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.UseVisualStyleBackColor = false;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // btnUp
             // 
+            this.btnUp.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUp.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUp.IconChar = FontAwesome.Sharp.IconChar.CaretSquareUp;
             this.btnUp.IconColor = System.Drawing.Color.Black;
             this.btnUp.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUp.IconSize = 60;
-            this.btnUp.Location = new System.Drawing.Point(50, 412);
+            this.btnUp.Location = new System.Drawing.Point(50, 420);
             this.btnUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(100, 100);
             this.btnUp.TabIndex = 37;
             this.btnUp.Text = "UP";
             this.btnUp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.UseVisualStyleBackColor = false;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // listBoxEvents
@@ -405,7 +411,7 @@
             this.listBoxEvents.Location = new System.Drawing.Point(50, 50);
             this.listBoxEvents.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxEvents.Name = "listBoxEvents";
-            this.listBoxEvents.Size = new System.Drawing.Size(291, 292);
+            this.listBoxEvents.Size = new System.Drawing.Size(300, 292);
             this.listBoxEvents.TabIndex = 36;
             this.listBoxEvents.SelectedIndexChanged += new System.EventHandler(this.listBoxEvents_SelectedIndexChanged);
             // 
@@ -567,10 +573,12 @@
             this.Controls.Add(this.listBoxEvents);
             this.Controls.Add(this.picLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "EventMaintenance";
-            this.Text = "EventMaintenance";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Event Maintenance";
             this.Load += new System.EventHandler(this.EventMaintenance_Load);
             this.panelAdd.ResumeLayout(false);
             this.panelAdd.PerformLayout();

@@ -37,6 +37,7 @@
             // 
             // btnGenerateReport
             // 
+            this.btnGenerateReport.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnGenerateReport.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnGenerateReport.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnGenerateReport.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -44,32 +45,33 @@
             this.btnGenerateReport.IconColor = System.Drawing.Color.Black;
             this.btnGenerateReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGenerateReport.IconSize = 80;
-            this.btnGenerateReport.Location = new System.Drawing.Point(219, 109);
+            this.btnGenerateReport.Location = new System.Drawing.Point(145, 70);
             this.btnGenerateReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnGenerateReport.Name = "btnGenerateReport";
-            this.btnGenerateReport.Size = new System.Drawing.Size(112, 122);
+            this.btnGenerateReport.Size = new System.Drawing.Size(120, 120);
             this.btnGenerateReport.TabIndex = 1;
             this.btnGenerateReport.Text = "GENERATE REPORT";
             this.btnGenerateReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGenerateReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnGenerateReport.UseVisualStyleBackColor = true;
+            this.btnGenerateReport.UseVisualStyleBackColor = false;
             this.btnGenerateReport.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnReturn
             // 
+            this.btnReturn.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnReturn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btnReturn.IconColor = System.Drawing.Color.Black;
             this.btnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReturn.IconSize = 60;
-            this.btnReturn.Location = new System.Drawing.Point(335, 109);
+            this.btnReturn.Location = new System.Drawing.Point(269, 70);
             this.btnReturn.Margin = new System.Windows.Forms.Padding(2);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(112, 122);
+            this.btnReturn.Size = new System.Drawing.Size(120, 120);
             this.btnReturn.TabIndex = 19;
             this.btnReturn.Text = "RETURN";
             this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.UseVisualStyleBackColor = false;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // printEvents
@@ -92,12 +94,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(667, 355);
+            this.ClientSize = new System.Drawing.Size(534, 261);
             this.Controls.Add(this.btnReturn);
             this.Controls.Add(this.btnGenerateReport);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Report";
-            this.Text = "Report";
+            this.Text = "Report Preview";
             this.ResumeLayout(false);
 
         }

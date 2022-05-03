@@ -62,7 +62,7 @@ namespace Kai
             ///ADD ALL THE RESULTS OF THE DATATABLE TO A NEW DATAROW
             filteredEvent = filteredTable.Select();
             ///SET THE PAGES EXPECTED INT TO THE AMOUNT OF ROWS IN THE FILTERED TABLE
-            pagesExpected = tableCount;
+            pagesExpected = tableCount;            
             printPreviewDialog.ShowDialog();
 
         }
@@ -242,11 +242,7 @@ namespace Kai
         ///</Summary>
         private void btnReturn_Click(object sender, EventArgs e)
         {
-            if (frmMenu == null)
-            {
-                frmMenu = new MainMenu();
-            }
-            frmMenu.ShowDialog();
+            Close();
 
         }
 
