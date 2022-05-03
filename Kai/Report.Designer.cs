@@ -53,7 +53,7 @@
             this.btnGenerateReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnGenerateReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGenerateReport.UseVisualStyleBackColor = true;
-            this.btnGenerateReport.Click += new System.EventHandler(this.iconPrint_Click);
+            this.btnGenerateReport.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnReturn
             // 
@@ -70,6 +70,7 @@
             this.btnReturn.Text = "RETURN";
             this.btnReturn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
             // 
             // printEvents
             // 
@@ -85,7 +86,6 @@
             this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
-            this.printPreviewDialog.Load += new System.EventHandler(this.printPreviewDialog_Load);
             // 
             // Report
             // 
@@ -98,7 +98,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Report";
             this.Text = "Report";
-            this.Load += new System.EventHandler(this.Report_Load);
             this.ResumeLayout(false);
 
         }

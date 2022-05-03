@@ -11,7 +11,7 @@ namespace Kai
         private MainMenu frmMenu;
         private DataTable whanauCopy;
         private CurrencyManager cmWhanau;
-  
+
 
 
         public Whanau(DataModule dm, MainMenu mnu)
@@ -26,7 +26,7 @@ namespace Kai
 
         public void BindControls()
         {
-            whanauCopy = DM.dtWhanau.Copy();            
+            whanauCopy = DM.dtWhanau.Copy();
             whanauCopy.Columns.Add(new DataColumn("FullName"));
 
             String fName;
@@ -47,7 +47,7 @@ namespace Kai
             txtPhone.DataBindings.Add("Text", whanauCopy, "Phone");
             txtAddress.DataBindings.Add("Text", whanauCopy, "Address");
 
-            
+
 
         }
 
@@ -60,7 +60,7 @@ namespace Kai
         //1. CLICK THE ADD BUTTON 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            HideButtons();            
+            HideButtons();
             panelAdd.Visible = true;
             panelAdd.Location = new Point(442, 50);
 
@@ -79,7 +79,7 @@ namespace Kai
                 else
                 {
                     //update original datatable
-                    DataRow newWhanauRow = DM.dtWhanau.NewRow();                   
+                    DataRow newWhanauRow = DM.dtWhanau.NewRow();
                     newWhanauRow["FirstName"] = txtAddFirstName.Text;
                     newWhanauRow["LastName"] = txtAddLastName.Text;
                     newWhanauRow["Email"] = txtAddEmail.Text;
@@ -94,7 +94,7 @@ namespace Kai
                     newWhanauCopyRow["Email"] = txtAddEmail.Text;
                     newWhanauCopyRow["Phone"] = txtAddPhone.Text;
                     newWhanauCopyRow["Address"] = txtAddAddress.Text;
-                    newWhanauCopyRow["FullName"] = txtAddFirstName.Text +" "+ txtAddLastName.Text;
+                    newWhanauCopyRow["FullName"] = txtAddFirstName.Text + " " + txtAddLastName.Text;
                     whanauCopy.Rows.Add(newWhanauCopyRow);
 
 
@@ -104,10 +104,10 @@ namespace Kai
                     if (MessageBox.Show("whanau added successfully", "Success",
                                MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        panelAdd.Visible = false;                        
+                        panelAdd.Visible = false;
                         ShowButtons();
-                       
-                    }       
+
+                    }
 
                 }
 
@@ -135,7 +135,7 @@ namespace Kai
         {
             HideButtons();
             panelUpdate.Location = new Point(442, 50);
-            panelUpdate.Visible = true;           
+            panelUpdate.Visible = true;
 
             txtUpdateFirstName.Text = txtFirstName.Text.ToString();
             txtUpdateLastName.Text = txtLastName.Text.ToString();
@@ -148,7 +148,7 @@ namespace Kai
         //2. SAVE THE UPDATED RECORD
         private void btnUpdateSave_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 if ((txtUpdateFirstName.Text == "") || (txtUpdateLastName.Text == "") || (txtUpdateEmail.Text == "") ||
@@ -157,7 +157,7 @@ namespace Kai
                     MessageBox.Show("You must enter a value for each of the Whanau text fields", "Error");
                 }
                 else
-                {                 
+                {
                     DataRow updateWhanauRow = DM.dtWhanau.Rows[cmWhanau.Position];
                     updateWhanauRow["FirstName"] = txtUpdateFirstName.Text;
                     updateWhanauRow["LastName"] = txtUpdateLastName.Text;
@@ -165,7 +165,7 @@ namespace Kai
                     updateWhanauRow["Phone"] = txtUpdatePhone.Text;
                     updateWhanauRow["Address"] = txtUpdateAddress.Text;
 
-                    DataRow updateWhanauCopyRow = whanauCopy.Rows[cmWhanau.Position];                 
+                    DataRow updateWhanauCopyRow = whanauCopy.Rows[cmWhanau.Position];
                     updateWhanauCopyRow["FirstName"] = txtUpdateFirstName.Text;
                     updateWhanauCopyRow["LastName"] = txtUpdateLastName.Text;
                     updateWhanauCopyRow["Email"] = txtUpdateEmail.Text;
@@ -180,7 +180,7 @@ namespace Kai
                     if (MessageBox.Show("whanau added successfully", "Success",
                             MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        panelUpdate.Visible = false;                      
+                        panelUpdate.Visible = false;
                         ShowButtons();
                     }
 
@@ -197,8 +197,8 @@ namespace Kai
         private void btnUpdateCancel_Click(object sender, EventArgs e)
         {
             ShowButtons();
-            panelUpdate.Visible = false;           
-            
+            panelUpdate.Visible = false;
+
         }
 
         //TASK C         
@@ -210,7 +210,7 @@ namespace Kai
             {
                 // SEE IF THE WHANAU IS REGISTERED TO ANY EVENTS
                 DataRow deleteWhanauRow = DM.dtWhanau.Rows[cmWhanau.Position];
-                DataRow deleteWhanauCopyRow = whanauCopy.Rows[cmWhanau.Position];    
+                DataRow deleteWhanauCopyRow = whanauCopy.Rows[cmWhanau.Position];
                 DataRow[] eventRegisterRow = DM.dtEventRegister.Select("WhanauID = " + txtWhanauID.Text);
                 if (eventRegisterRow.Length != 0)
                 {
@@ -222,14 +222,14 @@ namespace Kai
                                         MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         MessageBox.Show("Whanau Record Deleted Successfully?", "Success");
-                        
+
                         deleteWhanauCopyRow.Delete();
                         deleteWhanauRow.Delete();
                         DM.UpdateWhanau();
-                       
+
                     }
 
-                } 
+                }
 
             }
             catch (Exception ex)
@@ -257,13 +257,13 @@ namespace Kai
 
         //DISABLES BUTTONS, PANEL AND LISTBOX     
 
-     
+
         private void HideButtons()
         {
             panelDelete.Visible = false;
             listBoxWhanau.Visible = false;
             btnUp.Visible = false;
-            btnDown.Visible = false; 
+            btnDown.Visible = false;
             btnAdd.Enabled = false;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
@@ -304,7 +304,7 @@ namespace Kai
             Close();
         }
 
-     
+
 
 
         private void Whanau_Load(object sender, EventArgs e)

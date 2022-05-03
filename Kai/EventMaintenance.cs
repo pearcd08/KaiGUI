@@ -30,7 +30,7 @@ namespace Kai
             //load data into textboxes             
             txtEventID.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventID");
             txtEventName.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventName");
-            txtEventDate.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventDate");                                 
+            txtEventDate.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventDate");
 
         }
 
@@ -46,10 +46,10 @@ namespace Kai
         //ADD A NEW EVENT RECORD
         //1. CLICK THE ADD BUTTON
         private void btnAdd_Click(object sender, EventArgs e)
-        {           
+        {
             //enable add panel and change location
             panelAdd.Location = new Point(390, 50);
-            panelAdd.Visible = true;            
+            panelAdd.Visible = true;
             HideButtons();
 
         }
@@ -97,7 +97,7 @@ namespace Kai
         private void btnAddCancel_Click(object sender, EventArgs e)
         {
             //disable add panel
-            panelAdd.Visible = false;          
+            panelAdd.Visible = false;
             //enable buttons
             ShowButtons();
 
@@ -108,7 +108,7 @@ namespace Kai
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-                      
+
             //enable update panel and change location
             panelUpdate.Location = new Point(390, 50);
             panelUpdate.Visible = true;
@@ -116,7 +116,7 @@ namespace Kai
             HideButtons();
             //put text from original text boxes to the update panel textboxes
             txtUpdateEventName.Text = txtEventName.Text;
-            
+
 
         }
 
@@ -162,7 +162,7 @@ namespace Kai
         private void btnUpdateCanel_Click(object sender, EventArgs e)
         {
             //disable update panel
-            panelUpdate.Visible = false;          
+            panelUpdate.Visible = false;
             //enable button
             ShowButtons();
         }
@@ -217,8 +217,8 @@ namespace Kai
             btnReturn.Enabled = true;
 
         }
-         
- 
+
+
 
         private void listBoxEvents_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -229,7 +229,7 @@ namespace Kai
                 DataRow drEvent = DM.dtEvent.Rows[cmEvent.Position];
                 int aLocationID = Convert.ToInt32(drEvent["LocationID"].ToString());
                 cmLocation.Position = DM.locationView.Find(aLocationID);
-                DataRow drLocation = DM.dtLocation.Rows[cmLocation.Position];                
+                DataRow drLocation = DM.dtLocation.Rows[cmLocation.Position];
                 txtLocation.Text = drLocation["LocationName"].ToString();
 
                 //REMOVE TIME FROM THE DATE DATA BY SPLITTING THE STRING AT THE SPACE
@@ -253,10 +253,10 @@ namespace Kai
 
         }
 
-    
-           
 
-       
+
+
+
 
         private void btnReturn_Click(object sender, EventArgs e)
         {

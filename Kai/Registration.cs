@@ -25,7 +25,9 @@ namespace Kai
             BindControls();
 
         }
-
+        ///<Summary> method: BindControls()
+        ///Binds the data grid views to the different tables
+        ///</Summary> 
         private void BindControls()
         {
             dgvEvents.DataSource = DM.dsKaioordinate;
@@ -38,16 +40,13 @@ namespace Kai
             dgvRegister.DataMember = "EventRegister";
         }
 
-        private void Registration_Load(object sender, EventArgs e)
-        {
 
-        }
 
-        private void btnReturn_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        ///<Summary> method: btnAdd_Click()
+        ///Takes the ID from the event and whanau data grid view
+        ///If an registration doesn't exist with both those ids
+        ///Create a new one
+        ///</Summary> 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string aEventID = dgvEvents["EventID", cmEvent.Position].Value.ToString();
@@ -72,6 +71,10 @@ namespace Kai
 
         }
 
+        ///<Summary> method: btnDelete_Click()
+        ///Takes the ID from event register data grid view
+        ///Deletes the row with that id from eventregister table       
+        ///</Summary> 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DataRow deleteEventRegisterRow = DM.dtEventRegister.Rows[cmEventRegister.Position];
@@ -81,10 +84,22 @@ namespace Kai
                 deleteEventRegisterRow.Delete();
                 DM.UpdateEventRegister();
                 MessageBox.Show("Entry removed successfully", "Success");
-
             }
 
         }
+
+        ///<Summary> method: btnReturn_Click()
+        ///Closes the window       
+        ///</Summary> 
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void Registration_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 
 
