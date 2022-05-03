@@ -428,6 +428,7 @@
             // 
             // btnUpdateSave
             // 
+            this.btnUpdateSave.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUpdateSave.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateSave.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnUpdateSave.IconColor = System.Drawing.Color.Black;
@@ -439,7 +440,7 @@
             this.btnUpdateSave.Size = new System.Drawing.Size(148, 39);
             this.btnUpdateSave.TabIndex = 29;
             this.btnUpdateSave.Text = "SAVE";
-            this.btnUpdateSave.UseVisualStyleBackColor = true;
+            this.btnUpdateSave.UseVisualStyleBackColor = false;
             this.btnUpdateSave.Click += new System.EventHandler(this.btnUpdateSave_Click);
             // 
             // label6
@@ -456,6 +457,7 @@
             // 
             // btnUpdateCancel
             // 
+            this.btnUpdateCancel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnUpdateCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnUpdateCancel.IconColor = System.Drawing.Color.Black;
@@ -467,7 +469,7 @@
             this.btnUpdateCancel.Size = new System.Drawing.Size(148, 39);
             this.btnUpdateCancel.TabIndex = 26;
             this.btnUpdateCancel.Text = "CANCEL";
-            this.btnUpdateCancel.UseVisualStyleBackColor = true;
+            this.btnUpdateCancel.UseVisualStyleBackColor = false;
             this.btnUpdateCancel.Click += new System.EventHandler(this.btnUpdateCancel_Click);
             // 
             // txtUpdateKaiName
@@ -605,6 +607,7 @@
             // 
             // btnAddSave
             // 
+            this.btnAddSave.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAddSave.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSave.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnAddSave.IconColor = System.Drawing.Color.Black;
@@ -616,7 +619,7 @@
             this.btnAddSave.Size = new System.Drawing.Size(148, 39);
             this.btnAddSave.TabIndex = 29;
             this.btnAddSave.Text = "SAVE";
-            this.btnAddSave.UseVisualStyleBackColor = true;
+            this.btnAddSave.UseVisualStyleBackColor = false;
             this.btnAddSave.Click += new System.EventHandler(this.btnAddSave_Click);
             // 
             // label8
@@ -633,6 +636,7 @@
             // 
             // btnAddCancel
             // 
+            this.btnAddCancel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnAddCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnAddCancel.IconColor = System.Drawing.Color.Black;
@@ -644,7 +648,7 @@
             this.btnAddCancel.Size = new System.Drawing.Size(148, 39);
             this.btnAddCancel.TabIndex = 26;
             this.btnAddCancel.Text = "CANCEL";
-            this.btnAddCancel.UseVisualStyleBackColor = true;
+            this.btnAddCancel.UseVisualStyleBackColor = false;
             this.btnAddCancel.Click += new System.EventHandler(this.btnAddCancel_Click);
             // 
             // txtAddKaiName
@@ -741,7 +745,7 @@
             this.cboAddEvent.Size = new System.Drawing.Size(300, 32);
             this.cboAddEvent.TabIndex = 22;
             // 
-            // FormKaiMaintenance
+            // KaiMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -762,8 +766,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "FormKaiMaintenance";
-            this.Text = "Kai Management";
+            this.Name = "KaiMaintenance";
+            this.Text = "Kai Maintenance";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.Load += new System.EventHandler(this.KaiMaintenance_Load);
             ((System.ComponentModel.ISupportInitialize)(this.kAIBindingSource)).EndInit();

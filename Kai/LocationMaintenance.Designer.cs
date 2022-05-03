@@ -82,7 +82,7 @@
             // 
             // btnReturn
             // 
-            this.btnReturn.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnReturn.BackColor = System.Drawing.SystemColors.Control;
             this.btnReturn.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btnReturn.IconColor = System.Drawing.Color.Black;
@@ -100,7 +100,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
             this.btnDelete.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnDelete.IconColor = System.Drawing.Color.Black;
@@ -118,7 +118,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnUpdate.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnUpdate.IconColor = System.Drawing.Color.Black;
@@ -136,7 +136,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
             this.btnAdd.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAdd.IconColor = System.Drawing.Color.Black;
@@ -154,7 +154,7 @@
             // 
             // btnDown
             // 
-            this.btnDown.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDown.BackColor = System.Drawing.SystemColors.Control;
             this.btnDown.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDown.IconChar = FontAwesome.Sharp.IconChar.CaretSquareDown;
             this.btnDown.IconColor = System.Drawing.Color.Black;
@@ -172,7 +172,7 @@
             // 
             // btnUp
             // 
-            this.btnUp.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnUp.BackColor = System.Drawing.SystemColors.Control;
             this.btnUp.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUp.IconChar = FontAwesome.Sharp.IconChar.CaretSquareUp;
             this.btnUp.IconColor = System.Drawing.Color.Black;
@@ -369,6 +369,7 @@
             // 
             // btnAddSave
             // 
+            this.btnAddSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddSave.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSave.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnAddSave.IconColor = System.Drawing.Color.Black;
@@ -380,11 +381,12 @@
             this.btnAddSave.Size = new System.Drawing.Size(148, 39);
             this.btnAddSave.TabIndex = 33;
             this.btnAddSave.Text = "SAVE";
-            this.btnAddSave.UseVisualStyleBackColor = true;
+            this.btnAddSave.UseVisualStyleBackColor = false;
             this.btnAddSave.Click += new System.EventHandler(this.btnAddSave_Click);
             // 
             // btnAddCancel
             // 
+            this.btnAddCancel.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnAddCancel.IconColor = System.Drawing.Color.Black;
@@ -396,7 +398,7 @@
             this.btnAddCancel.Size = new System.Drawing.Size(148, 39);
             this.btnAddCancel.TabIndex = 32;
             this.btnAddCancel.Text = "CANCEL";
-            this.btnAddCancel.UseVisualStyleBackColor = true;
+            this.btnAddCancel.UseVisualStyleBackColor = false;
             this.btnAddCancel.Click += new System.EventHandler(this.btnAddCancel_Click);
             // 
             // txtAddAddress3
@@ -537,6 +539,7 @@
             // 
             // btnUpdateSave
             // 
+            this.btnUpdateSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpdateSave.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateSave.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnUpdateSave.IconColor = System.Drawing.Color.Black;
@@ -548,7 +551,7 @@
             this.btnUpdateSave.Size = new System.Drawing.Size(148, 39);
             this.btnUpdateSave.TabIndex = 35;
             this.btnUpdateSave.Text = "SAVE";
-            this.btnUpdateSave.UseVisualStyleBackColor = true;
+            this.btnUpdateSave.UseVisualStyleBackColor = false;
             this.btnUpdateSave.Click += new System.EventHandler(this.btnUpdateSave_Click);
             // 
             // label5
@@ -586,6 +589,7 @@
             // 
             // btnUpdateCancel
             // 
+            this.btnUpdateCancel.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpdateCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnUpdateCancel.IconColor = System.Drawing.Color.Black;
@@ -597,7 +601,7 @@
             this.btnUpdateCancel.Size = new System.Drawing.Size(148, 39);
             this.btnUpdateCancel.TabIndex = 34;
             this.btnUpdateCancel.Text = "CANCEL";
-            this.btnUpdateCancel.UseVisualStyleBackColor = true;
+            this.btnUpdateCancel.UseVisualStyleBackColor = false;
             this.btnUpdateCancel.Click += new System.EventHandler(this.btnUpdateCancel_Click);
             // 
             // txtUpdateAddress2
@@ -650,7 +654,7 @@
             this.picLogo.TabIndex = 35;
             this.picLogo.TabStop = false;
             // 
-            // FormLocationMaintenance
+            // LocationMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -671,8 +675,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "FormLocationMaintenance";
-            this.Text = "Location Management";
+            this.Name = "LocationMaintenance";
+            this.Text = "Location Maintenence";
             this.Load += new System.EventHandler(this.Locations_Load);
             this.panelDelete.ResumeLayout(false);
             this.panelDelete.PerformLayout();

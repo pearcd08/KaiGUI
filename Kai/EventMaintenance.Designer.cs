@@ -79,6 +79,7 @@
             // 
             // btnAddSave
             // 
+            this.btnAddSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddSave.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddSave.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnAddSave.IconColor = System.Drawing.Color.Black;
@@ -91,11 +92,12 @@
             this.btnAddSave.TabIndex = 33;
             this.btnAddSave.Text = "SAVE   ";
             this.btnAddSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddSave.UseVisualStyleBackColor = true;
+            this.btnAddSave.UseVisualStyleBackColor = false;
             this.btnAddSave.Click += new System.EventHandler(this.btnAddSave_Click);
             // 
             // btnAddCancel
             // 
+            this.btnAddCancel.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnAddCancel.IconColor = System.Drawing.Color.Black;
@@ -108,7 +110,7 @@
             this.btnAddCancel.TabIndex = 32;
             this.btnAddCancel.Text = "CANCEL ";
             this.btnAddCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddCancel.UseVisualStyleBackColor = true;
+            this.btnAddCancel.UseVisualStyleBackColor = false;
             this.btnAddCancel.Click += new System.EventHandler(this.btnAddCancel_Click);
             // 
             // lblLocationAdd
@@ -475,6 +477,7 @@
             // 
             // btnUpdateSave
             // 
+            this.btnUpdateSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpdateSave.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateSave.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnUpdateSave.IconColor = System.Drawing.Color.Black;
@@ -487,11 +490,12 @@
             this.btnUpdateSave.TabIndex = 33;
             this.btnUpdateSave.Text = "SAVE   ";
             this.btnUpdateSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateSave.UseVisualStyleBackColor = true;
+            this.btnUpdateSave.UseVisualStyleBackColor = false;
             this.btnUpdateSave.Click += new System.EventHandler(this.btnUpdateSave_Click);
             // 
             // btnUpdateCanel
             // 
+            this.btnUpdateCanel.BackColor = System.Drawing.SystemColors.Control;
             this.btnUpdateCanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateCanel.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnUpdateCanel.IconColor = System.Drawing.Color.Black;
@@ -504,7 +508,7 @@
             this.btnUpdateCanel.TabIndex = 32;
             this.btnUpdateCanel.Text = "CANCEL ";
             this.btnUpdateCanel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateCanel.UseVisualStyleBackColor = true;
+            this.btnUpdateCanel.UseVisualStyleBackColor = false;
             this.btnUpdateCanel.Click += new System.EventHandler(this.btnUpdateCanel_Click);
             // 
             // label2
@@ -560,7 +564,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(73)))), ((int)(((byte)(41)))));
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(2003, 561);
             this.Controls.Add(this.panelUpdate);
             this.Controls.Add(this.panelAdd);
             this.Controls.Add(this.panelDelete);

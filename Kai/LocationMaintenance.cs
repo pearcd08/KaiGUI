@@ -360,36 +360,46 @@ namespace Kai
             Close();
         }
 
-        /// <summary> method: HideButtons()
-        /// Hides original panel, up and down buttons and listbox
-        /// Disables other buttons
-        /// </summary> 
+        ///<Summary> method: HideButtons()
+        ///Disables panel, buttons and changes backcolor to Control Dark
+        ///</Summary>  
         private void HideButtons()
         {
             panelDelete.Visible = false;
             listBoxLocations.Visible = false;
-            btnUp.Visible = false;
-            btnDown.Visible = false; ;
+            btnUp.Enabled = false;
+            btnUp.BackColor = SystemColors.ControlDark;
+            btnDown.Enabled = false; 
+            btnDown.BackColor = SystemColors.ControlDark;
             btnAdd.Enabled = false;
+            btnAdd.BackColor = SystemColors.ControlDark;
             btnUpdate.Enabled = false;
+            btnUpdate.BackColor = SystemColors.ControlDark;
             btnDelete.Enabled = false;
+            btnDelete.BackColor = SystemColors.ControlDark;
             btnReturn.Enabled = false;
+            btnReturn.BackColor = SystemColors.ControlDark;
         }
 
-        /// <summary> method: ShowButtons()
-        /// Shows original panel, up and down buttons and listbox
-        /// Emables other buttons
-        /// </summary> 
+        ///<Summary> method: HideButtons()
+        ///Enables original panel, buttons and changes backcolor to Control
+        ///</Summary> 
         private void ShowButtons()
         {
             panelDelete.Visible = true;
             listBoxLocations.Visible = true;
-            btnUp.Visible = true;
-            btnDown.Visible = true;
+            btnUp.Enabled = true;
+            btnUp.BackColor = SystemColors.Control;
+            btnDown.Enabled = true;
+            btnDown.BackColor = SystemColors.Control;
             btnAdd.Enabled = true;
+            btnAdd.BackColor = SystemColors.Control;
             btnUpdate.Enabled = true;
+            btnUpdate.BackColor = SystemColors.Control;
             btnDelete.Enabled = true;
+            btnDelete.BackColor = SystemColors.Control;
             btnReturn.Enabled = true;
+            btnReturn.BackColor = SystemColors.Control;
 
         }
 

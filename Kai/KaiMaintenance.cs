@@ -107,6 +107,11 @@ namespace Kai
                     MessageBox.Show("Quantity cannot be zero", "Error");
                     numAddServingQuantity.Focus();
                 }
+                if ((cboxAddPreparation.Checked) && (numAddPreparationTime.Value == 0)) 
+                {
+                    MessageBox.Show("Preparation Time cannot be 0 if Preperation is required", "Error");
+                    numAddPreparationTime.Focus();
+                }
                 else if (txtAddKaiName.Text != "" || numAddServingQuantity.Value != 0)
                 {
                     DataRow newKaiRow = DM.dtKai.NewRow();
@@ -215,7 +220,11 @@ namespace Kai
                     MessageBox.Show("Quantity cannot be zero", "Error");
                     numUpdateServingQuantity.Focus();
                 }
-
+                if ((cboxUpdatePreparation.Checked) && (numUpdatePreparationTime.Value == 0))
+                {
+                    MessageBox.Show("Preparation Time cannot be 0 if Preperation is required", "Error");
+                    numUpdatePreparationTime.Focus();
+                }
                 else if ((txtUpdateKaiName.Text != "") && (numUpdateServingQuantity.Text != "0"))
                 {
                     DataRow updateKaiRow = DM.dtKai.Rows[cmKai.Position];
@@ -349,36 +358,46 @@ namespace Kai
 
         }
 
-
         ///<Summary> method: HideButtons()
-        ///Hides the buttons, the orignal panel and the listbox
+        ///Disables panel, buttons and changes backcolor to Control Dark
         ///</Summary>  
         private void HideButtons()
         {
             panelDelete.Visible = false;
             listBoxKai.Visible = false;
-            btnUp.Visible = false;
-            btnDown.Visible = false;
+            btnUp.Enabled = false;
+            btnUp.BackColor = SystemColors.ControlDark;
+            btnDown.Enabled = false; ;
+            btnDown.BackColor = SystemColors.ControlDark;
             btnAdd.Enabled = false;
+            btnAdd.BackColor = SystemColors.ControlDark;
             btnUpdate.Enabled = false;
+            btnUpdate.BackColor = SystemColors.ControlDark;
             btnDelete.Enabled = false;
+            btnDelete.BackColor = SystemColors.ControlDark;
             btnReturn.Enabled = false;
-
+            btnReturn.BackColor = SystemColors.ControlDark;
         }
 
-        ///<Summary> method: ShowButtons()
-        ///Shows the buttons, the orignal panel and the listbox
-        ///</Summary>
+        ///<Summary> method: HideButtons()
+        ///Enables original panel, buttons and changes backcolor to Control
+        ///</Summary> 
         private void ShowButtons()
         {
             panelDelete.Visible = true;
             listBoxKai.Visible = true;
-            btnUp.Visible = true;
-            btnDown.Visible = true;
+            btnUp.Enabled = true;
+            btnUp.BackColor = SystemColors.Control;
+            btnDown.Enabled = true;
+            btnDown.BackColor = SystemColors.Control;
             btnAdd.Enabled = true;
+            btnAdd.BackColor = SystemColors.Control;
             btnUpdate.Enabled = true;
+            btnUpdate.BackColor = SystemColors.Control;
             btnDelete.Enabled = true;
+            btnDelete.BackColor = SystemColors.Control;
             btnReturn.Enabled = true;
+            btnReturn.BackColor = SystemColors.Control;
 
         }
 

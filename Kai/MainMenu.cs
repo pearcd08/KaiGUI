@@ -11,7 +11,7 @@ namespace Kai
         private EventMaintenance eventsForm;
         private WhanauMaintenance whanauForm;
         private LocationMaintenance locationForm;
-        private FormRegistration registrationForm;
+        private Registration registrationForm;
         private Report reportForm;
         public Size formSize;
 
@@ -90,7 +90,7 @@ namespace Kai
         {
             if (registrationForm == null)
             {
-                registrationForm = new FormRegistration(DM, this);
+                registrationForm = new Registration(DM, this);
             }
             registrationForm.Size = formSize;
             registrationForm.StartPosition = FormStartPosition.CenterScreen;

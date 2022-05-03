@@ -666,7 +666,7 @@
             this.panelDelete.Size = new System.Drawing.Size(467, 355);
             this.panelDelete.TabIndex = 54;
             // 
-            // FormWhanauMaintenance
+            // WhanauMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -687,8 +687,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.Name = "FormWhanauMaintenance";
-            this.Text = "Whanau Management";
+            this.Name = "WhanauMaintenance";
+            this.Text = "Whanau Maintenance";
             this.Load += new System.EventHandler(this.Whanau_Load);
             this.panelAdd.ResumeLayout(false);
             this.panelAdd.PerformLayout();

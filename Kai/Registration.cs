@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Kai
 {
-    public partial class FormRegistration : Form
+    public partial class Registration : Form
     {
         private DataModule DM;
         private MainMenu frmMenu;
@@ -14,7 +14,7 @@ namespace Kai
         private CurrencyManager cmDT;
 
 
-        public FormRegistration(DataModule dm, MainMenu mnu)
+        public Registration(DataModule dm, MainMenu mnu)
         {
             InitializeComponent();
             DM = dm;
