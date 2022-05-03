@@ -114,8 +114,9 @@ namespace Kai
                 }
                 else if (txtAddKaiName.Text != "" || numAddServingQuantity.Value != 0)
                 {
+                    int aEventID = Convert.ToInt32(cboAddEvent.SelectedValue);
                     DataRow newKaiRow = DM.dtKai.NewRow();
-                    newKaiRow["EventID"] = cboAddEvent.SelectedValue;
+                    newKaiRow["EventID"] = aEventID;
                     newKaiRow["KaiName"] = txtAddKaiName.Text;
                     newKaiRow["PreparationRequired"] = cboxAddPreparation.Checked;
                     newKaiRow["PreparationMinutes"] = numAddPreparationTime.Value;
@@ -227,8 +228,9 @@ namespace Kai
                 }
                 else if ((txtUpdateKaiName.Text != "") && (numUpdateServingQuantity.Text != "0"))
                 {
+                    int aEventID = Convert.ToInt32(cboUpdateEvent.SelectedValue);
                     DataRow updateKaiRow = DM.dtKai.Rows[cmKai.Position];
-                    updateKaiRow["EventID"] = cboUpdateEvent.SelectedValue;
+                    updateKaiRow["EventID"] = aEventID;
                     updateKaiRow["KaiName"] = txtUpdateKaiName.Text;
                     updateKaiRow["PreparationRequired"] = cboxUpdatePreparation.Checked;
                     updateKaiRow["PreparationMinutes"] = numUpdatePreparationTime.Text;
@@ -239,9 +241,7 @@ namespace Kai
                     if (MessageBox.Show("Kai updated successfully", "Success",
                                MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        panelUpdate.Visible = false;
-                        listBoxKai.Visible = true;
-                        panelDelete.Visible = true;
+                        panelUpdate.Visible = false;                        
                         ShowButtons();
                     }
 

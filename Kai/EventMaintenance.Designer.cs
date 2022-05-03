@@ -61,7 +61,7 @@
             this.dateUpdateEventDate = new System.Windows.Forms.DateTimePicker();
             this.cboUpdateLocation = new System.Windows.Forms.ComboBox();
             this.btnUpdateSave = new FontAwesome.Sharp.IconButton();
-            this.btnUpdateCanel = new FontAwesome.Sharp.IconButton();
+            this.btnUpdateCancel = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUpdateEventName = new System.Windows.Forms.TextBox();
@@ -434,7 +434,7 @@
             this.panelUpdate.Controls.Add(this.dateUpdateEventDate);
             this.panelUpdate.Controls.Add(this.cboUpdateLocation);
             this.panelUpdate.Controls.Add(this.btnUpdateSave);
-            this.panelUpdate.Controls.Add(this.btnUpdateCanel);
+            this.panelUpdate.Controls.Add(this.btnUpdateCancel);
             this.panelUpdate.Controls.Add(this.label2);
             this.panelUpdate.Controls.Add(this.label3);
             this.panelUpdate.Controls.Add(this.txtUpdateEventName);
@@ -493,23 +493,23 @@
             this.btnUpdateSave.UseVisualStyleBackColor = false;
             this.btnUpdateSave.Click += new System.EventHandler(this.btnUpdateSave_Click);
             // 
-            // btnUpdateCanel
+            // btnUpdateCancel
             // 
-            this.btnUpdateCanel.BackColor = System.Drawing.SystemColors.Control;
-            this.btnUpdateCanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateCanel.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnUpdateCanel.IconColor = System.Drawing.Color.Black;
-            this.btnUpdateCanel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUpdateCanel.IconSize = 36;
-            this.btnUpdateCanel.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnUpdateCanel.Location = new System.Drawing.Point(328, 252);
-            this.btnUpdateCanel.Name = "btnUpdateCanel";
-            this.btnUpdateCanel.Size = new System.Drawing.Size(120, 39);
-            this.btnUpdateCanel.TabIndex = 32;
-            this.btnUpdateCanel.Text = "CANCEL ";
-            this.btnUpdateCanel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUpdateCanel.UseVisualStyleBackColor = false;
-            this.btnUpdateCanel.Click += new System.EventHandler(this.btnUpdateCanel_Click);
+            this.btnUpdateCancel.BackColor = System.Drawing.SystemColors.Control;
+            this.btnUpdateCancel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateCancel.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btnUpdateCancel.IconColor = System.Drawing.Color.Black;
+            this.btnUpdateCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnUpdateCancel.IconSize = 36;
+            this.btnUpdateCancel.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btnUpdateCancel.Location = new System.Drawing.Point(328, 252);
+            this.btnUpdateCancel.Name = "btnUpdateCancel";
+            this.btnUpdateCancel.Size = new System.Drawing.Size(120, 39);
+            this.btnUpdateCancel.TabIndex = 32;
+            this.btnUpdateCancel.Text = "CANCEL ";
+            this.btnUpdateCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUpdateCancel.UseVisualStyleBackColor = false;
+            this.btnUpdateCancel.Click += new System.EventHandler(this.btnUpdateCancel_Click);
             // 
             // label2
             // 
@@ -630,7 +630,7 @@
         private System.Windows.Forms.DateTimePicker dateUpdateEventDate;
         private System.Windows.Forms.ComboBox cboUpdateLocation;
         private FontAwesome.Sharp.IconButton btnUpdateSave;
-        private FontAwesome.Sharp.IconButton btnUpdateCanel;
+        private FontAwesome.Sharp.IconButton btnUpdateCancel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUpdateEventName;
