@@ -83,7 +83,7 @@
             // btnReturn
             // 
             this.btnReturn.BackColor = System.Drawing.SystemColors.Control;
-            this.btnReturn.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturn.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReturn.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.btnReturn.IconColor = System.Drawing.Color.Black;
             this.btnReturn.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -101,7 +101,7 @@
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
             this.btnDelete.IconColor = System.Drawing.Color.Black;
             this.btnDelete.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -119,7 +119,7 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.SystemColors.Control;
-            this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.IconChar = FontAwesome.Sharp.IconChar.Edit;
             this.btnUpdate.IconColor = System.Drawing.Color.Black;
             this.btnUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -137,7 +137,7 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
-            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnAdd.IconColor = System.Drawing.Color.Black;
             this.btnAdd.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -155,7 +155,7 @@
             // btnDown
             // 
             this.btnDown.BackColor = System.Drawing.SystemColors.Control;
-            this.btnDown.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDown.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDown.IconChar = FontAwesome.Sharp.IconChar.CaretSquareDown;
             this.btnDown.IconColor = System.Drawing.Color.Black;
             this.btnDown.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -173,7 +173,7 @@
             // btnUp
             // 
             this.btnUp.BackColor = System.Drawing.SystemColors.Control;
-            this.btnUp.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUp.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUp.IconChar = FontAwesome.Sharp.IconChar.CaretSquareUp;
             this.btnUp.IconColor = System.Drawing.Color.Black;
             this.btnUp.IconFont = FontAwesome.Sharp.IconFont.Auto;

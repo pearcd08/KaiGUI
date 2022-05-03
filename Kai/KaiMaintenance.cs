@@ -107,7 +107,7 @@ namespace Kai
                     MessageBox.Show("Quantity cannot be zero", "Error");
                     numAddServingQuantity.Focus();
                 }
-                if ((cboxAddPreparation.Checked) && (numAddPreparationTime.Value == 0)) 
+                if ((cboxAddPreparation.Checked) && (numAddPreparationTime.Value == 0))
                 {
                     MessageBox.Show("Preparation Time cannot be 0 if Preperation is required", "Error");
                     numAddPreparationTime.Focus();
@@ -272,29 +272,37 @@ namespace Kai
         ///</Summary> 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
             try
             {
-                DataRow deleteKaiRow = DM.dtKai.Rows[cmKai.Position];
-                int aEventID = Convert.ToInt32(deleteKaiRow["EventID"].ToString());
+                DataRow kaiRow = DM.dtKai.Rows[cmKai.Position];
+                int aEventID = Convert.ToInt32(kaiRow["EventID"].ToString());
                 DataRow[] eventRegisterRow = DM.dtEventRegister.Select("EventID = " + aEventID);
 
-                if (eventRegisterRow.Length != 0)
+                if (eventRegisterRow.Length == 0)
                 {
-                    MessageBox.Show("Cannot delete a Kai that is in a Registered Event", "Error");
-                }
-                else
-                {
+                    int kaiID = Convert.ToInt32(DM.dtKai.Rows[cmKai.Position]["KaiID"].ToString());
+                    int row = 0;
+                    for (int i = 0; i < DM.dtKai.Rows.Count; i++)
+                    {
+                        int kID = Convert.ToInt32(DM.dtKai.Rows[i]["KaiID"].ToString());
+                        if (kaiID == kID)
+                        {
+                            row = i;
+                        }
+
+                    }
                     if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
                                         MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-
+                        DataRow deleteKaiRow = DM.dsKaioordinate.Tables["Kai"].Rows[row];
                         deleteKaiRow.Delete();
                         DM.UpdateKai();
-                        MessageBox.Show("Kai Deleted Successfully", "Success");
-
+                        MessageBox.Show("Kai successfully deleted", "Error");
                     }
-
+                }
+                else
+                {
+                    MessageBox.Show("Cannot delete a Kai registered to an Event", "Error");
                 }
 
             }

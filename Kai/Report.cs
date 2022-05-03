@@ -158,7 +158,7 @@ namespace Kai
                 ///loop through the whanau attending the event                       
                 foreach (DataRow drEventRegister in drRegistrations)
                 {
-                    string whanauText = "";
+                    
                     ///use whanau id from eventregister to find the parent record in whanau
                     int aWhanauID = Convert.ToInt32(drEventRegister["WhanauID"].ToString());
                     cmWhanau.Position = DM.whanauView.Find(aWhanauID);
@@ -206,12 +206,10 @@ namespace Kai
                 {
                     foreach (DataRow drEventKai in drKaiRegistrations)
                     {
-                        string kaiText = "";
                         ///use whanau id from eventregister to find the parent record in whanau
                         int aKaiID = Convert.ToInt32(drEventKai["KaiID"].ToString());
                         cmKai.Position = DM.kaiView.Find(aKaiID);
                         DataRow drKai = DM.dtKai.Rows[cmKai.Position];
-
 
                         g.DrawString(drKai["KaiName"].ToString(), textFont, brush, (leftMargin + headingLeftMargin), (topMargin + (linesSoFar * textHeight)));
                         g.DrawString(drKai["PreparationRequired"].ToString(), textFont, brush, (leftMargin + midMargin), (topMargin + (linesSoFar * textHeight)));

@@ -21,17 +21,17 @@ namespace Kai
             BindControls();
             LoadLocations();
         }
-
+        ///<Summary> method: BindControls()
+        ///Binds data to listbox and textboxes
+        ///</Summary>  
         private void BindControls()
-        {   //load data into listbox
+        {  
             listBoxEvents.DataSource = DM.dsKaioordinate;
             listBoxEvents.DisplayMember = "Event.EventName";
-            listBoxEvents.ValueMember = "Event.EventID";
-            //load data into textboxes             
+            listBoxEvents.ValueMember = "Event.EventID";                       
             txtEventID.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventID");
             txtEventName.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventName");
-            txtEventDate.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventDate");
-
+            txtEventDate.DataBindings.Add("Text", DM.dsKaioordinate, "Event.EventDate");            
         }
 
 
@@ -136,15 +136,14 @@ namespace Kai
                     updateEventRow["EventName"] = txtUpdateEventName.Text;
                     updateEventRow["LocationID"] = cboUpdateLocation.SelectedValue;
                     updateEventRow["EventDate"] = dateUpdateEventDate.Text;
-                    cmEvent.EndCurrentEdit();
+                    //cmEvent.EndCurrentEdit();
                     DM.UpdateEvent();
 
                     if (MessageBox.Show("Event updated successfully", "Success",
                                MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         panelUpdate.Visible = false;
-                        listBoxEvents.Visible = true;
-                        panelDelete.Visible = true;
+                       
                         ShowButtons();
                     }
 
@@ -172,22 +171,43 @@ namespace Kai
         //DELETE AN EXISTING RECORD
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataRow deleteEventRow = DM.dtEvent.Rows[cmEvent.Position];
 
             try
             {
-                if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
-                                    MessageBoxButtons.OKCancel) == DialogResult.OK)
+                int aEventID = Convert.ToInt32(txtEventID.Text);
+                DataRow[] kaiRow = DM.dtKai.Select("EventID = " + aEventID);
+
+                if (kaiRow.Length == 0)
                 {
-                    deleteEventRow.Delete();
-                    DM.UpdateEvent();
-                    MessageBox.Show("Event deleted successfully", "Success"); ;
+                    int row = 0;
+                    for (int i = 0; i < DM.dtEvent.Rows.Count; i++)
+                    {
+                        int eID = Convert.ToInt32(DM.dtEvent.Rows[i]["EventID"].ToString());
+                        if (aEventID == eID)
+                        {
+                            row = i;
+                        }
+
+                    }
+                    if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
+                                        MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        DataRow deleteEventRow = DM.dsKaioordinate.Tables["Event"].Rows[row];
+                        deleteEventRow.Delete();
+                        DM.UpdateEvent();
+                        MessageBox.Show("Event deleted successfully", "Success"); ;
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("You may only delete an event that has no kai", "Error");
                 }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("You may only delete an event that has no kai", "Error");
+                MessageBox.Show(ex.Message, "Error");
             }
         }
 
@@ -251,8 +271,7 @@ namespace Kai
                 //REMOVE TIME FROM THE DATE DATA BY SPLITTING THE STRING AT THE SPACE
                 string newDate = txtEventDate.Text.Split(' ')[0];
                 txtEventDate.Text = newDate;
-                dateUpdateEventDate.Text = newDate;
-
+               
 
             }
         }
@@ -268,11 +287,6 @@ namespace Kai
             cboUpdateLocation.ValueMember = "Location.LocationID";
 
         }
-
-
-
-
-
 
         private void btnReturn_Click(object sender, EventArgs e)
         {

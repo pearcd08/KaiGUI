@@ -24,6 +24,12 @@ namespace Kai
 
         }
 
+        ///<Summary> method: BindControls()
+        ///Creates a copy of the Whanau DataTable
+        ///Adds a new column for full name
+        ///Concetates first name and last name 
+        ///binds text boxes to the new Datatable
+        ///</Summary> 
         public void BindControls()
         {
             whanauCopy = DM.dtWhanau.Copy();
@@ -51,13 +57,13 @@ namespace Kai
 
         }
 
-
-
-
-
         ///TASK A
         ///ADD A NEW WHANAU RECORD
-        ///1. CLICK THE ADD BUTTON 
+
+        ///<Summary> method: btnAdd_Click()
+        ///Initiates the HideButtons() method
+        ///Makes the add panel visible and sets its location
+        ///</Summary> 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             HideButtons();
@@ -66,7 +72,9 @@ namespace Kai
 
         }
 
-        //2. SAVE THE NEW WHANAU RECORD
+        ///<Summary> method: btnAddSave_Click()
+        ///Saves a new Whanau to the database if all fields are correct
+        ///</Summary> 
         private void btnAddSave_Click(object sender, EventArgs e)
         {
             try
@@ -120,7 +128,9 @@ namespace Kai
 
         }
 
-        //3. CANCEL THE ADD OPERATION
+        ///<Summary> method: btnAddCancel_Click()
+        ///Makes add panel invisible and initiates ShowButtons()     
+        ///</Summary> 
         private void btnAddCancel_Click(object sender, EventArgs e)
         {
             panelAdd.Visible = false;
@@ -128,9 +138,14 @@ namespace Kai
 
         }
 
-        //TASK B
-        //UPDATE A WHANAU RECORD
-        //1. CLICK THE UPDATE BUTTON
+        ///TASK B
+        ///UPDATE A WHANAU RECORD
+
+        ///<Summary> method: btnReturn_Click()
+        ///Initiates the HideButtons() method
+        ///Makes the Update panel visible and sets its location
+        ///Transfers the text from the original text boxes to the update text boxes
+        ///</Summary> 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             HideButtons();
@@ -145,7 +160,9 @@ namespace Kai
 
         }
 
-        //2. SAVE THE UPDATED RECORD
+        ///<Summary> method: btnUpdateSave_Click()
+        ///Updates an existing record in the database if all fields are correct
+        ///</Summary> 
         private void btnUpdateSave_Click(object sender, EventArgs e)
         {
 
@@ -193,7 +210,9 @@ namespace Kai
             }
         }
 
-        //3. CANCEL THE UPDATE OPERATION
+        ///<Summary> method: btnUpdateCancel_Click()
+        ///Makes update panel invisible and initiates ShowButtons()     
+        ///</Summary> 
         private void btnUpdateCancel_Click(object sender, EventArgs e)
         {
             ShowButtons();
@@ -201,35 +220,46 @@ namespace Kai
 
         }
 
-        //TASK C         
-        //DELETE A WHANAU RECORD
+        ///TASK C         
+        ///DELETE A WHANAU RECORD
 
+        ///<Summary> method: btnDelete_Click()
+        ///Deletes the selected whanau from the database and the copied datatable 
+        ///if they are not registered to any events  
+        ///</Summary> 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                // SEE IF THE WHANAU IS REGISTERED TO ANY EVENTS
-                DataRow deleteWhanauRow = DM.dtWhanau.Rows[cmWhanau.Position];
-                DataRow deleteWhanauCopyRow = whanauCopy.Rows[cmWhanau.Position];
-                DataRow[] eventRegisterRow = DM.dtEventRegister.Select("WhanauID = " + txtWhanauID.Text);
-                if (eventRegisterRow.Length != 0)
+                int aWhanauID = Convert.ToInt32(txtWhanauID.Text);
+                DataRow[] eventRegisterRow = DM.dtEventRegister.Select("WhanauID = " + aWhanauID);
+                if (eventRegisterRow.Length == 0)
                 {
-                    MessageBox.Show("You may only delete kai that have no event relation", "Error");
-                }
-                else
-                {
+                    int row = 0;
+                    for (int i = 0; i < DM.dtWhanau.Rows.Count; i++)
+                    {
+                        int wID = Convert.ToInt32(DM.dtWhanau.Rows[i]["WhanauID"].ToString());
+                        if (aWhanauID == wID)
+                        {
+                            row = i;
+                        }
+                    }
                     if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
                                         MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         MessageBox.Show("Whanau Record Deleted Successfully?", "Success");
 
-                        
+                        DataRow deleteWhanauRow = DM.dsKaioordinate.Tables["Whanau"].Rows[row];
                         deleteWhanauRow.Delete();
-                        deleteWhanauCopyRow.Delete();
                         DM.UpdateWhanau();
+                        DataRow deleteWhanauCopy = whanauCopy.Rows[row];
+                        deleteWhanauCopy.Delete();
 
                     }
-
+                }
+                else
+                {
+                    MessageBox.Show("You may only delete kai that have no event relation", "Error");
                 }
 
             }
@@ -241,22 +271,25 @@ namespace Kai
         }
 
 
-        //OTHER FUNCTIONS
+        ///OTHER FUNCTIONS
 
-        //ALLOWS USER TO ONLY INPUT NUMBERS INTO PHONE FIELDS
+        ///<Summary> method: txtAddPhone_Keypress()
+        ///User can only input numbers into text field and use backspace   
+        ///</Summary> 
         private void txtAddPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
 
         }
 
+        ///<Summary> method: txtUpdatePhone_Keypress()
+        ///User can only input numbers into text field and use backspace   
+        ///</Summary> 
         private void txtUpdatePhone_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
 
         }
-
-          
 
 
         ///<Summary> method: HideButtons()
@@ -268,7 +301,7 @@ namespace Kai
             listBoxWhanau.Visible = false;
             btnUp.Enabled = false;
             btnUp.BackColor = SystemColors.ControlDark;
-            btnDown.Enabled = false; 
+            btnDown.Enabled = false;
             btnDown.BackColor = SystemColors.ControlDark;
             btnAdd.Enabled = false;
             btnAdd.BackColor = SystemColors.ControlDark;
@@ -301,7 +334,9 @@ namespace Kai
             btnReturn.BackColor = SystemColors.Control;
 
         }
-
+        ///<Summary> method: btnUp_Click()
+        ///Clicking button will navigate up the listbox
+        ///</Summary> 
         private void btnUp_Click(object sender, EventArgs e)
         {
             if (cmWhanau.Position > 0)
@@ -309,7 +344,9 @@ namespace Kai
                 --cmWhanau.Position;
             }
         }
-
+        ///<Summary> method: btnDown_Click()
+        ///Clicking button will navigate down the listbox
+        ///</Summary> 
         private void btnDown_Click(object sender, EventArgs e)
         {
             if (cmWhanau.Position < cmWhanau.Count - 1)
@@ -317,23 +354,18 @@ namespace Kai
                 ++cmWhanau.Position;
             }
         }
-
+        ///<Summary> method: btnReturn_Click()
+        ///Clicking button will close the form
+        ///</Summary> 
         private void btnReturn_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-
-
-
-        private void Whanau_Load(object sender, EventArgs e)
+        private void WhanauMaintenance_Load(object sender, EventArgs e)
         {
 
-
         }
-
-
-
     }
 
 }

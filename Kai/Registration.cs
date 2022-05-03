@@ -11,7 +11,7 @@ namespace Kai
         private CurrencyManager cmEvent;
         private CurrencyManager cmWhanau;
         private CurrencyManager cmEventRegister;
-        private CurrencyManager cmDT;
+       
 
 
         public Registration(DataModule dm, MainMenu mnu)

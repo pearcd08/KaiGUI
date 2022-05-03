@@ -104,14 +104,14 @@ namespace Kai
                                                     txtAddAddress4.Text.Trim() + ", " + txtAddAddress5.Text.Trim();
                         DM.dtLocation.Rows.Add(newLocationRow);
                         DM.UpdateLocation();
-                        if (MessageBox.Show("“Location added successfully”", "Success",
+                        if (MessageBox.Show("Location added successfully", "Success",
                                          MessageBoxButtons.OK) == DialogResult.OK)
                         {
                             panelAdd.Visible = false;
                             ShowButtons();
                         }
                     }
-                    if((txtAddAddress1.Text.Trim() == "") && (txtAddAddress2.Text.Trim() == ""))
+                    if ((txtAddAddress1.Text.Trim() == "") && (txtAddAddress2.Text.Trim() == ""))
                     {
                         MessageBox.Show("Atleast one Street Address line is required", "Error");
                     }
@@ -123,11 +123,11 @@ namespace Kai
                 }
 
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
             }
-           
+
 
         }
 
@@ -210,7 +210,7 @@ namespace Kai
                 else
                 {
                     DataRow updateLocationRow = DM.dtLocation.Rows[cmLocation.Position];
-                    if ((txtUpdateAddress1.Text.Trim() == "") && (txtUpdateAddress2.Text.Trim() != "") && (txtUpdateAddress3.Text.Trim() != "") && 
+                    if ((txtUpdateAddress1.Text.Trim() == "") && (txtUpdateAddress2.Text.Trim() != "") && (txtUpdateAddress3.Text.Trim() != "") &&
                         (txtUpdateAddress4.Text.Trim() != "") && (txtUpdateAddress5.Text.Trim() != ""))
                     {
                         updateLocationRow["LocationName"] = txtUpdateLocationName.Text.Trim();
@@ -262,7 +262,7 @@ namespace Kai
 
                     if ((txtUpdateAddress1.Text.Trim() == "") && (txtUpdateAddress2.Text.Trim() == ""))
                     {
-                        MessageBox.Show("Atleast one Street Address line is required", "Error");
+                        MessageBox.Show("At least one Street Address line is required", "Error");
                     }
 
                     if ((txtUpdateAddress3.Text.Trim() == "") || (txtUpdateAddress4.Text.Trim() == "") || (txtUpdateAddress5.Text.Trim() == ""))
@@ -300,23 +300,36 @@ namespace Kai
         {
             try
             {
-                DataRow deleteLocationRow = DM.dtLocation.Rows[cmLocation.Position];
-                DataRow[] locationEventRow = DM.dtEvent.Select("LocationID = " + txtLocationID.Text);
+                int aLocationID = Convert.ToInt32(txtLocationID.Text);
+                DataRow[] locationEventRow = DM.dtEvent.Select("LocationID = " + aLocationID);
 
-                if (locationEventRow.Length > 0)
+                if (locationEventRow.Length == 0)
                 {
-                    MessageBox.Show("You may only delete locations that have no events", "Error");
+                    int row = 0;
+                    for (int i = 0; i < DM.dtLocation.Rows.Count; i++)
+                    {
+                        int locID = Convert.ToInt32(DM.dtLocation.Rows[i]["LocationID"].ToString());
+                        if (aLocationID == locID)
+                        {
+                            row = i;
+                        }
+
+                    }
+                    if (MessageBox.Show("Are you sure you want to delete this Location?", "Warning",
+                                      MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        MessageBox.Show("Location successfully deleted", "Success");
+                        DataRow deleteLocationRow = DM.dsKaioordinate.Tables["Location"].Rows[row];
+                        deleteLocationRow.Delete();
+                        DM.UpdateLocation();
+
+                    }
+
                 }
                 else
                 {
-                    if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
-                                        MessageBoxButtons.OKCancel) == DialogResult.OK)
-                    {
-                        deleteLocationRow.Delete();
-                        DM.UpdateLocation();
-                        MessageBox.Show("Location successfully deleted", "Success");
+                    MessageBox.Show("You may only delete locations that have no events", "Error");
 
-                    }
                 }
 
             }
@@ -369,7 +382,7 @@ namespace Kai
             listBoxLocations.Visible = false;
             btnUp.Enabled = false;
             btnUp.BackColor = SystemColors.ControlDark;
-            btnDown.Enabled = false; 
+            btnDown.Enabled = false;
             btnDown.BackColor = SystemColors.ControlDark;
             btnAdd.Enabled = false;
             btnAdd.BackColor = SystemColors.ControlDark;
@@ -417,11 +430,11 @@ namespace Kai
             e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }
 
-              
-    /// <summary> method: txtUpdateAddress5_KeyPress()
-    /// Only allows numbers and backspace in the update postcode text box     
-    /// </summary> 
-    private void txtUpdateAddress5_KeyPress(object sender, KeyPressEventArgs e)
+
+        /// <summary> method: txtUpdateAddress5_KeyPress()
+        /// Only allows numbers and backspace in the update postcode text box     
+        /// </summary> 
+        private void txtUpdateAddress5_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Back);
         }

@@ -28,6 +28,10 @@ namespace Kai
             formSize = new Size(900, 600);
         }
 
+        ///<Summary> method: btnKai_Click()
+        ///Opens the form
+        ///Sets the properties of the form
+        ///</Summary> 
         private void btnKai_Click(object sender, EventArgs e)
         {
             if (kaiForm == null)
@@ -43,6 +47,10 @@ namespace Kai
 
         }
 
+        ///<Summary> method: btnEvents_Click()
+        ///Opens the form
+        ///Sets the properties of the form
+        ///</Summary> 
         private void btnEvents_Click(object sender, EventArgs e)
         {
             if (eventsForm == null)
@@ -58,6 +66,10 @@ namespace Kai
 
         }
 
+        ///<Summary> method: btnWhanau_Click()
+        ///Opens the form
+        ///Sets the properties of the form
+        ///</Summary> 
         private void btnWhanau_Click(object sender, EventArgs e)
         {
             if (whanauForm == null)
@@ -73,6 +85,10 @@ namespace Kai
 
         }
 
+        ///<Summary> method: btnLocations_Click()
+        ///Opens the form
+        ///Sets the properties of the form
+        ///</Summary> 
         private void btnLocations_Click(object sender, EventArgs e)
         {
             if (locationForm == null)
@@ -86,6 +102,10 @@ namespace Kai
             locationForm.ShowDialog();
         }
 
+        ///<Summary> method: btnRegistration_Click()
+        ///Opens the form
+        ///Sets the properties of the form
+        ///</Summary> 
         private void btnRegistration_Click(object sender, EventArgs e)
         {
             if (registrationForm == null)
@@ -99,7 +119,10 @@ namespace Kai
             registrationForm.ShowDialog();
         }
 
-
+        ///<Summary> method: btnReport_Click()
+        ///Opens the form
+        ///Sets the properties of the form
+        ///</Summary> 
         private void btnReport_Click(object sender, EventArgs e)
         {
             if (reportForm == null)
@@ -114,7 +137,9 @@ namespace Kai
 
         }
 
-
+        ///<Summary> method: btnWxit_Click()
+        ///Closes the application    
+        ///</Summary> 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Close();

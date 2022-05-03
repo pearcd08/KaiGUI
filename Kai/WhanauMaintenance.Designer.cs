@@ -689,7 +689,7 @@
             this.MaximizeBox = false;
             this.Name = "WhanauMaintenance";
             this.Text = "Whanau Maintenance";
-            this.Load += new System.EventHandler(this.Whanau_Load);
+            this.Load += new System.EventHandler(this.WhanauMaintenance_Load);
             this.panelAdd.ResumeLayout(false);
             this.panelAdd.PerformLayout();
             this.panelUpdate.ResumeLayout(false);
