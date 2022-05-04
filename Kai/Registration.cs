@@ -11,7 +11,7 @@ namespace Kai
         private CurrencyManager cmEvent;
         private CurrencyManager cmWhanau;
         private CurrencyManager cmEventRegister;
-       
+
 
 
         public Registration(DataModule dm, MainMenu mnu)
@@ -77,27 +77,35 @@ namespace Kai
         ///</Summary> 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int regID = Convert.ToInt32(DM.dtEventRegister.Rows[cmEventRegister.Position]["RegistrationID"]);
-            int row = 0;
-
-            for (int i = 0; i < DM.dtEventRegister.Rows.Count; i++)
+            try
             {
-                int rID = Convert.ToInt32(DM.dtEventRegister.Rows[i]["RegistrationID"]);
-               
-                if (regID == rID)
+                int regID = Convert.ToInt32(DM.dtEventRegister.Rows[cmEventRegister.Position]["RegistrationID"]);
+                int row = 0;
+
+                for (int i = 0; i < DM.dtEventRegister.Rows.Count; i++)
                 {
-                    row = i;
+                    int rID = Convert.ToInt32(DM.dtEventRegister.Rows[i]["RegistrationID"]);
+
+                    if (regID == rID)
+                    {
+                        row = i;
+                    }
+                }
+
+                DataRow deleteEventRegisterRow = DM.dsKaioordinate.Tables["EventRegister"].Rows[row];
+                if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
+                                        MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    deleteEventRegisterRow.Delete();
+                    DM.UpdateEventRegister();
+                    MessageBox.Show("Entry removed successfully", "Success");
                 }
             }
-
-            DataRow deleteEventRegisterRow = DM.dsKaioordinate.Tables["EventRegister"].Rows[row];
-            if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
-                                    MessageBoxButtons.OKCancel) == DialogResult.OK)
+            catch (Exception ex) 
             {
-                deleteEventRegisterRow.Delete();
-                DM.UpdateEventRegister();
-                MessageBox.Show("Entry removed successfully", "Success");
+                MessageBox.Show(ex.Message,"Error");
             }
+           
 
         }
 
