@@ -31,9 +31,13 @@ namespace Kai
 
 
 
+        ///<Summary> method: btn_Print)
+        ///Filters the Event table to only get events with whanau registered
+        ///Print the document in a print preview window
+        ///</Summary>
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            
+
             DataTable filteredTable = new DataTable();
             DataColumn newColumn = new DataColumn("EventID", typeof(Int32));
             filteredTable.Columns.Add(newColumn);
@@ -64,15 +68,17 @@ namespace Kai
             filteredEvent = filteredTable.Select();
             ///SET THE PAGES EXPECTED INT TO THE AMOUNT OF ROWS IN THE FILTERED TABLE
             pagesExpected = tableCount;
-
-            printPreviewDialog.PrintPreviewControl.Document = printEvents;      
-            printPreviewDialog.PrintPreviewControl.Zoom = 1;   
-          
+            printPreviewDialog.PrintPreviewControl.Document = printEvents;
+            printPreviewDialog.PrintPreviewControl.Zoom = 1;
             printPreviewDialog.ShowDialog();
 
         }
 
 
+        ///<Summary> method: printEvents_PrintPage)
+        ///Create a printable page by looping though the filteredEvent datarow
+        ///Get the child rows for each event (Whanau and Kai)
+        ///</Summary>
         private void printEvents_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
             ///font styles
@@ -163,7 +169,7 @@ namespace Kai
                 ///loop through the whanau attending the event                       
                 foreach (DataRow drEventRegister in drRegistrations)
                 {
-                    
+
                     ///use whanau id from eventregister to find the parent record in whanau
                     int aWhanauID = Convert.ToInt32(drEventRegister["WhanauID"].ToString());
                     cmWhanau.Position = DM.whanauView.Find(aWhanauID);
@@ -197,8 +203,6 @@ namespace Kai
                          topMargin + (linesSoFar * textHeight));
             linesSoFar++;
             linesSoFar++;
-
-
 
             DataRow[] drKaiRegistrations = drEvent.GetChildRows(DM.dtEvent.ChildRelations["EVENT_KAI"]);
             if (drKaiRegistrations.Length == 0)
