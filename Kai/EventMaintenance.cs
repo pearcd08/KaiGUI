@@ -50,6 +50,7 @@ namespace Kai
         {
             panelAdd.Location = new Point(390, 52);
             panelAdd.Visible = true;
+            LoadLocations();
             HideButtons();
 
         }
@@ -137,8 +138,19 @@ namespace Kai
                 }
                 else
                 {
+                    int eventID = Convert.ToInt32(txtEventID.Text);
+                    int row = 0;
+                    for (int i = 0; i < DM.dtEvent.Rows.Count; i++)
+                    {
+                        int eID = Convert.ToInt32(DM.dtEvent.Rows[i]["EventID"].ToString());
+                        if (eventID == eID)
+                        {
+                            row = i;
+                        }
+
+                    }
                     int aLocationID = Convert.ToInt32(cboUpdateLocation.SelectedValue);
-                    DataRow updateEventRow = DM.dtEvent.Rows[cmEvent.Position];
+                    DataRow updateEventRow = DM.dsKaioordinate.Tables["Event"].Rows[row];                    
                     updateEventRow["EventName"] = txtUpdateEventName.Text;
                     updateEventRow["LocationID"] = aLocationID;
                     updateEventRow["EventDate"] = dateUpdateEventDate.Text;

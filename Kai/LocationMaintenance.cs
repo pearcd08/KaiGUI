@@ -86,7 +86,7 @@ namespace Kai
                         (txtAddAddress4.Text.Trim() != "") && (txtAddAddress5.Text.Trim() != ""))
                     {
                         newLocationRow["LocationName"] = txtAddLocationName.Text;
-                        newLocationRow["Address"] = txtAddAddress1.Text.Trim() + ", " + txtAddAddress3.Text.Trim() + ", " + txtAddAddress4.Text.Trim() + ", " + txtAddAddress5.Text.Trim();
+                        newLocationRow["Address"] = txtAddAddress1.Text.Trim() + ", " + txtAddAddress3.Text.Trim() + ", " + txtAddAddress4.Text.Trim() + " " + txtAddAddress5.Text.Trim();
                         DM.dtLocation.Rows.Add(newLocationRow);
                         DM.UpdateLocation();
                         if (MessageBox.Show("“Location added successfully”", "Success",
@@ -101,7 +101,7 @@ namespace Kai
                     {
                         newLocationRow["LocationName"] = txtAddLocationName.Text;
                         newLocationRow["Address"] = txtAddAddress1.Text.Trim() + ", " + txtAddAddress2.Text.Trim() + ", " + txtAddAddress3.Text.Trim() + ", " +
-                                                    txtAddAddress4.Text.Trim() + ", " + txtAddAddress5.Text.Trim();
+                                                    txtAddAddress4.Text.Trim() + " " + txtAddAddress5.Text.Trim();
                         DM.dtLocation.Rows.Add(newLocationRow);
                         DM.UpdateLocation();
                         if (MessageBox.Show("Location added successfully", "Success",
@@ -167,9 +167,10 @@ namespace Kai
         /// </summary>
         private void SplitAddress()
         {
-            string[] splitPostcode;
+         
             string originalAddress = txtLocationAddress.Text;
             string[] splitAddress2 = originalAddress.Split(',');
+            string[] splitPostcode;
             if (splitAddress2.Length == 4)
             {
                 txtUpdateAddress1.Text = splitAddress2[0].Trim();
@@ -209,7 +210,19 @@ namespace Kai
                 }
                 else
                 {
-                    DataRow updateLocationRow = DM.dtLocation.Rows[cmLocation.Position];
+                    int locationID = Convert.ToInt32(txtLocationID.Text);
+                    int row = 0;
+                    for (int i = 0; i < DM.dtLocation.Rows.Count; i++)
+                    {
+                        int locID = Convert.ToInt32(DM.dtLocation.Rows[i]["LocationID"].ToString());
+                        if (locationID == locID)
+                        {
+                            row = i;
+                        }
+
+                    }
+                    DataRow updateLocationRow = DM.dsKaioordinate.Tables["Location"].Rows[row];
+
                     if ((txtUpdateAddress1.Text.Trim() == "") && (txtUpdateAddress2.Text.Trim() != "") && (txtUpdateAddress3.Text.Trim() != "") &&
                         (txtUpdateAddress4.Text.Trim() != "") && (txtUpdateAddress5.Text.Trim() != ""))
                     {
@@ -227,7 +240,7 @@ namespace Kai
                         }
 
                     }
-                    if ((txtUpdateAddress1.Text.Trim() != "") && (txtUpdateAddress2.Text.Trim() == "") && (txtUpdateAddress3.Text.Trim() != "") &&
+                    else if ((txtUpdateAddress1.Text.Trim() != "") && (txtUpdateAddress2.Text.Trim() == "") && (txtUpdateAddress3.Text.Trim() != "") &&
                         (txtUpdateAddress4.Text.Trim() != "") && (txtUpdateAddress5.Text.Trim() != ""))
                     {
                         updateLocationRow["LocationName"] = txtUpdateLocationName.Text.Trim();
@@ -243,7 +256,7 @@ namespace Kai
                             ShowButtons();
                         }
                     }
-                    if ((txtUpdateAddress1.Text.Trim() != "") && (txtUpdateAddress2.Text.Trim() != "") && (txtUpdateAddress3.Text.Trim() != "") &&
+                    else if ((txtUpdateAddress1.Text.Trim() != "") && (txtUpdateAddress2.Text.Trim() != "") && (txtUpdateAddress3.Text.Trim() != "") &&
                         (txtUpdateAddress4.Text.Trim() != "") && (txtUpdateAddress5.Text.Trim() != ""))
                     {
                         updateLocationRow["LocationName"] = txtUpdateLocationName.Text.Trim();
@@ -260,12 +273,12 @@ namespace Kai
                         }
                     }
 
-                    if ((txtUpdateAddress1.Text.Trim() == "") && (txtUpdateAddress2.Text.Trim() == ""))
+                    else if ((txtUpdateAddress1.Text.Trim() == "") && (txtUpdateAddress2.Text.Trim() == ""))
                     {
                         MessageBox.Show("At least one Street Address line is required", "Error");
                     }
 
-                    if ((txtUpdateAddress3.Text.Trim() == "") || (txtUpdateAddress4.Text.Trim() == "") || (txtUpdateAddress5.Text.Trim() == ""))
+                    else if ((txtUpdateAddress3.Text.Trim() == "") || (txtUpdateAddress4.Text.Trim() == "") || (txtUpdateAddress5.Text.Trim() == ""))
                     {
                         MessageBox.Show("Suburb, City and Postcode is required", "Error");
                     }

@@ -102,12 +102,12 @@ namespace Kai
                     MessageBox.Show("Please enter a Kai Name", "Error");
                 }
 
-                if (numAddServingQuantity.Value == 0)
+                else if (numAddServingQuantity.Value == 0)
                 {
                     MessageBox.Show("Quantity cannot be zero", "Error");
                     numAddServingQuantity.Focus();
                 }
-                if ((cboxAddPreparation.Checked) && (numAddPreparationTime.Value == 0))
+                else if ((cboxAddPreparation.Checked) && (numAddPreparationTime.Value == 0))
                 {
                     MessageBox.Show("Preparation Time cannot be 0 if Preperation is required", "Error");
                     numAddPreparationTime.Focus();
@@ -216,20 +216,32 @@ namespace Kai
                     MessageBox.Show("Please enter an Kai Name", "Error");
                     txtUpdateKaiName.Focus();
                 }
-                if (numUpdateServingQuantity.Text == "0")
+                else if (numUpdateServingQuantity.Text == "0")
                 {
                     MessageBox.Show("Quantity cannot be zero", "Error");
                     numUpdateServingQuantity.Focus();
                 }
-                if ((cboxUpdatePreparation.Checked) && (numUpdatePreparationTime.Value == 0))
+                else if ((cboxUpdatePreparation.Checked) && (numUpdatePreparationTime.Value == 0))
                 {
                     MessageBox.Show("Preparation Time cannot be 0 if Preperation is required", "Error");
                     numUpdatePreparationTime.Focus();
                 }
                 else if ((txtUpdateKaiName.Text != "") && (numUpdateServingQuantity.Text != "0"))
                 {
+                    int kaiID = Convert.ToInt32(txtKaiID.Text);
+                    int row = 0;
+                    for (int i = 0; i < DM.dtKai.Rows.Count; i++)
+                    {
+                        int kID = Convert.ToInt32(DM.dtKai.Rows[i]["KaiID"].ToString());
+                        if (kaiID == kID)
+                        {
+                            row = i;
+                        }
+
+                    }
                     int aEventID = Convert.ToInt32(cboUpdateEvent.SelectedValue);
-                    DataRow updateKaiRow = DM.dtKai.Rows[cmKai.Position];
+
+                    DataRow updateKaiRow = DM.dsKaioordinate.Tables["Kai"].Rows[row];
                     updateKaiRow["EventID"] = aEventID;
                     updateKaiRow["KaiName"] = txtUpdateKaiName.Text;
                     updateKaiRow["PreparationRequired"] = cboxUpdatePreparation.Checked;
@@ -237,13 +249,15 @@ namespace Kai
                     updateKaiRow["ServeQuantity"] = numUpdateServingQuantity.Text;
                     cmKai.EndCurrentEdit();
                     DM.UpdateKai();
-
                     if (MessageBox.Show("Kai updated successfully", "Success",
-                               MessageBoxButtons.OKCancel) == DialogResult.OK)
+                           MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
-                        panelUpdate.Visible = false;                        
+                        panelUpdate.Visible = false;
                         ShowButtons();
                     }
+
+
+
 
                 }
             }

@@ -112,8 +112,6 @@ namespace Kai
                     newWhanauCopyRow["Address"] = txtAddAddress.Text;
                     newWhanauCopyRow["FullName"] = txtAddFirstName.Text + " " + txtAddLastName.Text;
                     whanauCopy.Rows.Add(newWhanauCopyRow);
-
-
                     DM.UpdateWhanau();
 
 
@@ -190,7 +188,19 @@ namespace Kai
                 }
                 else
                 {
-                    DataRow updateWhanauRow = DM.dtWhanau.Rows[cmWhanau.Position];
+                    int whanauID = Convert.ToInt32(txtWhanauID.Text);
+                    int row = 0;
+                    for (int i = 0; i < DM.dtWhanau.Rows.Count; i++)
+                    {
+                        int wID = Convert.ToInt32(DM.dtWhanau.Rows[i]["WhanauID"].ToString());
+                        if (whanauID == wID)
+                        {
+                            row = i;
+                        }
+
+                    }
+
+                    DataRow updateWhanauRow = DM.dsKaioordinate.Tables["Whanau"].Rows[row];
                     updateWhanauRow["FirstName"] = txtUpdateFirstName.Text;
                     updateWhanauRow["LastName"] = txtUpdateLastName.Text;
                     updateWhanauRow["Email"] = txtUpdateEmail.Text;
