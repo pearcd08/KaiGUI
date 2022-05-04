@@ -77,7 +77,20 @@ namespace Kai
         ///</Summary> 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DataRow deleteEventRegisterRow = DM.dtEventRegister.Rows[cmEventRegister.Position];
+            int regID = Convert.ToInt32(DM.dtEventRegister.Rows[cmEventRegister.Position]["RegistrationID"]);
+            int row = 0;
+
+            for (int i = 0; i < DM.dtEventRegister.Rows.Count; i++)
+            {
+                int rID = Convert.ToInt32(DM.dtEventRegister.Rows[i]["RegistrationID"]);
+               
+                if (regID == rID)
+                {
+                    row = i;
+                }
+            }
+
+            DataRow deleteEventRegisterRow = DM.dsKaioordinate.Tables["EventRegister"].Rows[row];
             if (MessageBox.Show("Are you sure you want to delete this record?", "Warning",
                                     MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
