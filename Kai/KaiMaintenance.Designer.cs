@@ -40,8 +40,8 @@
             this.lblEvent = new System.Windows.Forms.Label();
             this.lblKaiName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblPreperationTime = new System.Windows.Forms.Label();
-            this.lblPreperation = new System.Windows.Forms.Label();
+            this.lblPreparationTime = new System.Windows.Forms.Label();
+            this.lblPreparation = new System.Windows.Forms.Label();
             this.btnUp = new FontAwesome.Sharp.IconButton();
             this.btnDown = new FontAwesome.Sharp.IconButton();
             this.btnAdd = new FontAwesome.Sharp.IconButton();
@@ -56,28 +56,28 @@
             this.numUpdateServingQuantity = new System.Windows.Forms.NumericUpDown();
             this.numUpdatePreparationTime = new System.Windows.Forms.NumericUpDown();
             this.panelUpdate = new System.Windows.Forms.Panel();
-            this.lblMinutes = new System.Windows.Forms.Label();
+            this.lblMinutesUpdate = new System.Windows.Forms.Label();
             this.btnUpdateSave = new FontAwesome.Sharp.IconButton();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblKaiNameUpdate = new System.Windows.Forms.Label();
             this.btnUpdateCancel = new FontAwesome.Sharp.IconButton();
             this.txtUpdateKaiName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEventUpdate = new System.Windows.Forms.Label();
+            this.lblPreparationUpdate = new System.Windows.Forms.Label();
+            this.lblServingQuantityUpdate = new System.Windows.Forms.Label();
+            this.lblPreparationTimeUpdate = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelDelete = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.panelAdd = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lbl = new System.Windows.Forms.Label();
             this.btnAddSave = new FontAwesome.Sharp.IconButton();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblKaiNameAdd = new System.Windows.Forms.Label();
             this.btnAddCancel = new FontAwesome.Sharp.IconButton();
             this.txtAddKaiName = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblEventAdd = new System.Windows.Forms.Label();
+            this.lblPreparationAdd = new System.Windows.Forms.Label();
+            this.lblServingQuantityAdd = new System.Windows.Forms.Label();
+            this.lblPreparationTimeAdd = new System.Windows.Forms.Label();
             this.numAddPreparationTime = new System.Windows.Forms.NumericUpDown();
             this.numAddServingQuantity = new System.Windows.Forms.NumericUpDown();
             this.cboxAddPreparation = new System.Windows.Forms.CheckBox();
@@ -194,29 +194,29 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Serving Quantity";
             // 
-            // lblPreperationTime
+            // lblPreparationTime
             // 
-            this.lblPreperationTime.AutoSize = true;
-            this.lblPreperationTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreperationTime.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPreperationTime.Location = new System.Drawing.Point(23, 209);
-            this.lblPreperationTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPreperationTime.Name = "lblPreperationTime";
-            this.lblPreperationTime.Size = new System.Drawing.Size(155, 24);
-            this.lblPreperationTime.TabIndex = 11;
-            this.lblPreperationTime.Text = "Preperation Time";
+            this.lblPreparationTime.AutoSize = true;
+            this.lblPreparationTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreparationTime.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPreparationTime.Location = new System.Drawing.Point(23, 209);
+            this.lblPreparationTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreparationTime.Name = "lblPreparationTime";
+            this.lblPreparationTime.Size = new System.Drawing.Size(154, 24);
+            this.lblPreparationTime.TabIndex = 11;
+            this.lblPreparationTime.Text = "Preparation Time";
             // 
-            // lblPreperation
+            // lblPreparation
             // 
-            this.lblPreperation.AutoSize = true;
-            this.lblPreperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreperation.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPreperation.Location = new System.Drawing.Point(61, 160);
-            this.lblPreperation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPreperation.Name = "lblPreperation";
-            this.lblPreperation.Size = new System.Drawing.Size(117, 24);
-            this.lblPreperation.TabIndex = 12;
-            this.lblPreperation.Text = "Preperation?";
+            this.lblPreparation.AutoSize = true;
+            this.lblPreparation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreparation.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPreparation.Location = new System.Drawing.Point(61, 160);
+            this.lblPreparation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreparation.Name = "lblPreparation";
+            this.lblPreparation.Size = new System.Drawing.Size(116, 24);
+            this.lblPreparation.TabIndex = 12;
+            this.lblPreparation.Text = "Preparation?";
             // 
             // btnUp
             // 
@@ -395,15 +395,15 @@
             // 
             // panelUpdate
             // 
-            this.panelUpdate.Controls.Add(this.lblMinutes);
+            this.panelUpdate.Controls.Add(this.lblMinutesUpdate);
             this.panelUpdate.Controls.Add(this.btnUpdateSave);
-            this.panelUpdate.Controls.Add(this.label6);
+            this.panelUpdate.Controls.Add(this.lblKaiNameUpdate);
             this.panelUpdate.Controls.Add(this.btnUpdateCancel);
             this.panelUpdate.Controls.Add(this.txtUpdateKaiName);
-            this.panelUpdate.Controls.Add(this.label5);
-            this.panelUpdate.Controls.Add(this.label4);
-            this.panelUpdate.Controls.Add(this.label2);
-            this.panelUpdate.Controls.Add(this.label1);
+            this.panelUpdate.Controls.Add(this.lblEventUpdate);
+            this.panelUpdate.Controls.Add(this.lblPreparationUpdate);
+            this.panelUpdate.Controls.Add(this.lblServingQuantityUpdate);
+            this.panelUpdate.Controls.Add(this.lblPreparationTimeUpdate);
             this.panelUpdate.Controls.Add(this.numUpdatePreparationTime);
             this.panelUpdate.Controls.Add(this.numUpdateServingQuantity);
             this.panelUpdate.Controls.Add(this.cboxUpdatePreparation);
@@ -414,17 +414,17 @@
             this.panelUpdate.TabIndex = 27;
             this.panelUpdate.Visible = false;
             // 
-            // lblMinutes
+            // lblMinutesUpdate
             // 
-            this.lblMinutes.AutoSize = true;
-            this.lblMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinutes.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMinutes.Location = new System.Drawing.Point(270, 172);
-            this.lblMinutes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMinutes.Name = "lblMinutes";
-            this.lblMinutes.Size = new System.Drawing.Size(76, 24);
-            this.lblMinutes.TabIndex = 30;
-            this.lblMinutes.Text = "minutes";
+            this.lblMinutesUpdate.AutoSize = true;
+            this.lblMinutesUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinutesUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblMinutesUpdate.Location = new System.Drawing.Point(270, 172);
+            this.lblMinutesUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMinutesUpdate.Name = "lblMinutesUpdate";
+            this.lblMinutesUpdate.Size = new System.Drawing.Size(76, 24);
+            this.lblMinutesUpdate.TabIndex = 30;
+            this.lblMinutesUpdate.Text = "minutes";
             // 
             // btnUpdateSave
             // 
@@ -443,17 +443,17 @@
             this.btnUpdateSave.UseVisualStyleBackColor = false;
             this.btnUpdateSave.Click += new System.EventHandler(this.btnUpdateSave_Click);
             // 
-            // label6
+            // lblKaiNameUpdate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(68, 69);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 24);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Kai Name";
+            this.lblKaiNameUpdate.AutoSize = true;
+            this.lblKaiNameUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKaiNameUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblKaiNameUpdate.Location = new System.Drawing.Point(68, 69);
+            this.lblKaiNameUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKaiNameUpdate.Name = "lblKaiNameUpdate";
+            this.lblKaiNameUpdate.Size = new System.Drawing.Size(92, 24);
+            this.lblKaiNameUpdate.TabIndex = 28;
+            this.lblKaiNameUpdate.Text = "Kai Name";
             // 
             // btnUpdateCancel
             // 
@@ -481,53 +481,53 @@
             this.txtUpdateKaiName.Size = new System.Drawing.Size(300, 29);
             this.txtUpdateKaiName.TabIndex = 28;
             // 
-            // label5
+            // lblEventUpdate
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(102, 19);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 24);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Event";
+            this.lblEventUpdate.AutoSize = true;
+            this.lblEventUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEventUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblEventUpdate.Location = new System.Drawing.Point(102, 19);
+            this.lblEventUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEventUpdate.Name = "lblEventUpdate";
+            this.lblEventUpdate.Size = new System.Drawing.Size(58, 24);
+            this.lblEventUpdate.TabIndex = 28;
+            this.lblEventUpdate.Text = "Event";
             // 
-            // label4
+            // lblPreparationUpdate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(43, 116);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 24);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Preperation?";
+            this.lblPreparationUpdate.AutoSize = true;
+            this.lblPreparationUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreparationUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPreparationUpdate.Location = new System.Drawing.Point(43, 116);
+            this.lblPreparationUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreparationUpdate.Name = "lblPreparationUpdate";
+            this.lblPreparationUpdate.Size = new System.Drawing.Size(116, 24);
+            this.lblPreparationUpdate.TabIndex = 28;
+            this.lblPreparationUpdate.Text = "Preparation?";
             // 
-            // label2
+            // lblServingQuantityUpdate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(13, 212);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 24);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Serving Quantity";
+            this.lblServingQuantityUpdate.AutoSize = true;
+            this.lblServingQuantityUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServingQuantityUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblServingQuantityUpdate.Location = new System.Drawing.Point(13, 212);
+            this.lblServingQuantityUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblServingQuantityUpdate.Name = "lblServingQuantityUpdate";
+            this.lblServingQuantityUpdate.Size = new System.Drawing.Size(147, 24);
+            this.lblServingQuantityUpdate.TabIndex = 28;
+            this.lblServingQuantityUpdate.Text = "Serving Quantity";
             // 
-            // label1
+            // lblPreparationTimeUpdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(5, 169);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 24);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Preperation Time";
+            this.lblPreparationTimeUpdate.AutoSize = true;
+            this.lblPreparationTimeUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreparationTimeUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPreparationTimeUpdate.Location = new System.Drawing.Point(5, 169);
+            this.lblPreparationTimeUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreparationTimeUpdate.Name = "lblPreparationTimeUpdate";
+            this.lblPreparationTimeUpdate.Size = new System.Drawing.Size(154, 24);
+            this.lblPreparationTimeUpdate.TabIndex = 12;
+            this.lblPreparationTimeUpdate.Text = "Preparation Time";
             // 
             // picLogo
             // 
@@ -546,8 +546,8 @@
             this.panelDelete.Controls.Add(this.txtPreperation);
             this.panelDelete.Controls.Add(this.txtServingQuantity);
             this.panelDelete.Controls.Add(this.txtPreperationTime);
-            this.panelDelete.Controls.Add(this.lblPreperation);
-            this.panelDelete.Controls.Add(this.lblPreperationTime);
+            this.panelDelete.Controls.Add(this.lblPreparation);
+            this.panelDelete.Controls.Add(this.lblPreparationTime);
             this.panelDelete.Controls.Add(this.label3);
             this.panelDelete.Controls.Add(this.lblKaiName);
             this.panelDelete.Controls.Add(this.lblEvent);
@@ -574,36 +574,36 @@
             // 
             // panelAdd
             // 
-            this.panelAdd.Controls.Add(this.label7);
+            this.panelAdd.Controls.Add(this.lbl);
             this.panelAdd.Controls.Add(this.btnAddSave);
-            this.panelAdd.Controls.Add(this.label8);
+            this.panelAdd.Controls.Add(this.lblKaiNameAdd);
             this.panelAdd.Controls.Add(this.btnAddCancel);
             this.panelAdd.Controls.Add(this.txtAddKaiName);
-            this.panelAdd.Controls.Add(this.label9);
-            this.panelAdd.Controls.Add(this.label10);
-            this.panelAdd.Controls.Add(this.label11);
-            this.panelAdd.Controls.Add(this.label12);
+            this.panelAdd.Controls.Add(this.lblEventAdd);
+            this.panelAdd.Controls.Add(this.lblPreparationAdd);
+            this.panelAdd.Controls.Add(this.lblServingQuantityAdd);
+            this.panelAdd.Controls.Add(this.lblPreparationTimeAdd);
             this.panelAdd.Controls.Add(this.numAddPreparationTime);
             this.panelAdd.Controls.Add(this.numAddServingQuantity);
             this.panelAdd.Controls.Add(this.cboxAddPreparation);
             this.panelAdd.Controls.Add(this.cboAddEvent);
-            this.panelAdd.Location = new System.Drawing.Point(946, 40);
+            this.panelAdd.Location = new System.Drawing.Point(958, 40);
             this.panelAdd.Name = "panelAdd";
             this.panelAdd.Size = new System.Drawing.Size(507, 354);
             this.panelAdd.TabIndex = 31;
             this.panelAdd.Visible = false;
             // 
-            // label7
+            // lbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(270, 172);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 24);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "minutes";
+            this.lbl.AutoSize = true;
+            this.lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl.ForeColor = System.Drawing.SystemColors.Control;
+            this.lbl.Location = new System.Drawing.Point(270, 172);
+            this.lbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl.Name = "lbl";
+            this.lbl.Size = new System.Drawing.Size(76, 24);
+            this.lbl.TabIndex = 30;
+            this.lbl.Text = "minutes";
             // 
             // btnAddSave
             // 
@@ -622,17 +622,17 @@
             this.btnAddSave.UseVisualStyleBackColor = false;
             this.btnAddSave.Click += new System.EventHandler(this.btnAddSave_Click);
             // 
-            // label8
+            // lblKaiNameAdd
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(68, 69);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 24);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Kai Name";
+            this.lblKaiNameAdd.AutoSize = true;
+            this.lblKaiNameAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKaiNameAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblKaiNameAdd.Location = new System.Drawing.Point(68, 69);
+            this.lblKaiNameAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblKaiNameAdd.Name = "lblKaiNameAdd";
+            this.lblKaiNameAdd.Size = new System.Drawing.Size(92, 24);
+            this.lblKaiNameAdd.TabIndex = 28;
+            this.lblKaiNameAdd.Text = "Kai Name";
             // 
             // btnAddCancel
             // 
@@ -660,53 +660,53 @@
             this.txtAddKaiName.Size = new System.Drawing.Size(300, 29);
             this.txtAddKaiName.TabIndex = 28;
             // 
-            // label9
+            // lblEventAdd
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(102, 19);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(58, 24);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Event";
+            this.lblEventAdd.AutoSize = true;
+            this.lblEventAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEventAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblEventAdd.Location = new System.Drawing.Point(102, 19);
+            this.lblEventAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEventAdd.Name = "lblEventAdd";
+            this.lblEventAdd.Size = new System.Drawing.Size(58, 24);
+            this.lblEventAdd.TabIndex = 28;
+            this.lblEventAdd.Text = "Event";
             // 
-            // label10
+            // lblPreparationAdd
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(43, 116);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(117, 24);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Preperation?";
+            this.lblPreparationAdd.AutoSize = true;
+            this.lblPreparationAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreparationAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPreparationAdd.Location = new System.Drawing.Point(43, 116);
+            this.lblPreparationAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreparationAdd.Name = "lblPreparationAdd";
+            this.lblPreparationAdd.Size = new System.Drawing.Size(117, 24);
+            this.lblPreparationAdd.TabIndex = 28;
+            this.lblPreparationAdd.Text = "Preperation?";
             // 
-            // label11
+            // lblServingQuantityAdd
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(13, 212);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(147, 24);
-            this.label11.TabIndex = 28;
-            this.label11.Text = "Serving Quantity";
+            this.lblServingQuantityAdd.AutoSize = true;
+            this.lblServingQuantityAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblServingQuantityAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblServingQuantityAdd.Location = new System.Drawing.Point(13, 212);
+            this.lblServingQuantityAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblServingQuantityAdd.Name = "lblServingQuantityAdd";
+            this.lblServingQuantityAdd.Size = new System.Drawing.Size(147, 24);
+            this.lblServingQuantityAdd.TabIndex = 28;
+            this.lblServingQuantityAdd.Text = "Serving Quantity";
             // 
-            // label12
+            // lblPreparationTimeAdd
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(5, 169);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(155, 24);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Preperation Time";
+            this.lblPreparationTimeAdd.AutoSize = true;
+            this.lblPreparationTimeAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreparationTimeAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPreparationTimeAdd.Location = new System.Drawing.Point(5, 169);
+            this.lblPreparationTimeAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPreparationTimeAdd.Name = "lblPreparationTimeAdd";
+            this.lblPreparationTimeAdd.Size = new System.Drawing.Size(154, 24);
+            this.lblPreparationTimeAdd.TabIndex = 12;
+            this.lblPreparationTimeAdd.Text = "Preparation Time";
             // 
             // numAddPreparationTime
             // 
@@ -797,8 +797,8 @@
         private System.Windows.Forms.Label lblEvent;
         private System.Windows.Forms.Label lblKaiName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblPreperationTime;
-        private System.Windows.Forms.Label lblPreperation;
+        private System.Windows.Forms.Label lblPreparationTime;
+        private System.Windows.Forms.Label lblPreparation;
         private FontAwesome.Sharp.IconButton btnUp;
         private FontAwesome.Sharp.IconButton btnDown;
         private FontAwesome.Sharp.IconButton btnAdd;
@@ -813,13 +813,13 @@
         private System.Windows.Forms.NumericUpDown numUpdateServingQuantity;
         private System.Windows.Forms.NumericUpDown numUpdatePreparationTime;
         private System.Windows.Forms.Panel panelUpdate;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblKaiNameUpdate;
         private System.Windows.Forms.TextBox txtUpdateKaiName;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblMinutes;
+        private System.Windows.Forms.Label lblEventUpdate;
+        private System.Windows.Forms.Label lblPreparationUpdate;
+        private System.Windows.Forms.Label lblServingQuantityUpdate;
+        private System.Windows.Forms.Label lblPreparationTimeUpdate;
+        private System.Windows.Forms.Label lblMinutesUpdate;
         private FontAwesome.Sharp.IconButton btnUpdateSave;
         private FontAwesome.Sharp.IconButton btnUpdateCancel;
         private System.Windows.Forms.PictureBox picLogo;
@@ -827,15 +827,15 @@
         private dsKaioordinate dsKaioordinate;
         private System.Windows.Forms.Panel panelDelete;
         private System.Windows.Forms.Panel panelAdd;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbl;
         private FontAwesome.Sharp.IconButton btnAddSave;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblKaiNameAdd;
         private FontAwesome.Sharp.IconButton btnAddCancel;
         private System.Windows.Forms.TextBox txtAddKaiName;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblEventAdd;
+        private System.Windows.Forms.Label lblPreparationAdd;
+        private System.Windows.Forms.Label lblServingQuantityAdd;
+        private System.Windows.Forms.Label lblPreparationTimeAdd;
         private System.Windows.Forms.NumericUpDown numAddPreparationTime;
         private System.Windows.Forms.NumericUpDown numAddServingQuantity;
         private System.Windows.Forms.CheckBox cboxAddPreparation;

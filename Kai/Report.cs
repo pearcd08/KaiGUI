@@ -33,6 +33,7 @@ namespace Kai
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            
             DataTable filteredTable = new DataTable();
             DataColumn newColumn = new DataColumn("EventID", typeof(Int32));
             filteredTable.Columns.Add(newColumn);
@@ -62,7 +63,11 @@ namespace Kai
             ///ADD ALL THE RESULTS OF THE DATATABLE TO A NEW DATAROW
             filteredEvent = filteredTable.Select();
             ///SET THE PAGES EXPECTED INT TO THE AMOUNT OF ROWS IN THE FILTERED TABLE
-            pagesExpected = tableCount;            
+            pagesExpected = tableCount;
+
+            printPreviewDialog.PrintPreviewControl.Document = printEvents;      
+            printPreviewDialog.PrintPreviewControl.Zoom = 1;   
+          
             printPreviewDialog.ShowDialog();
 
         }

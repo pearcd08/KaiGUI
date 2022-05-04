@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Kai
@@ -79,7 +80,14 @@ namespace Kai
         {
             try
             {
-                if ((txtAddFirstName.Text == "") || (txtAddLastName.Text == "") || (txtAddEmail.Text == "") ||
+                string emailRegEx = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+                if (!(Regex.IsMatch(txtAddEmail.Text, emailRegEx)))
+                {
+                    MessageBox.Show("Enter a valid email address, must have an @ and . symbol");
+                    txtAddAddress.Focus();
+
+                }
+                else if ((txtAddFirstName.Text == "") || (txtAddLastName.Text == "") || (txtAddEmail.Text == "") ||
                    (txtAddPhone.Text == "") || (txtAddAddress.Text == ""))
                 {
                     MessageBox.Show("You must enter a value for each of the Whanau text fields", "Error");
@@ -109,7 +117,7 @@ namespace Kai
                     DM.UpdateWhanau();
 
 
-                    if (MessageBox.Show("whanau added successfully", "Success",
+                    if (MessageBox.Show("Whanau added successfully", "Success",
                                MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         panelAdd.Visible = false;
@@ -168,8 +176,15 @@ namespace Kai
 
             try
             {
-                if ((txtUpdateFirstName.Text == "") || (txtUpdateLastName.Text == "") || (txtUpdateEmail.Text == "") ||
-               (txtUpdatePhone.Text == "") || (txtUpdateAddress.Text == ""))
+                string emailRegEx = "^([0-9a-zA-Z]([-\\.\\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\\w]*[0-9a-zA-Z]\\.)+[a-zA-Z]{2,9})$";
+                if (!(Regex.IsMatch(txtUpdateEmail.Text, emailRegEx)))
+                {
+                    MessageBox.Show("Enter a valid email address, must have an @ and . symbol");
+                    txtUpdateAddress.Focus();
+
+                }
+                else if ((txtUpdateFirstName.Text == "") || (txtUpdateLastName.Text == "") || (txtUpdateEmail.Text == "") ||
+                         (txtUpdatePhone.Text == "") || (txtUpdateAddress.Text == ""))
                 {
                     MessageBox.Show("You must enter a value for each of the Whanau text fields", "Error");
                 }
@@ -194,7 +209,7 @@ namespace Kai
                     DM.UpdateWhanau();
 
 
-                    if (MessageBox.Show("whanau added successfully", "Success",
+                    if (MessageBox.Show("Whanau updated successfully", "Success",
                             MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {
                         panelUpdate.Visible = false;
@@ -366,6 +381,8 @@ namespace Kai
         {
 
         }
+
+
     }
 
 }

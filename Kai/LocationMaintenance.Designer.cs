@@ -44,34 +44,34 @@
             this.txtLocationID = new System.Windows.Forms.TextBox();
             this.panelDelete = new System.Windows.Forms.Panel();
             this.panelAdd = new System.Windows.Forms.Panel();
-            this.labelPostcode = new System.Windows.Forms.Label();
+            this.lblPostCodeAdd = new System.Windows.Forms.Label();
             this.txtAddAddress5 = new System.Windows.Forms.TextBox();
-            this.labelCity = new System.Windows.Forms.Label();
-            this.labelSuburb = new System.Windows.Forms.Label();
-            this.labelStreetAddress2 = new System.Windows.Forms.Label();
+            this.lblCityAdd = new System.Windows.Forms.Label();
+            this.lblSuburbAdd = new System.Windows.Forms.Label();
+            this.lblStreetAddress2Add = new System.Windows.Forms.Label();
             this.txtAddAddress4 = new System.Windows.Forms.TextBox();
             this.btnAddSave = new FontAwesome.Sharp.IconButton();
             this.btnAddCancel = new FontAwesome.Sharp.IconButton();
             this.txtAddAddress3 = new System.Windows.Forms.TextBox();
-            this.lblStreetAddress1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblStreetAddress1Add = new System.Windows.Forms.Label();
+            this.lblLocationNameAdd = new System.Windows.Forms.Label();
             this.txtAddAddress2 = new System.Windows.Forms.TextBox();
             this.txtAddLocationName = new System.Windows.Forms.TextBox();
             this.txtAddAddress1 = new System.Windows.Forms.TextBox();
             this.panelUpdate = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPostCodeUpdate = new System.Windows.Forms.Label();
             this.txtUpdateAddress5 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCItyUpdate = new System.Windows.Forms.Label();
             this.txtUpdateAddress4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSuburbUpdate = new System.Windows.Forms.Label();
             this.btnUpdateSave = new FontAwesome.Sharp.IconButton();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblStreetAddress2 = new System.Windows.Forms.Label();
             this.txtUpdateAddress3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblStreetAddress1Update = new System.Windows.Forms.Label();
             this.btnUpdateCancel = new FontAwesome.Sharp.IconButton();
             this.txtUpdateAddress2 = new System.Windows.Forms.TextBox();
             this.txtUpdateAddress1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblLocationNameUpdate = new System.Windows.Forms.Label();
             this.txtUpdateLocationName = new System.Windows.Forms.TextBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelDelete.SuspendLayout();
@@ -281,17 +281,17 @@
             // 
             // panelAdd
             // 
-            this.panelAdd.Controls.Add(this.labelPostcode);
+            this.panelAdd.Controls.Add(this.lblPostCodeAdd);
             this.panelAdd.Controls.Add(this.txtAddAddress5);
-            this.panelAdd.Controls.Add(this.labelCity);
-            this.panelAdd.Controls.Add(this.labelSuburb);
-            this.panelAdd.Controls.Add(this.labelStreetAddress2);
+            this.panelAdd.Controls.Add(this.lblCityAdd);
+            this.panelAdd.Controls.Add(this.lblSuburbAdd);
+            this.panelAdd.Controls.Add(this.lblStreetAddress2Add);
             this.panelAdd.Controls.Add(this.txtAddAddress4);
             this.panelAdd.Controls.Add(this.btnAddSave);
             this.panelAdd.Controls.Add(this.btnAddCancel);
             this.panelAdd.Controls.Add(this.txtAddAddress3);
-            this.panelAdd.Controls.Add(this.lblStreetAddress1);
-            this.panelAdd.Controls.Add(this.label2);
+            this.panelAdd.Controls.Add(this.lblStreetAddress1Add);
+            this.panelAdd.Controls.Add(this.lblLocationNameAdd);
             this.panelAdd.Controls.Add(this.txtAddAddress2);
             this.panelAdd.Controls.Add(this.txtAddLocationName);
             this.panelAdd.Controls.Add(this.txtAddAddress1);
@@ -300,17 +300,17 @@
             this.panelAdd.Size = new System.Drawing.Size(458, 305);
             this.panelAdd.TabIndex = 33;
             // 
-            // labelPostcode
+            // lblPostCodeAdd
             // 
-            this.labelPostcode.AutoSize = true;
-            this.labelPostcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPostcode.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelPostcode.Location = new System.Drawing.Point(55, 195);
-            this.labelPostcode.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPostcode.Name = "labelPostcode";
-            this.labelPostcode.Size = new System.Drawing.Size(89, 24);
-            this.labelPostcode.TabIndex = 46;
-            this.labelPostcode.Text = "Postcode";
+            this.lblPostCodeAdd.AutoSize = true;
+            this.lblPostCodeAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostCodeAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPostCodeAdd.Location = new System.Drawing.Point(55, 195);
+            this.lblPostCodeAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPostCodeAdd.Name = "lblPostCodeAdd";
+            this.lblPostCodeAdd.Size = new System.Drawing.Size(89, 24);
+            this.lblPostCodeAdd.TabIndex = 46;
+            this.lblPostCodeAdd.Text = "Postcode";
             // 
             // txtAddAddress5
             // 
@@ -322,41 +322,41 @@
             this.txtAddAddress5.TabIndex = 45;
             this.txtAddAddress5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddAddress5_KeyPress);
             // 
-            // labelCity
+            // lblCityAdd
             // 
-            this.labelCity.AutoSize = true;
-            this.labelCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCity.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelCity.Location = new System.Drawing.Point(104, 159);
-            this.labelCity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelCity.Name = "labelCity";
-            this.labelCity.Size = new System.Drawing.Size(40, 24);
-            this.labelCity.TabIndex = 44;
-            this.labelCity.Text = "City";
+            this.lblCityAdd.AutoSize = true;
+            this.lblCityAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCityAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCityAdd.Location = new System.Drawing.Point(104, 159);
+            this.lblCityAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCityAdd.Name = "lblCityAdd";
+            this.lblCityAdd.Size = new System.Drawing.Size(40, 24);
+            this.lblCityAdd.TabIndex = 44;
+            this.lblCityAdd.Text = "City";
             // 
-            // labelSuburb
+            // lblSuburbAdd
             // 
-            this.labelSuburb.AutoSize = true;
-            this.labelSuburb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSuburb.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelSuburb.Location = new System.Drawing.Point(72, 129);
-            this.labelSuburb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelSuburb.Name = "labelSuburb";
-            this.labelSuburb.Size = new System.Drawing.Size(72, 24);
-            this.labelSuburb.TabIndex = 43;
-            this.labelSuburb.Text = "Suburb";
+            this.lblSuburbAdd.AutoSize = true;
+            this.lblSuburbAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuburbAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblSuburbAdd.Location = new System.Drawing.Point(72, 129);
+            this.lblSuburbAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSuburbAdd.Name = "lblSuburbAdd";
+            this.lblSuburbAdd.Size = new System.Drawing.Size(72, 24);
+            this.lblSuburbAdd.TabIndex = 43;
+            this.lblSuburbAdd.Text = "Suburb";
             // 
-            // labelStreetAddress2
+            // lblStreetAddress2Add
             // 
-            this.labelStreetAddress2.AutoSize = true;
-            this.labelStreetAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStreetAddress2.ForeColor = System.Drawing.SystemColors.Control;
-            this.labelStreetAddress2.Location = new System.Drawing.Point(-4, 98);
-            this.labelStreetAddress2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelStreetAddress2.Name = "labelStreetAddress2";
-            this.labelStreetAddress2.Size = new System.Drawing.Size(148, 24);
-            this.labelStreetAddress2.TabIndex = 42;
-            this.labelStreetAddress2.Text = "Street Address 2";
+            this.lblStreetAddress2Add.AutoSize = true;
+            this.lblStreetAddress2Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreetAddress2Add.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblStreetAddress2Add.Location = new System.Drawing.Point(-4, 98);
+            this.lblStreetAddress2Add.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStreetAddress2Add.Name = "lblStreetAddress2Add";
+            this.lblStreetAddress2Add.Size = new System.Drawing.Size(148, 24);
+            this.lblStreetAddress2Add.TabIndex = 42;
+            this.lblStreetAddress2Add.Text = "Street Address 2";
             // 
             // txtAddAddress4
             // 
@@ -410,29 +410,29 @@
             this.txtAddAddress3.Size = new System.Drawing.Size(300, 29);
             this.txtAddAddress3.TabIndex = 40;
             // 
-            // lblStreetAddress1
+            // lblStreetAddress1Add
             // 
-            this.lblStreetAddress1.AutoSize = true;
-            this.lblStreetAddress1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStreetAddress1.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblStreetAddress1.Location = new System.Drawing.Point(-4, 63);
-            this.lblStreetAddress1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblStreetAddress1.Name = "lblStreetAddress1";
-            this.lblStreetAddress1.Size = new System.Drawing.Size(148, 24);
-            this.lblStreetAddress1.TabIndex = 31;
-            this.lblStreetAddress1.Text = "Street Address 1";
+            this.lblStreetAddress1Add.AutoSize = true;
+            this.lblStreetAddress1Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreetAddress1Add.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblStreetAddress1Add.Location = new System.Drawing.Point(-4, 63);
+            this.lblStreetAddress1Add.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStreetAddress1Add.Name = "lblStreetAddress1Add";
+            this.lblStreetAddress1Add.Size = new System.Drawing.Size(148, 24);
+            this.lblStreetAddress1Add.TabIndex = 31;
+            this.lblStreetAddress1Add.Text = "Street Address 1";
             // 
-            // label2
+            // lblLocationNameAdd
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(8, 5);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 24);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Location Name";
+            this.lblLocationNameAdd.AutoSize = true;
+            this.lblLocationNameAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocationNameAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblLocationNameAdd.Location = new System.Drawing.Point(8, 5);
+            this.lblLocationNameAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLocationNameAdd.Name = "lblLocationNameAdd";
+            this.lblLocationNameAdd.Size = new System.Drawing.Size(137, 24);
+            this.lblLocationNameAdd.TabIndex = 30;
+            this.lblLocationNameAdd.Text = "Location Name";
             // 
             // txtAddAddress2
             // 
@@ -463,36 +463,36 @@
             // 
             // panelUpdate
             // 
-            this.panelUpdate.Controls.Add(this.label7);
+            this.panelUpdate.Controls.Add(this.lblPostCodeUpdate);
             this.panelUpdate.Controls.Add(this.txtUpdateAddress5);
-            this.panelUpdate.Controls.Add(this.label1);
+            this.panelUpdate.Controls.Add(this.lblCItyUpdate);
             this.panelUpdate.Controls.Add(this.txtUpdateAddress4);
-            this.panelUpdate.Controls.Add(this.label3);
+            this.panelUpdate.Controls.Add(this.lblSuburbUpdate);
             this.panelUpdate.Controls.Add(this.btnUpdateSave);
-            this.panelUpdate.Controls.Add(this.label5);
+            this.panelUpdate.Controls.Add(this.lblStreetAddress2);
             this.panelUpdate.Controls.Add(this.txtUpdateAddress3);
-            this.panelUpdate.Controls.Add(this.label6);
+            this.panelUpdate.Controls.Add(this.lblStreetAddress1Update);
             this.panelUpdate.Controls.Add(this.btnUpdateCancel);
             this.panelUpdate.Controls.Add(this.txtUpdateAddress2);
             this.panelUpdate.Controls.Add(this.txtUpdateAddress1);
-            this.panelUpdate.Controls.Add(this.label4);
+            this.panelUpdate.Controls.Add(this.lblLocationNameUpdate);
             this.panelUpdate.Controls.Add(this.txtUpdateLocationName);
             this.panelUpdate.Location = new System.Drawing.Point(1334, 47);
             this.panelUpdate.Name = "panelUpdate";
             this.panelUpdate.Size = new System.Drawing.Size(458, 305);
             this.panelUpdate.TabIndex = 34;
             // 
-            // label7
+            // lblPostCodeUpdate
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(55, 195);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 24);
-            this.label7.TabIndex = 47;
-            this.label7.Text = "Postcode";
+            this.lblPostCodeUpdate.AutoSize = true;
+            this.lblPostCodeUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostCodeUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPostCodeUpdate.Location = new System.Drawing.Point(55, 195);
+            this.lblPostCodeUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPostCodeUpdate.Name = "lblPostCodeUpdate";
+            this.lblPostCodeUpdate.Size = new System.Drawing.Size(89, 24);
+            this.lblPostCodeUpdate.TabIndex = 47;
+            this.lblPostCodeUpdate.Text = "Postcode";
             // 
             // txtUpdateAddress5
             // 
@@ -504,17 +504,17 @@
             this.txtUpdateAddress5.TabIndex = 47;
             this.txtUpdateAddress5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUpdateAddress5_KeyPress);
             // 
-            // label1
+            // lblCItyUpdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(104, 159);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 24);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "City";
+            this.lblCItyUpdate.AutoSize = true;
+            this.lblCItyUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCItyUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCItyUpdate.Location = new System.Drawing.Point(104, 159);
+            this.lblCItyUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCItyUpdate.Name = "lblCItyUpdate";
+            this.lblCItyUpdate.Size = new System.Drawing.Size(40, 24);
+            this.lblCItyUpdate.TabIndex = 48;
+            this.lblCItyUpdate.Text = "City";
             // 
             // txtUpdateAddress4
             // 
@@ -525,17 +525,17 @@
             this.txtUpdateAddress4.Size = new System.Drawing.Size(300, 29);
             this.txtUpdateAddress4.TabIndex = 37;
             // 
-            // label3
+            // lblSuburbUpdate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(72, 129);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 24);
-            this.label3.TabIndex = 47;
-            this.label3.Text = "Suburb";
+            this.lblSuburbUpdate.AutoSize = true;
+            this.lblSuburbUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuburbUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblSuburbUpdate.Location = new System.Drawing.Point(72, 129);
+            this.lblSuburbUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSuburbUpdate.Name = "lblSuburbUpdate";
+            this.lblSuburbUpdate.Size = new System.Drawing.Size(72, 24);
+            this.lblSuburbUpdate.TabIndex = 47;
+            this.lblSuburbUpdate.Text = "Suburb";
             // 
             // btnUpdateSave
             // 
@@ -554,17 +554,17 @@
             this.btnUpdateSave.UseVisualStyleBackColor = false;
             this.btnUpdateSave.Click += new System.EventHandler(this.btnUpdateSave_Click);
             // 
-            // label5
+            // lblStreetAddress2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(-4, 98);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 24);
-            this.label5.TabIndex = 46;
-            this.label5.Text = "Street Address 2";
+            this.lblStreetAddress2.AutoSize = true;
+            this.lblStreetAddress2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreetAddress2.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblStreetAddress2.Location = new System.Drawing.Point(-4, 98);
+            this.lblStreetAddress2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStreetAddress2.Name = "lblStreetAddress2";
+            this.lblStreetAddress2.Size = new System.Drawing.Size(148, 24);
+            this.lblStreetAddress2.TabIndex = 46;
+            this.lblStreetAddress2.Text = "Street Address 2";
             // 
             // txtUpdateAddress3
             // 
@@ -575,17 +575,17 @@
             this.txtUpdateAddress3.Size = new System.Drawing.Size(300, 29);
             this.txtUpdateAddress3.TabIndex = 36;
             // 
-            // label6
+            // lblStreetAddress1Update
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(-4, 63);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 24);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Street Address 1";
+            this.lblStreetAddress1Update.AutoSize = true;
+            this.lblStreetAddress1Update.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStreetAddress1Update.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblStreetAddress1Update.Location = new System.Drawing.Point(-4, 63);
+            this.lblStreetAddress1Update.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblStreetAddress1Update.Name = "lblStreetAddress1Update";
+            this.lblStreetAddress1Update.Size = new System.Drawing.Size(148, 24);
+            this.lblStreetAddress1Update.TabIndex = 45;
+            this.lblStreetAddress1Update.Text = "Street Address 1";
             // 
             // btnUpdateCancel
             // 
@@ -622,17 +622,17 @@
             this.txtUpdateAddress1.Size = new System.Drawing.Size(300, 29);
             this.txtUpdateAddress1.TabIndex = 34;
             // 
-            // label4
+            // lblLocationNameUpdate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(8, 5);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 24);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Location Name";
+            this.lblLocationNameUpdate.AutoSize = true;
+            this.lblLocationNameUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocationNameUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblLocationNameUpdate.Location = new System.Drawing.Point(8, 5);
+            this.lblLocationNameUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLocationNameUpdate.Name = "lblLocationNameUpdate";
+            this.lblLocationNameUpdate.Size = new System.Drawing.Size(137, 24);
+            this.lblLocationNameUpdate.TabIndex = 30;
+            this.lblLocationNameUpdate.Text = "Location Name";
             // 
             // txtUpdateLocationName
             // 
@@ -706,10 +706,10 @@
         private System.Windows.Forms.TextBox txtLocationID;
         private System.Windows.Forms.Panel panelDelete;
         private System.Windows.Forms.Panel panelAdd;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblLocationNameAdd;
         private System.Windows.Forms.TextBox txtAddLocationName;
         private System.Windows.Forms.Panel panelUpdate;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLocationNameUpdate;
         private System.Windows.Forms.TextBox txtUpdateLocationName;
         private FontAwesome.Sharp.IconButton btnAddSave;
         private FontAwesome.Sharp.IconButton btnAddCancel;
@@ -724,17 +724,17 @@
         private System.Windows.Forms.TextBox txtAddAddress3;
         private System.Windows.Forms.TextBox txtAddAddress2;
         private System.Windows.Forms.TextBox txtAddAddress1;
-        private System.Windows.Forms.Label labelCity;
-        private System.Windows.Forms.Label labelSuburb;
-        private System.Windows.Forms.Label labelStreetAddress2;
-        private System.Windows.Forms.Label lblStreetAddress1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label labelPostcode;
+        private System.Windows.Forms.Label lblCityAdd;
+        private System.Windows.Forms.Label lblSuburbAdd;
+        private System.Windows.Forms.Label lblStreetAddress2Add;
+        private System.Windows.Forms.Label lblStreetAddress1Add;
+        private System.Windows.Forms.Label lblCItyUpdate;
+        private System.Windows.Forms.Label lblSuburbUpdate;
+        private System.Windows.Forms.Label lblStreetAddress2;
+        private System.Windows.Forms.Label lblStreetAddress1Update;
+        private System.Windows.Forms.Label lblPostCodeAdd;
         private System.Windows.Forms.TextBox txtAddAddress5;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPostCodeUpdate;
         private System.Windows.Forms.TextBox txtUpdateAddress5;
     }
 }

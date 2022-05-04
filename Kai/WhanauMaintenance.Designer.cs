@@ -47,31 +47,31 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
-            this.Address = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
             this.panelAdd = new System.Windows.Forms.Panel();
             this.btnAddSave = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAddressAdd = new System.Windows.Forms.Label();
             this.btnAddCancel = new FontAwesome.Sharp.IconButton();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblPhoneAdd = new System.Windows.Forms.Label();
             this.txtAddFirstName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblEmailAdd = new System.Windows.Forms.Label();
             this.txtAddLastName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblLastNameAdd = new System.Windows.Forms.Label();
             this.txtAddEmail = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblFirstNameAdd = new System.Windows.Forms.Label();
             this.txtAddPhone = new System.Windows.Forms.TextBox();
             this.txtAddAddress = new System.Windows.Forms.TextBox();
             this.panelUpdate = new System.Windows.Forms.Panel();
             this.btnUpdateSave = new FontAwesome.Sharp.IconButton();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblAddressUpdate = new System.Windows.Forms.Label();
             this.btnUpdateCancel = new FontAwesome.Sharp.IconButton();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPhoneUpdate = new System.Windows.Forms.Label();
             this.txtUpdateFirstName = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblEmailUpdate = new System.Windows.Forms.Label();
             this.txtUpdateLastName = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblLastNameUpdate = new System.Windows.Forms.Label();
             this.txtUpdateEmail = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblFirstNameUpdate = new System.Windows.Forms.Label();
             this.txtUpdatePhone = new System.Windows.Forms.TextBox();
             this.txtUpdateAddress = new System.Windows.Forms.TextBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -313,30 +313,30 @@
             this.lblPhone.TabIndex = 37;
             this.lblPhone.Text = "Phone";
             // 
-            // Address
+            // lblAddress
             // 
-            this.Address.AutoSize = true;
-            this.Address.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address.ForeColor = System.Drawing.SystemColors.Control;
-            this.Address.Location = new System.Drawing.Point(81, 251);
-            this.Address.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(80, 24);
-            this.Address.TabIndex = 38;
-            this.Address.Text = "Address";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblAddress.Location = new System.Drawing.Point(81, 251);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(80, 24);
+            this.lblAddress.TabIndex = 38;
+            this.lblAddress.Text = "Address";
             // 
             // panelAdd
             // 
             this.panelAdd.Controls.Add(this.btnAddSave);
-            this.panelAdd.Controls.Add(this.label1);
+            this.panelAdd.Controls.Add(this.lblAddressAdd);
             this.panelAdd.Controls.Add(this.btnAddCancel);
-            this.panelAdd.Controls.Add(this.label2);
+            this.panelAdd.Controls.Add(this.lblPhoneAdd);
             this.panelAdd.Controls.Add(this.txtAddFirstName);
-            this.panelAdd.Controls.Add(this.label3);
+            this.panelAdd.Controls.Add(this.lblEmailAdd);
             this.panelAdd.Controls.Add(this.txtAddLastName);
-            this.panelAdd.Controls.Add(this.label4);
+            this.panelAdd.Controls.Add(this.lblLastNameAdd);
             this.panelAdd.Controls.Add(this.txtAddEmail);
-            this.panelAdd.Controls.Add(this.label5);
+            this.panelAdd.Controls.Add(this.lblFirstNameAdd);
             this.panelAdd.Controls.Add(this.txtAddPhone);
             this.panelAdd.Controls.Add(this.txtAddAddress);
             this.panelAdd.Location = new System.Drawing.Point(901, 47);
@@ -362,17 +362,17 @@
             this.btnAddSave.UseVisualStyleBackColor = false;
             this.btnAddSave.Click += new System.EventHandler(this.btnAddSave_Click);
             // 
-            // label1
+            // lblAddressAdd
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(20, 201);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 24);
-            this.label1.TabIndex = 51;
-            this.label1.Text = "Address";
+            this.lblAddressAdd.AutoSize = true;
+            this.lblAddressAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblAddressAdd.Location = new System.Drawing.Point(20, 201);
+            this.lblAddressAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddressAdd.Name = "lblAddressAdd";
+            this.lblAddressAdd.Size = new System.Drawing.Size(80, 24);
+            this.lblAddressAdd.TabIndex = 51;
+            this.lblAddressAdd.Text = "Address";
             // 
             // btnAddCancel
             // 
@@ -391,17 +391,17 @@
             this.btnAddCancel.UseVisualStyleBackColor = false;
             this.btnAddCancel.Click += new System.EventHandler(this.btnAddCancel_Click);
             // 
-            // label2
+            // lblPhoneAdd
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(34, 151);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 24);
-            this.label2.TabIndex = 50;
-            this.label2.Text = "Phone";
+            this.lblPhoneAdd.AutoSize = true;
+            this.lblPhoneAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPhoneAdd.Location = new System.Drawing.Point(34, 151);
+            this.lblPhoneAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPhoneAdd.Name = "lblPhoneAdd";
+            this.lblPhoneAdd.Size = new System.Drawing.Size(66, 24);
+            this.lblPhoneAdd.TabIndex = 50;
+            this.lblPhoneAdd.Text = "Phone";
             // 
             // txtAddFirstName
             // 
@@ -411,17 +411,17 @@
             this.txtAddFirstName.Size = new System.Drawing.Size(300, 29);
             this.txtAddFirstName.TabIndex = 41;
             // 
-            // label3
+            // lblEmailAdd
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(43, 101);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 24);
-            this.label3.TabIndex = 49;
-            this.label3.Text = "Email";
+            this.lblEmailAdd.AutoSize = true;
+            this.lblEmailAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblEmailAdd.Location = new System.Drawing.Point(43, 101);
+            this.lblEmailAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmailAdd.Name = "lblEmailAdd";
+            this.lblEmailAdd.Size = new System.Drawing.Size(57, 24);
+            this.lblEmailAdd.TabIndex = 49;
+            this.lblEmailAdd.Text = "Email";
             // 
             // txtAddLastName
             // 
@@ -431,17 +431,17 @@
             this.txtAddLastName.Size = new System.Drawing.Size(300, 29);
             this.txtAddLastName.TabIndex = 42;
             // 
-            // label4
+            // lblLastNameAdd
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(2, 51);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 24);
-            this.label4.TabIndex = 48;
-            this.label4.Text = "Last Name";
+            this.lblLastNameAdd.AutoSize = true;
+            this.lblLastNameAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastNameAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblLastNameAdd.Location = new System.Drawing.Point(2, 51);
+            this.lblLastNameAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLastNameAdd.Name = "lblLastNameAdd";
+            this.lblLastNameAdd.Size = new System.Drawing.Size(99, 24);
+            this.lblLastNameAdd.TabIndex = 48;
+            this.lblLastNameAdd.Text = "Last Name";
             // 
             // txtAddEmail
             // 
@@ -451,17 +451,17 @@
             this.txtAddEmail.Size = new System.Drawing.Size(300, 29);
             this.txtAddEmail.TabIndex = 43;
             // 
-            // label5
+            // lblFirstNameAdd
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Control;
-            this.label5.Location = new System.Drawing.Point(0, 1);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 24);
-            this.label5.TabIndex = 47;
-            this.label5.Text = "First Name";
+            this.lblFirstNameAdd.AutoSize = true;
+            this.lblFirstNameAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstNameAdd.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFirstNameAdd.Location = new System.Drawing.Point(0, 1);
+            this.lblFirstNameAdd.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFirstNameAdd.Name = "lblFirstNameAdd";
+            this.lblFirstNameAdd.Size = new System.Drawing.Size(101, 24);
+            this.lblFirstNameAdd.TabIndex = 47;
+            this.lblFirstNameAdd.Text = "First Name";
             // 
             // txtAddPhone
             // 
@@ -484,15 +484,15 @@
             // panelUpdate
             // 
             this.panelUpdate.Controls.Add(this.btnUpdateSave);
-            this.panelUpdate.Controls.Add(this.label6);
+            this.panelUpdate.Controls.Add(this.lblAddressUpdate);
             this.panelUpdate.Controls.Add(this.btnUpdateCancel);
-            this.panelUpdate.Controls.Add(this.label7);
+            this.panelUpdate.Controls.Add(this.lblPhoneUpdate);
             this.panelUpdate.Controls.Add(this.txtUpdateFirstName);
-            this.panelUpdate.Controls.Add(this.label8);
+            this.panelUpdate.Controls.Add(this.lblEmailUpdate);
             this.panelUpdate.Controls.Add(this.txtUpdateLastName);
-            this.panelUpdate.Controls.Add(this.label9);
+            this.panelUpdate.Controls.Add(this.lblLastNameUpdate);
             this.panelUpdate.Controls.Add(this.txtUpdateEmail);
-            this.panelUpdate.Controls.Add(this.label10);
+            this.panelUpdate.Controls.Add(this.lblFirstNameUpdate);
             this.panelUpdate.Controls.Add(this.txtUpdatePhone);
             this.panelUpdate.Controls.Add(this.txtUpdateAddress);
             this.panelUpdate.Location = new System.Drawing.Point(1331, 47);
@@ -518,17 +518,17 @@
             this.btnUpdateSave.UseVisualStyleBackColor = false;
             this.btnUpdateSave.Click += new System.EventHandler(this.btnUpdateSave_Click);
             // 
-            // label6
+            // lblAddressUpdate
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(20, 201);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 24);
-            this.label6.TabIndex = 51;
-            this.label6.Text = "Address";
+            this.lblAddressUpdate.AutoSize = true;
+            this.lblAddressUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddressUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblAddressUpdate.Location = new System.Drawing.Point(20, 201);
+            this.lblAddressUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAddressUpdate.Name = "lblAddressUpdate";
+            this.lblAddressUpdate.Size = new System.Drawing.Size(80, 24);
+            this.lblAddressUpdate.TabIndex = 51;
+            this.lblAddressUpdate.Text = "Address";
             // 
             // btnUpdateCancel
             // 
@@ -547,17 +547,17 @@
             this.btnUpdateCancel.UseVisualStyleBackColor = false;
             this.btnUpdateCancel.Click += new System.EventHandler(this.btnUpdateCancel_Click);
             // 
-            // label7
+            // lblPhoneUpdate
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(34, 151);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 24);
-            this.label7.TabIndex = 50;
-            this.label7.Text = "Phone";
+            this.lblPhoneUpdate.AutoSize = true;
+            this.lblPhoneUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhoneUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPhoneUpdate.Location = new System.Drawing.Point(34, 151);
+            this.lblPhoneUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPhoneUpdate.Name = "lblPhoneUpdate";
+            this.lblPhoneUpdate.Size = new System.Drawing.Size(66, 24);
+            this.lblPhoneUpdate.TabIndex = 50;
+            this.lblPhoneUpdate.Text = "Phone";
             // 
             // txtUpdateFirstName
             // 
@@ -567,17 +567,17 @@
             this.txtUpdateFirstName.Size = new System.Drawing.Size(300, 29);
             this.txtUpdateFirstName.TabIndex = 41;
             // 
-            // label8
+            // lblEmailUpdate
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(43, 101);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 24);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "Email";
+            this.lblEmailUpdate.AutoSize = true;
+            this.lblEmailUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmailUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblEmailUpdate.Location = new System.Drawing.Point(43, 101);
+            this.lblEmailUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmailUpdate.Name = "lblEmailUpdate";
+            this.lblEmailUpdate.Size = new System.Drawing.Size(57, 24);
+            this.lblEmailUpdate.TabIndex = 49;
+            this.lblEmailUpdate.Text = "Email";
             // 
             // txtUpdateLastName
             // 
@@ -587,17 +587,17 @@
             this.txtUpdateLastName.Size = new System.Drawing.Size(300, 29);
             this.txtUpdateLastName.TabIndex = 42;
             // 
-            // label9
+            // lblLastNameUpdate
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(2, 51);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 24);
-            this.label9.TabIndex = 48;
-            this.label9.Text = "Last Name";
+            this.lblLastNameUpdate.AutoSize = true;
+            this.lblLastNameUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastNameUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblLastNameUpdate.Location = new System.Drawing.Point(2, 51);
+            this.lblLastNameUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLastNameUpdate.Name = "lblLastNameUpdate";
+            this.lblLastNameUpdate.Size = new System.Drawing.Size(99, 24);
+            this.lblLastNameUpdate.TabIndex = 48;
+            this.lblLastNameUpdate.Text = "Last Name";
             // 
             // txtUpdateEmail
             // 
@@ -607,17 +607,17 @@
             this.txtUpdateEmail.Size = new System.Drawing.Size(300, 29);
             this.txtUpdateEmail.TabIndex = 43;
             // 
-            // label10
+            // lblFirstNameUpdate
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(0, 1);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 24);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "First Name";
+            this.lblFirstNameUpdate.AutoSize = true;
+            this.lblFirstNameUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstNameUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFirstNameUpdate.Location = new System.Drawing.Point(0, 1);
+            this.lblFirstNameUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFirstNameUpdate.Name = "lblFirstNameUpdate";
+            this.lblFirstNameUpdate.Size = new System.Drawing.Size(101, 24);
+            this.lblFirstNameUpdate.TabIndex = 47;
+            this.lblFirstNameUpdate.Text = "First Name";
             // 
             // txtUpdatePhone
             // 
@@ -649,7 +649,7 @@
             // 
             // panelDelete
             // 
-            this.panelDelete.Controls.Add(this.Address);
+            this.panelDelete.Controls.Add(this.lblAddress);
             this.panelDelete.Controls.Add(this.lblPhone);
             this.panelDelete.Controls.Add(this.lblEmail);
             this.panelDelete.Controls.Add(this.lblLastName);
@@ -721,31 +721,31 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.Label Address;
+        private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Panel panelAdd;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblAddressAdd;
+        private System.Windows.Forms.Label lblPhoneAdd;
         private System.Windows.Forms.TextBox txtAddFirstName;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblEmailAdd;
         private System.Windows.Forms.TextBox txtAddLastName;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLastNameAdd;
         private System.Windows.Forms.TextBox txtAddEmail;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblFirstNameAdd;
         private System.Windows.Forms.TextBox txtAddPhone;
         private System.Windows.Forms.TextBox txtAddAddress;
         private FontAwesome.Sharp.IconButton btnAddSave;
         private FontAwesome.Sharp.IconButton btnAddCancel;
         private System.Windows.Forms.Panel panelUpdate;
         private FontAwesome.Sharp.IconButton btnUpdateSave;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblAddressUpdate;
         private FontAwesome.Sharp.IconButton btnUpdateCancel;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPhoneUpdate;
         private System.Windows.Forms.TextBox txtUpdateFirstName;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblEmailUpdate;
         private System.Windows.Forms.TextBox txtUpdateLastName;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblLastNameUpdate;
         private System.Windows.Forms.TextBox txtUpdateEmail;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblFirstNameUpdate;
         private System.Windows.Forms.TextBox txtUpdatePhone;
         private System.Windows.Forms.TextBox txtUpdateAddress;
         private System.Windows.Forms.PictureBox picLogo;

@@ -48,7 +48,7 @@ namespace Kai
         ///</Summary>  
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            panelAdd.Location = new Point(390, 50);
+            panelAdd.Location = new Point(390, 52);
             panelAdd.Visible = true;
             HideButtons();
 
@@ -113,7 +113,7 @@ namespace Kai
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            panelUpdate.Location = new Point(390, 50);
+            panelUpdate.Location = new Point(390, 52);
             panelUpdate.Visible = true;
             LoadLocations();
             HideButtons();

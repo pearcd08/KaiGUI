@@ -57,13 +57,13 @@
             this.listBoxEvents = new System.Windows.Forms.ListBox();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelUpdate = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEventDateUpdate = new System.Windows.Forms.Label();
             this.dateUpdateEventDate = new System.Windows.Forms.DateTimePicker();
             this.cboUpdateLocation = new System.Windows.Forms.ComboBox();
             this.btnUpdateSave = new FontAwesome.Sharp.IconButton();
             this.btnUpdateCancel = new FontAwesome.Sharp.IconButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblLocationUpdate = new System.Windows.Forms.Label();
+            this.lblEventNameUpdate = new System.Windows.Forms.Label();
             this.txtUpdateEventName = new System.Windows.Forms.TextBox();
             this.dsKaioordinate = new Kai.dsKaioordinate();
             this.lOCATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -430,30 +430,30 @@
             // 
             // panelUpdate
             // 
-            this.panelUpdate.Controls.Add(this.label1);
+            this.panelUpdate.Controls.Add(this.lblEventDateUpdate);
             this.panelUpdate.Controls.Add(this.dateUpdateEventDate);
             this.panelUpdate.Controls.Add(this.cboUpdateLocation);
             this.panelUpdate.Controls.Add(this.btnUpdateSave);
             this.panelUpdate.Controls.Add(this.btnUpdateCancel);
-            this.panelUpdate.Controls.Add(this.label2);
-            this.panelUpdate.Controls.Add(this.label3);
+            this.panelUpdate.Controls.Add(this.lblLocationUpdate);
+            this.panelUpdate.Controls.Add(this.lblEventNameUpdate);
             this.panelUpdate.Controls.Add(this.txtUpdateEventName);
             this.panelUpdate.Location = new System.Drawing.Point(1384, 49);
             this.panelUpdate.Name = "panelUpdate";
             this.panelUpdate.Size = new System.Drawing.Size(458, 305);
             this.panelUpdate.TabIndex = 46;
             // 
-            // label1
+            // lblEventDateUpdate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(43, 106);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 24);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Event Date";
+            this.lblEventDateUpdate.AutoSize = true;
+            this.lblEventDateUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEventDateUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblEventDateUpdate.Location = new System.Drawing.Point(43, 106);
+            this.lblEventDateUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEventDateUpdate.Name = "lblEventDateUpdate";
+            this.lblEventDateUpdate.Size = new System.Drawing.Size(101, 24);
+            this.lblEventDateUpdate.TabIndex = 36;
+            this.lblEventDateUpdate.Text = "Event Date";
             // 
             // dateUpdateEventDate
             // 
@@ -511,29 +511,29 @@
             this.btnUpdateCancel.UseVisualStyleBackColor = false;
             this.btnUpdateCancel.Click += new System.EventHandler(this.btnUpdateCancel_Click);
             // 
-            // label2
+            // lblLocationUpdate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(63, 60);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 24);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Location";
+            this.lblLocationUpdate.AutoSize = true;
+            this.lblLocationUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocationUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblLocationUpdate.Location = new System.Drawing.Point(63, 60);
+            this.lblLocationUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLocationUpdate.Name = "lblLocationUpdate";
+            this.lblLocationUpdate.Size = new System.Drawing.Size(81, 24);
+            this.lblLocationUpdate.TabIndex = 31;
+            this.lblLocationUpdate.Text = "Location";
             // 
-            // label3
+            // lblEventNameUpdate
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(31, 5);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 24);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Event Name";
+            this.lblEventNameUpdate.AutoSize = true;
+            this.lblEventNameUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEventNameUpdate.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblEventNameUpdate.Location = new System.Drawing.Point(31, 5);
+            this.lblEventNameUpdate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEventNameUpdate.Name = "lblEventNameUpdate";
+            this.lblEventNameUpdate.Size = new System.Drawing.Size(114, 24);
+            this.lblEventNameUpdate.TabIndex = 30;
+            this.lblEventNameUpdate.Text = "Event Name";
             // 
             // txtUpdateEventName
             // 
@@ -626,13 +626,13 @@
         private System.Windows.Forms.ComboBox cboAddLocation;
         private System.Windows.Forms.Label lblEventDateAdd;
         private System.Windows.Forms.Panel panelUpdate;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEventDateUpdate;
         private System.Windows.Forms.DateTimePicker dateUpdateEventDate;
         private System.Windows.Forms.ComboBox cboUpdateLocation;
         private FontAwesome.Sharp.IconButton btnUpdateSave;
         private FontAwesome.Sharp.IconButton btnUpdateCancel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblLocationUpdate;
+        private System.Windows.Forms.Label lblEventNameUpdate;
         private System.Windows.Forms.TextBox txtUpdateEventName;
         private System.Windows.Forms.BindingSource lOCATIONBindingSource;
         private dsKaioordinate dsKaioordinate;
